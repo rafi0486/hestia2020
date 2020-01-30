@@ -50,7 +50,7 @@ if(isset($_COOKIE['redir']))
     />
     <style>
         .box__img{
-            max-height: 150px !important;
+            max-width: 150px !important;
         }
     </style>
     <link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
@@ -146,26 +146,25 @@ if(isset($_COOKIE['redir']))
         </div>
         <div class="menu__item">
           <span class="menu__item-number">03</span>
-          <a href="<?=  base_url()?>"><span class="menu__item-textwrap"
+          <span class="menu__item-textwrap" onclick="window.location='<?=  base_url()?>'"
             ><span class="menu__item-text">Workshops</span></span
           >
-          </a>
-          <a class="menu__item-link">Explore</a>
+      
+          <a class="menu__item-link hidden">Explore</a>
         </div>
         <div class="menu__item">
           <span class="menu__item-number">04</span>
-          <a href="<?=  base_url()?>"><span class="menu__item-textwrap"
+         <span class="menu__item-textwrap"  onclick="window.location='<?=  base_url()?>'"
             ><span class="menu__item-text">Online</span></span
           >
-          </a>
-          <a class="menu__item-link">Explore</a>
+          <a class="menu__item-link hidden">Explore</a>
         </div>
         <div class="menu__item">
           <span class="menu__item-number">05</span>
-          <a href="<?=  base_url()?>"><span class="menu__item-textwrap"
+         <span class="menu__item-textwrap"  onclick="window.location='<?=  base_url()?>'"
             ><span class="menu__item-text">General</span></span
-              ></a>
-          <a class="menu__item-link">Explore</a>
+              >
+          <a class="menu__item-link hidden">Explore</a>
         </div>
       </nav>
       <div class="page page--preview">
@@ -174,7 +173,7 @@ if(isset($_COOKIE['redir']))
               <?php
               foreach ($technical as $catrow){
                   ?>
-                        <a class="grid__item" href="">
+                        <a class="grid__item" href="<?= base_url("events/").$catrow->cat_name ?>">
                     <div class="box">
                       <div class="box__shadow"></div>
                       <img
@@ -196,132 +195,41 @@ if(isset($_COOKIE['redir']))
             
           </div>
           <div class="grid grid--layout-2">
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="<?= base_url("assets/main/") ?>img/event-listing/4.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >BIG{O} | CSE</span
-                  >
-                </h3>
-              </div>
-            </a>
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="<?= base_url("assets/main/") ?>img/event-listing/10.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >COMCADRE | MCA</span
-                  >
-                </h3>
-              </div>
-            </a>
+            
+             <?php
+              foreach ($cultural as $catrow){
+                  ?>
+                        <a class="grid__item" href="<?= base_url("events/").$catrow->cat_name ?>">
+                    <div class="box">
+                      <div class="box__shadow"></div>
+                      <img
+                        class="box__img"
+                        src="<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>"
+                        alt="<?=$catrow->cat_text?>"
+                      />
+                      <h3 class="hestia-font box__title">
+                        <span class="box__title-inner" data-hover="<?=$catrow->cat_text?>"
+                          ><?=$catrow->cat_text?></span
+                        >
+                      </h3>
+                    </div>
+                  </a>
+              <?php
+              }
+              ?>
+              
           </div>
-                   <div class="grid grid--layout-3">
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="img/event-listing/4.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >BIG{O} | CSE</span
-                  >
-                </h3>
-              </div>
-            </a>
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="img/event-listing/10.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >COMCADRE | MCA</span
-                  >
-                </h3>
-              </div>
-            </a>
+          <div class="grid grid--layout-3">
+            
+            
           </div>
           <div class="grid grid--layout-4">
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="img/event-listing/4.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >BIG{O} | CSE</span
-                  >
-                </h3>
-              </div>
-            </a>
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="img/event-listing/10.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >COMCADRE | MCA</span
-                  >
-                </h3>
-              </div>
-            </a>
+            
+           
           </div>
           <div class="grid grid--layout-5">
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="img/event-listing/11.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >BIG{O} | CSE</span
-                  >
-                </h3>
-              </div>
-            </a>
-            <a class="grid__item" href="">
-              <div class="box">
-                <div class="box__shadow"></div>
-                <img
-                  class="box__img"
-                  src="img/event-listing/12.jpg"
-                  alt="Some image"
-                />
-                <h3 class="hestia-font box__title">
-                  <span class="box__title-inner" data-hover="Jack"
-                    >COMCADRE | MCA</span
-                  >
-                </h3>
-              </div>
-            </a>
+            
+            
           </div>
           <button class="gridback">
             <svg class="icon icon--arrow">
