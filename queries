@@ -1,0 +1,18 @@
+//missing accomodation event
+SELECT * FROM `registration` where event_id=112 and member_email in(select email from users where accommodation is null) ORDER BY `registration`.`event_id` DESC 
+
+//duplicate event for same user
+SELECT `member_email`,`event_id`,count(*) FROM `registration` group by `member_email`,`event_id` having count(*)>1 ORDER BY `count(*)` DESC 
+
+//get duplicate event mails
+
+select * from registration where (`member_email`,`event_id`) in (SELECT `member_email`,`event_id`FROM `registration` group by `member_email`,`event_id` having count(*)>1  )
+
+//referral code event wise
+SELECT events.title,registration.referral_code,count(*) FROM `registration`, `events` where registration.event_id=events.event_id and registration.referral_code!='' and registration.referral_code like '%@%' and registration.referral_code not like 'spot%' and registration.referral_code like '%@%'group by events.title,registration.referral_code order by events.title,registration.referral_code 
+
+
+//08-04-2019 db changes
+ALTER TABLE `users` ADD `profile_completed` INT NOT NULL DEFAULT '0' COMMENT '0: not completed 1: completed' AFTER `timestamp`;
+
+ALTER TABLE `events` ADD `is_certificate_pub` INT NOT NULL DEFAULT '0' AFTER `link`;

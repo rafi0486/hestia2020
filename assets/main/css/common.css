@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Hestia Font";
+  src: url("../fonts/Brandon_blk.otf");
+}
+
+.hestia-font {
+  font-family: "Hestia Font";
+}
+
+.hestia-main {
+  text-align: center;
+  margin-top: 40px;
+  letter-spacing: 1.5px;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 700px) {
+  .hestia-main {
+    margin-top: 17vh;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+.links a {
+  color: white;
+
+  display: inline-block;
+  min-width: 130px;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.links {
+  display: block;
+  text-align: center;
+}

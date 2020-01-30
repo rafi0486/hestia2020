@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Galgo';
+  src: url('fonts/WildYouth-Regular- new.eot');
+
+  src: url('fonts/WildYouth-Regular- new.eot?#iefix') format('embedded-opentype'),
+
+       url('fonts/WildYouth-Regular- new.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'WildYouth-Regular';
+  src: url('fonts/WildYouth-Regular.svg#WildYouth-Regular') format('svg'),
+     
+  url('fonts/WildYouth-Regular.ttf') format('truetype'),
+       url('fonts/WildYouth-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
