@@ -125,6 +125,8 @@
       </nav>
       <div class="content" >
         <div class="grid" style="margin-top: 160px;">
+
+
           <a class="grid__item" href="#preview-8">
             <div class="box">
               <div class="box__shadow"></div>
@@ -136,12 +138,10 @@
               <h3 class="hestia-font box__title">
                 <span class="box__title-inner" data-hover="Jack">Jack</span>
               </h3>
-              <h4 class="hestia-font box__text box__text--bottom">
-                <span class="box__text-inner">Bust</span>
-              </h4>
               <div class="box__deco">&#10108;</div>
             </div>
           </a>
+      
           <a class="grid__item" href="#preview-9">
             <div class="box">
               <div class="box__shadow"></div>
@@ -153,11 +153,9 @@
               <h3 class="box__title">
                 <span class="box__title-inner" data-hover="Wild">Wild</span>
               </h3>
-              <h4 class="box__text box__text--bottom">
-                <span class="box__text-inner">Zack</span>
-              </h4>
             </div>
           </a>
+
           <a class="grid__item" href="#preview-10">
             <div class="box">
               <div class="box__shadow"></div>
@@ -169,13 +167,9 @@
               <h3 class="box__title box__title--bottom">
                 <span class="box__title-inner" data-hover="Lost">Lost</span>
               </h3>
-              <h4 class="box__text">
-                <span class="box__text-inner box__text-inner--rotated2"
-                  >Rust</span
-                >
-              </h4>
             </div>
           </a>
+
           <a class="grid__item" href="#preview-11">
             <div class="box">
               <div class="box__shadow"></div>
@@ -187,88 +181,15 @@
               <h3 class="box__title box__title--straight box__title--left">
                 <span class="box__title-inner" data-hover="Grit">Grit</span>
               </h3>
-              <h4 class="box__text box__text--bottom box__text--right">
-                <span class="box__text-inner box__text-inner--rotated3"
-                  >Mud</span
-                >
-              </h4>
               <div class="box__deco box__deco--top">&#10153;</div>
             </div>
           </a>
-          <a class="grid__item" href="#preview-8">
-            <div class="box">
-              <div class="box__shadow"></div>
-              <img
-                class="box__img"
-                src="<?=  base_url("assets/main/")?>img/event-listing/4.jpg"
-                alt="Some image"
-              />
-              <h3 class="box__title">
-                <span class="box__title-inner" data-hover="Jack">Jack</span>
-              </h3>
-              <h4 class="box__text box__text--bottom">
-                <span class="box__text-inner">Bust</span>
-              </h4>
-              <div class="box__deco">&#10108;</div>
-            </div>
-          </a>
-          <a class="grid__item" href="#preview-9">
-            <div class="box">
-              <div class="box__shadow"></div>
-              <img
-                class="box__img"
-                src="<?=  base_url("assets/main/")?>img/event-listing/10.jpg"
-                alt="Some image"
-              />
-              <h3 class="box__title">
-                <span class="box__title-inner" data-hover="Wild">Wild</span>
-              </h3>
-              <h4 class="box__text box__text--bottom">
-                <span class="box__text-inner">Zack</span>
-              </h4>
-            </div>
-          </a>
-          <a class="grid__item" href="#preview-10">
-            <div class="box">
-              <div class="box__shadow"></div>
-              <img
-                class="box__img"
-                src="<?=  base_url("assets/main/")?>img/event-listing/11.jpg"
-                alt="Some image"
-              />
-              <h3 class="box__title box__title--bottom">
-                <span class="box__title-inner" data-hover="Lost">Lost</span>
-              </h3>
-              <h4 class="box__text">
-                <span class="box__text-inner box__text-inner--rotated2"
-                  >Rust</span
-                >
-              </h4>
-            </div>
-          </a>
-          <a class="grid__item" href="#preview-11">
-            <div class="box">
-              <div class="box__shadow"></div>
-              <img
-                class="box__img"
-                src="<?=  base_url("assets/main/")?>img/event-listing/12.jpg"
-                alt="Some image"
-              />
-              <h3 class="box__title box__title--straight box__title--left">
-                <span class="box__title-inner" data-hover="Grit">Grit</span>
-              </h3>
-              <h4 class="box__text box__text--bottom box__text--right">
-                <span class="box__text-inner box__text-inner--rotated3"
-                  >Mud</span
-                >
-              </h4>
-              <div class="box__deco box__deco--top">&#10153;</div>
-            </div>
-          </a>
+
         </div>
       </div>
       <div class="overlay">
         <div class="overlay__reveal"></div>
+
         <div class="overlay__item" id="preview-8">
           <div class="box">
             <div class="box__shadow"></div>
@@ -353,6 +274,8 @@
             him old.
           </p>
         </div>
+
+
         <button class="overlay__close">
           <svg class="icon icon--cross">
             <use xlink:href="#icon-cross"></use>
