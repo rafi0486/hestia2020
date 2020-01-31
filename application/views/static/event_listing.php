@@ -98,7 +98,7 @@
             class="links hestia-font cl-effect-1	"
             style="background-color:transparent !important"
           >
-            <a>EVENTS</a>
+            <a href="<?=base_url()?>events">EVENTS</a>
             <a>SPONSORS</a>
             <a
               ><img
@@ -141,7 +141,7 @@
               <div class="box__deco">&#10108;</div>
             </div>
           </a>
-      
+
           <a class="grid__item" href="#preview-9">
             <div class="box">
               <div class="box__shadow"></div>

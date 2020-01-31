@@ -124,7 +124,7 @@ if(isset($_COOKIE['redir']))
             class="links hestia-font cl-effect-1	"
             style="background-color:transparent !important"
           >
-            <a>EVENTS</a>
+            <a href="<?=base_url()?>events">EVENTS</a>
             <a>SPONSORS</a>
             <a
               ><img
