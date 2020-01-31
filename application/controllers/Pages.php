@@ -5,8 +5,8 @@ class Pages extends CI_Controller {
         $this->load->model('report_model');
         $this->load->library('Google');
         $this->load->model('user_model');
-        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
-        "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
+        $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ?
+        "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .
         $_SERVER['REQUEST_URI'];
 
 
@@ -15,19 +15,19 @@ class Pages extends CI_Controller {
             redirect("Profile/complete");
         }
     }
-    function index(){ 
+    function index(){
         $data['google_login_url']=$this->google->loginURL();
         $this->load->view('static/home',$data);
     }
-    function main_events(){ 
+    function main_events(){
         $data['google_login_url']=$this->google->loginURL();
         $data['technical']=$this->report_model->get_categorieslike("technical");
         $data['cultural']=$this->report_model->get_categorieslike("cultural");
-        
+
         $this->load->view('static/main_events',$data);
     }
     function view($page){
-        
+
         if ( ! file_exists(APPPATH.'views/static/'.$page.'.php')){
             show_404();
         }
@@ -35,11 +35,11 @@ class Pages extends CI_Controller {
     }
     function Event($cat){
         $cat_name=$this->security->xss_clean($cat);
-
+        $data['google_login_url']=$this->google->loginURL();        
         $data['events']=$this->report_model->get_events($cat_name);
         $this->load->view('static/event_listing',$data);
     }
-    
+
     function UserEvents(){
 
     if(isset($_SESSION['email'])){
@@ -56,19 +56,19 @@ header('Location: '.$data['google_login_url']);
     }
 
         $data['certificate']="";
-        
+
      $this->load->view('static/user_events',$data);
 
     // var_dump($data);//htodo
     // $data['myevents']=[$row];
     }
-    
+
     function BookTicket(){
       echo $this->input->post('event_id');
       echo $this->input->post('txt_emails');
-      
 
-      
+
+
     }
     function url_submitted(){
         $f1= $this->input->post('f1');
@@ -98,7 +98,7 @@ header('Location: '.$data['google_login_url']);
 
 
         redirect(base_url()."myevents");
-        
+
       }
     function SingleEvent($elink){
         $elink1=$this->security->xss_clean($elink);
@@ -173,7 +173,7 @@ header('Location: '.$data['google_login_url']);
         if(isset($_SESSION['email'])){
             $islogged=true;
         }
- 
+
         if($islogged==true){
                 $team_size=$this->report_model->get_team_size($eid);
 
@@ -206,7 +206,7 @@ header('Location: '.$data['google_login_url']);
       $data['sponsors7']=$this->report_model->get_sponsors('s_hospital');
 
       $this->load->view('static/sponsors',$data);
-      
+
 
   }
 
@@ -221,5 +221,5 @@ header('Location: '.$data['google_login_url']);
 //        $this->load->view('templates/header', $data);
 //        $this->load->view('pages/'.$page, $data);
 //        $this->load->view('templates/footer', $data);
-//    } 
+//    }
 }
