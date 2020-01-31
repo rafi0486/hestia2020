@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title><?=$event->title?> - Hestia 19 - National Level Techno-Cultural Fest of TKM</title>
+    <title><?=$event->title?> - <?=APP_TITLE?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hestia 19 - National level Techno Cultural fest organized by TKM College of Engineering. March 28-31">
 <meta name="keywords" content="hestia,hestia19,tkmce,hestiatkm,hestiatkmce,conjura,fest,event,technical,cultural,technocultural">

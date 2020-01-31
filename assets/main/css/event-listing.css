@@ -455,12 +455,15 @@ main {
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 1000;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .overlay--open {
   pointer-events: auto;
+    background-color: #d0cfc5 ;
 }
 
 .overlay__reveal {
@@ -620,7 +623,7 @@ main {
   }
 
   .overlay__content {
-    font-size: 2.25rem;
+    font-size: 1rem;
     margin-top: 0;
   }
 

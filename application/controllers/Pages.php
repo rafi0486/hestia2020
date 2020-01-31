@@ -35,8 +35,8 @@ class Pages extends CI_Controller {
     }
     function Event($cat){
         $cat_name=$this->security->xss_clean($cat);
-
-        $data['events']=$this->report_model->get_events($cat_name);
+        $data['google_login_url']=$this->google->loginURL();
+        $data['events']=$this->report_model->get_events_detail($cat_name);
         $this->load->view('static/event_listing',$data);
     }
     
@@ -108,11 +108,15 @@ header('Location: '.$data['google_login_url']);
             show_404();
             return;
         }
-       $eid=$data['event']->event_id;
-       $isbooked=$this->report_model->get_book_status($eid);
+
+        
+        
+        $data['schedule']=$this->report_model->get_event_schedule($eid);
+        
+        $eid=$data['event']->event_id;
+        $isbooked=$this->report_model->get_book_status($eid);    
         $data['parent']=$this->report_model->get_event_cat_details($eid)->cat_name;
         $today = date('Y-m-d');
-        $data['schedule']=$this->report_model->get_event_schedule($eid);
         $startdate=date('Y-m-d', strtotime($data['event']->reg_start));
         $enddate = date('Y-m-d', strtotime($data['event']->reg_end));
         $cnt=$this->report_model->get_event_reg_count($eid);

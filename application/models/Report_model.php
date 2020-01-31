@@ -47,6 +47,79 @@ class Report_model extends CI_Model {
         $query = $this->db->get ();
         return $query->result();
     }
+    public function get_events_detail($id){
+        $this->db->select ( '*' );
+        $this->db->from ( 'events' );
+        $this->db->join ( 'categories', 'categories.cat_id = events.cat_id' , 'inner' );
+        if( $id != NULL ){
+            $this->db->where ( 'categories.cat_name',$id);
+        }
+        $query = $this->db->get ();
+        $data=$query->result();
+        $newdata= array();
+        $today = date('Y-m-d');
+        foreach ($data as $row){
+            $row->schedule=$this->get_event_schedule($row->event_id);
+            $eid=$row->event_id;
+            $isbooked=$this->get_book_status($eid);    
+            $row->parent=$this->get_event_cat_details($eid)->cat_name;
+
+            $startdate=date('Y-m-d', strtotime($row->reg_start));
+            $enddate = date('Y-m-d', strtotime($row->reg_end));
+            $cnt=$this->get_event_reg_count($eid);
+            $reg_fee=$row->reg_fee;
+            $reg_end = '';
+            $resulthtml="";
+            $results=$this->get_event_status_result($eid);
+            $btn = "";
+            if(count($results)>0){
+                $btn="<a href='#' class='btn btn-success btn-result'>Result &nbsp;<i class='fas fa-trophy'></i></a>";
+                $resulthtml="<table class='table table-striped'>";
+                foreach ($results as $rowresult){
+                    $resulthtml=$resulthtml."<tr><td>".$rowresult['label']."</td><td>".$rowresult['fullname']."</td><td>".$rowresult['college']."</td></tr>";
+                }
+                $resulthtml=$resulthtml."</table>";
+
+            }else{
+                if($reg_fee !== NULL){
+                    if($isbooked>=1) {
+                        $btn="<a href='#' id='".$eid."' class='btn btn-warning btn-custom disabled'>Booked &nbsp;<i class='fas fa-ticket-alt'></i></a>";
+                    } else {
+                        if (($today >= $startdate) && ($today <= $enddate)){
+
+                            if($cnt<$row->seats || $row->seats == 0){
+                                $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-primary'>BUY TICKET&nbsp;<i class='fas fa-shopping-cart'></i></a>";
+                                $reg_end = date('d-m-Y', strtotime($row->reg_end));
+                            }else{
+                                $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-danger disabled'>Sold Out&nbsp;<i class='fas fa-shopping-cart'></i></a>";
+                            }
+                        }else{
+                            if(($startdate  > $today)){
+                                $dtstart = date_create($startdate);
+                                $btn="<a href='#'  id='".$eid."' class='btn btn-warning btn-custom disabled'>Registration Starts on ".date_format($dtstart, 'd-m-Y')."&nbsp;<i class='fas fa-clock'></i></a>";
+
+                            }
+                            if(($today > $enddate)){
+                                $btn="<a href='#'  id='".$eid."' class='btn btn-danger btn-custom disabled'>Registration Closed&nbsp;<i class='fas fa-shopping-cart'></i></a>";
+
+                            }
+                        }
+                    }
+                }else{
+
+                }
+
+            }
+
+            //$data['islogged']=false; //#TODO
+            $row->result=$resulthtml;
+            $row->certificate="";
+            $row->btn=$btn;
+            $row->reg_end=$reg_end;
+            array_push($newdata,$row);           
+        }
+        return $newdata;
+    }
     public function get_events_available($id){
         $sql="SELECT e.* FROM events e left join (select event_id as reg_eid,count(*) as cur_cnt from registration group by event_id ) r on e.event_id=r.reg_eid where ifnull(r.cur_cnt,0)<e.seats and e.cat_id in(select cat_id from categories where cat_name='".$id."')";
         $query = $this->db->query($sql);
