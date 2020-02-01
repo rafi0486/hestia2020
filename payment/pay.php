@@ -86,7 +86,7 @@ else {
      }
 
 
-     $purp='Hestia 19 - '.$_SESSION['event_title'];
+     $purp=$base_app_title.' - '.$_SESSION['event_title'];
      if($acco_units!=0)
      {
        $purp=$purp.' and Accomodation('.$acco_units.')';

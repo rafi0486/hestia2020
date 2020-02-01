@@ -72,8 +72,16 @@ class Report_model extends CI_Model {
             $resulthtml="";
             $results=$this->get_event_status_result($eid);
             $btn = "";
+            $btn_text="";
+            $btn_class="";
+            $btn_extracss=" ";
+            $btn_icon=" ";
             if(count($results)>0){
-                $btn="<a href='#' class='btn btn-success btn-result'>Result &nbsp;<i class='fas fa-trophy'></i></a>";
+                $btn="<a href='#' class='btn btn-success btn-result'>Result &nbsp;</a>";
+                $btn_text='Result';
+                $btn_class=" btn-success ";
+                $btn_extracss=" ";
+                $btn_icon="<i class='fas fa-trophy'></i>";
                 $resulthtml="<table class='table table-striped'>";
                 foreach ($results as $rowresult){
                     $resulthtml=$resulthtml."<tr><td>".$rowresult['label']."</td><td>".$rowresult['fullname']."</td><td>".$rowresult['college']."</td></tr>";
@@ -83,25 +91,44 @@ class Report_model extends CI_Model {
             }else{
                 if($reg_fee !== NULL){
                     if($isbooked>=1) {
-                        $btn="<a href='#' id='".$eid."' class='btn btn-warning btn-custom disabled'>Booked &nbsp;<i class='fas fa-ticket-alt'></i></a>";
+                        $btn="<a href='#' id='' class='btn btn-warning btn-custom disabled'>Booked &nbsp;</i></a>";
+                        $btn_text='Booked';
+                        $btn_class=" text-warning ";
+                        $btn_extracss=" disabled";
+                        $btn_icon="<i class='fas fa-ticket-alt'></i>";
                     } else {
                         if (($today >= $startdate) && ($today <= $enddate)){
 
                             if($cnt<$row->seats || $row->seats == 0){
-                                $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-primary'>BUY TICKET&nbsp;<i class='fas fa-shopping-cart'></i></a>";
+                                $btn_text='BUY TICKET';
+                                $btn_class=" text-primary";
+                                $btn_extracss=" ";
+                                $btn_icon="<i class='fas fa-shopping-cart'></i>";                                
+                                //$btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-primary'>BUY TICKET&nbsp;<i class='fas fa-shopping-cart'></i></a>";
                                 $reg_end = date('d-m-Y', strtotime($row->reg_end));
                             }else{
                                 $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-danger disabled'>Sold Out&nbsp;<i class='fas fa-shopping-cart'></i></a>";
+                                $btn_text='Sold Out';
+                                $btn_class=" text-danger";
+                                $btn_extracss=" disabled ";
+                                $btn_icon="<i class='fas fa-shopping-cart'></i>";  
+                                
                             }
                         }else{
                             if(($startdate  > $today)){
                                 $dtstart = date_create($startdate);
                                 $btn="<a href='#'  id='".$eid."' class='btn btn-warning btn-custom disabled'>Registration Starts on ".date_format($dtstart, 'd-m-Y')."&nbsp;<i class='fas fa-clock'></i></a>";
-
+                                $btn_text="Registration Starts on ".date_format($dtstart, 'd-m-Y');
+                                $btn_class=" text-warning";
+                                $btn_extracss=" disabled ";
+                                $btn_icon="<i class='fas fa-clock'></i>"; 
                             }
                             if(($today > $enddate)){
                                 $btn="<a href='#'  id='".$eid."' class='btn btn-danger btn-custom disabled'>Registration Closed&nbsp;<i class='fas fa-shopping-cart'></i></a>";
-
+                                $btn_text="Registration Closed";
+                                $btn_class=" text-danger";
+                                $btn_extracss=" disabled ";
+                                $btn_icon="<i class='fas fa-shopping-cart'></i>";                                
                             }
                         }
                     }
@@ -114,7 +141,12 @@ class Report_model extends CI_Model {
             //$data['islogged']=false; //#TODO
             $row->result=$resulthtml;
             $row->certificate="";
-            $row->btn=$btn;
+            if(!$btn_text){
+                $btn_text="..";
+            }
+            $row->btn="<h4 class='box__text box__text--bottom btn-custom ".$btn_extracss."' id='".$eid."'  > 
+                                        <span class='box__text-inner ".$btn_class." ".$btn_extracss."' >".$btn_text."" ."</span>
+                                      </h4>";
             $row->reg_end=$reg_end;
             array_push($newdata,$row);           
         }

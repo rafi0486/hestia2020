@@ -7,8 +7,8 @@
   <link rel="icon" type="image/png" href="<?=base_url();?>assets/front/img/hestia-icon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="theme-color" content="#1a3840">
-  <meta name="description" content="Cultural Events - Hestia 19 - National level Techno Cultural fest organized by TKM College of Engineering. March 28-31">
-<meta name="keywords" content="hestia,hestia19,tkmce,hestiatkm,hestiatkmce,conjura,fest,event,technical,cultural,technocultural">
+  <meta name="description" content="Cultural Events - <?=APP_META_CONTENT?>">
+<meta name="keywords" content="<?=APP_META_KEYWORDS?>">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135958084-1"></script>
 <script>
@@ -21,7 +21,7 @@
 
 
   <title>
-    Cultural Events - Hestia 19 - National Level Techno-Cultural Fest of TKM
+    Cultural Events - <?=APP_TITLE?>
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->

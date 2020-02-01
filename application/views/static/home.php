@@ -125,14 +125,19 @@ if(isset($_COOKIE['redir']))
             style="background-color:transparent !important"
           >
             <a href="<?=base_url()?>events">EVENTS</a>
-            <a>SPONSORS</a>
+            <a>ABOUT</a>
             <a
               ><img
                 style="max-height: 75px;position:relative;top:25px"
                 src="<?=  base_url("assets/main/")?>img/logo.png"
             /></a>
-            <a>ABOUT</a>
             <a>CONTACT</a>
+
+            <?php if($this->session->userdata('sess_logged_in')==0){ ?>
+            <a href="<?= $google_login_url ?>">LOGIN</a>
+            <?php } else{ ?>
+            <a href="<?=base_url()?>myprofile">MY PROFILE</a>
+            <?php } ?>
           </nav>
         </section>
 
@@ -416,10 +421,15 @@ if(isset($_COOKIE['redir']))
           </svg>
         </button>
         <ul class="menu__inner">
-          <li class="menu__item"><a class="menu__link" href="#">Work</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Play</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Chat</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Party</a></li>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">SPONSORS</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">CONTACT</a></li>
+          <?php if($this->session->userdata('sess_logged_in')==0){ ?>
+          <li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
+          <?php }else { ?>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>myprofile">MY PROFILE</a></li>
+          <?php } ?>
         </ul>
       </nav>
     </main>

@@ -71,7 +71,7 @@ $data['msg']="";
         $pdf->SetAuthor('HESTIA TKMCE');
         $pdf->SetTitle('Certificate of participation');
         $pdf->SetSubject('Certificate');
-        $pdf->SetKeywords('Hestia 19 Participation Certificate');
+        $pdf->SetKeywords('Hestia 20 Participation Certificate');
 
 
         //

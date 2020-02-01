@@ -382,13 +382,19 @@ main {
 .box__text {
   margin: 0;
   position: absolute;
-  top: -6rem;
+  top: -5rem;
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 1.75rem;
   margin: 0.5rem 1rem;
+  cursor: pointer !important;
+  pointer-events:auto;
   font-family: 'Anton', sans-serif;
+}
+.box__text-inner{
+     cursor: pointer !important;
+        pointer-events:auto; 
 }
 
 .box__text-inner {

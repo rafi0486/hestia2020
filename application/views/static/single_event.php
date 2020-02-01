@@ -3,15 +3,14 @@
 <head>
     <title><?=$event->title?> - <?=APP_TITLE?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hestia 19 - National level Techno Cultural fest organized by TKM College of Engineering. March 28-31">
-<meta name="keywords" content="hestia,hestia19,tkmce,hestiatkm,hestiatkmce,conjura,fest,event,technical,cultural,technocultural">
+    <meta name="description" <?=APP_META_CONTENT?>>
+<meta name="keywords" content="<?=APP_META_KEYWORDS?>">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135958084-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-135958084-1');
 </script>
     <link rel="icon" type="image/png" href="<?=base_url();?>assets/front//img/hestia-icon.png">

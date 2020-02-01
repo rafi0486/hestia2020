@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="icon" type="image/png" href="//www.hestia.live/assets/front/img/hestia-icon.png">
-  <title> Hestia 19 - National Level Techno-Cultural Fest of TKM</title>
+  <title><?=APP_TITLE?></title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">

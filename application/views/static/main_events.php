@@ -131,37 +131,29 @@ if(isset($_COOKIE['redir']))
       </div>
       <nav class="menu">
         <div class="menu__item">
-          <span class="menu__item-number">01</span>
-          <span class="menu__item-textwrap"
-            ><span class="menu__item-text">Technical</span></span
-          >
-          <a class="menu__item-link">Explore</a>
+          <span class="menu__item-textwrap"><span class="menu__item-text">Technical</span></span>
+          <a class="menu__item-link ">Explore</a>
         </div>
         <div class="menu__item">
-          <span class="menu__item-number">02</span>
           <span class="menu__item-textwrap"
             ><span class="menu__item-text">Cultural</span></span
           >
-          <a class="menu__item-link">Explore</a>
+          <a class="menu__item-link ">Explore</a>
         </div>
         <div class="menu__item">
-          <span class="menu__item-number">03</span>
-          <span class="menu__item-textwrap" onclick="window.location='<?=  base_url()?>'"
+          <span class="menu__item-textwrap" onclick="window.location='<?=  base_url()?>events/workshops'"
             ><span class="menu__item-text">Workshops</span></span
           >
-      
           <a class="menu__item-link hidden">Explore</a>
         </div>
         <div class="menu__item">
-          <span class="menu__item-number">04</span>
-         <span class="menu__item-textwrap"  onclick="window.location='<?=  base_url()?>'"
+         <span class="menu__item-textwrap"  onclick="window.location='<?=  base_url()?>events/online'"
             ><span class="menu__item-text">Online</span></span
           >
           <a class="menu__item-link hidden">Explore</a>
         </div>
         <div class="menu__item">
-          <span class="menu__item-number">05</span>
-         <span class="menu__item-textwrap"  onclick="window.location='<?=  base_url()?>'"
+         <span class="menu__item-textwrap"  onclick="window.location='<?=  base_url()?>events/general'"
             ><span class="menu__item-text">General</span></span
               >
           <a class="menu__item-link hidden">Explore</a>
@@ -191,11 +183,11 @@ if(isset($_COOKIE['redir']))
               <?php
               }
               ?>
-            
-            
+
+
           </div>
           <div class="grid grid--layout-2">
-            
+
              <?php
               foreach ($cultural as $catrow){
                   ?>
@@ -217,19 +209,19 @@ if(isset($_COOKIE['redir']))
               <?php
               }
               ?>
-              
+
           </div>
           <div class="grid grid--layout-3">
-            
-            
+
+
           </div>
           <div class="grid grid--layout-4">
-            
-           
+
+
           </div>
           <div class="grid grid--layout-5">
-            
-            
+
+
           </div>
           <button class="gridback">
             <svg class="icon icon--arrow">

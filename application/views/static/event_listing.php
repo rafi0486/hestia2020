@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      { Event Name } | <?=APP_TITLE?>
+      <?=$title?> | <?=APP_TITLE?>
     </title>
     <meta
       name="description"
@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/bs-modal.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style rel="stylesheet" type="text/css">
         .small-text{
@@ -90,7 +92,7 @@
       </symbol>
     </svg>
     <main>
-        <div class="modal" id="myModal">
+        <div class="modal modal-lg" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -134,16 +136,16 @@
                                         Accommodation for
                                     </label>
                                     <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_1" value="1" >&nbsp;&nbsp;March 28
+                                    <input type="checkbox" id="day_1" value="1" >&nbsp;&nbsp;Feb 27
                                     </label>
                                     <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_2" value="2" >&nbsp;&nbsp;March 29
+                                    <input type="checkbox" id="day_2" value="2" >&nbsp;&nbsp;Feb 28
                                     </label>
                                     <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_3" value="3" >&nbsp;&nbsp;March 30
+                                    <input type="checkbox" id="day_3" value="3" >&nbsp;&nbsp;Feb 29
                                     </label>
                                     <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_4" value="4" >&nbsp;&nbsp;March 31
+                                    <input type="checkbox" id="day_4" value="4" >&nbsp;&nbsp;March 1
                                     </label>
                                 </div>
                                
@@ -285,19 +287,14 @@
             <h3 class="box__title">
               <span class="box__title-inner"><?=$event->title?></span>
             </h3>
+            <?=$event->btn?>
             
-            <h4 class="box__text box__text--bottom">
-               
-              <span class="box__text-inner">
-                  
-              </span>
-            </h4>
+              
           </div>
-          <div class="overlay__content">
+                  <div class="overlay__content" style="margin-top:40vw;">
               
               <div>
-                  <br/><br/><br/><br/>
-                  <br/><br/><br/><br/>
+               
                       <?=$event->details?>
               </div>
               <?php
@@ -364,8 +361,9 @@
                  <a style="text-decoration: none;" href="tel:+91<?=$event->co1_no?>"><h5><?=$event->co1_name?> : <?=$event->co1_no?></h5></a>
                  <a style="text-decoration: none;" href="tel:+91<?=$event->co2_no?>"><h5><?=$event->co2_name?> : <?=$event->co2_no?></h5></a>
              </div>
-             <?=$event->btn?>
-            
+             
+            <br/>
+            <br/>
           </div>
         </div>
               
@@ -479,6 +477,7 @@ function checkBoxValidate(){
             }
 }
     $('.btn-custom').click(function(){
+   
        $url="<?=base_url("process/")?>"+$(this).attr('id');
         $.ajax({
             type:'post',
@@ -605,7 +604,7 @@ function checkBoxValidate(){
        // $('.close-href').show(); // Shows
          // hides
         if(cur_cnt<=rem_members){
-            var html=" <div class='row' style='margin-bottom:10px;' id='member_"+(minmemb+cur_cnt)+"'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb+cur_cnt)+"' placeholder='Email' required> </div><div class='col-md-4 col-sm-12'><a id='member_"+(minmemb+cur_cnt)+"_close' class='close-href text-white' style='border: 0;float:left;position:absolute;left:-50px;' onclick='removeElement("+(minmemb+cur_cnt)+")'><button  class='btn btn-xs btn-danger'>X</button></a><label class='checkbox-inline chk_acommodation'><input type='checkbox'   class='chk_acm' id='chk_acm"+(minmemb+cur_cnt)+"'>&nbsp;&nbsp;Accommodation</label></div></div>";
+            var html=" <div class='row' style='margin-bottom:10px;' id='member_"+(minmemb+cur_cnt)+"'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb+cur_cnt)+"' placeholder='Email' required> </div><div class='col-md-4 col-sm-12'><a id='member_"+(minmemb+cur_cnt)+"_close' class='close-href text-white' style='border: 0;float:left;position:absolute;left:5px;' onclick='removeElement("+(minmemb+cur_cnt)+")'><button  class='btn btn-xs btn-danger'>X</button></a><label class='checkbox-inline chk_acommodation'><input type='checkbox'   class='chk_acm' id='chk_acm"+(minmemb+cur_cnt)+"'>&nbsp;&nbsp;Accommodation</label></div></div>";
             $('#team_form_members_opt').html(old+html);
 
         }
