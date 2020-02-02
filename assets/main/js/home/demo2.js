@@ -1,5 +1,5 @@
 createLandscape({
-  palleteImage: '../hestia2020/assets/main/img/home/pallete6.png'
+  palleteImage: '../hestia2020/assets/main/img/home/pallete.png'
 })
 
 function createLandscape(params) {

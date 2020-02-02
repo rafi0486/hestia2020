@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2018, Codrops
  * http://www.codrops.com
  */
@@ -52,15 +52,15 @@
             return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
           }
         };
-      
+
         const start = window.pageYOffset;
         const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-      
+
         const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
         const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
         const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
-      
+
         if ('requestAnimationFrame' in window === false) {
             window.scroll(0, destinationOffsetToScroll);
           if (callback) {
@@ -68,7 +68,7 @@
           }
           return;
         }
-      
+
         function scroll() {
           const now = 'now' in window.performance ? performance.now() : new Date().getTime();
           const time = Math.min(1, ((now - startTime) / duration));
@@ -80,10 +80,10 @@
             }
             return;
           }
-      
+
           requestAnimationFrame(scroll);
         }
-      
+
         scroll();
     }
 
@@ -152,12 +152,12 @@
                 const quadrant = center.x >= winsize.width/2 ?
                                     center.y <= winsize.height/2 ? 1 : 4 :
                                     center.y <= winsize.height/2 ? 2 : 3;
-                
+
                 // Now calculate how much to translate the item.
                 // The positions will be random but only in the area of the item´s quadrant.
                 // Also, consider a margin so the item does not stay completely out of the viewport or its quadrant.
                 const margins = {x: winsize.width*.05, y: winsize.height*.05}
-                const tx = quadrant === 1 || quadrant === 4 ? 
+                const tx = quadrant === 1 || quadrant === 4 ?
                         getRandom(-1*center.x + winsize.width/2 + margins.x, winsize.width - center.x - margins.x) :
                         getRandom(-1*center.x + margins.x, winsize.width/2 - center.x - margins.x);
                 const ty = quadrant === 1 || quadrant === 2 ?
@@ -180,13 +180,13 @@
             const mousepos = getMousePos(ev);
             // Document scrolls.
             const docScrolls = {
-                left : document.body.scrollLeft + document.documentElement.scrollLeft, 
+                left : document.body.scrollLeft + document.documentElement.scrollLeft,
                 top : document.body.scrollTop + document.documentElement.scrollTop
             };
             // Mouse position relative to the main element.
-            const relmousepos = { 
-                x : mousepos.x - docScrolls.left, 
-                y : mousepos.y - docScrolls.top 
+            const relmousepos = {
+                x : mousepos.x - docScrolls.left,
+                y : mousepos.y - docScrolls.top
             };
             // Movement settings for the tilt elements.
             this.DOM.items.forEach((item) => {
@@ -207,17 +207,17 @@
                 let cnt = 0;
                 this.DOM.items.forEach((item) => {
                     const rect = item.getBoundingClientRect();
-                    
+
                     // The speed and delay will depend on how much the item can be translated when moving the mouse (this.config.titltOffset).
                     // This will result in some items moving faster than others and also starting at different times.
                     const speed = lineEq(1.3,0.9,this.config.titltOffset.min,this.config.titltOffset.max,item.dataset.maxTy);
                     const delay = lineEq(0,0.4,this.config.titltOffset.min,this.config.titltOffset.max,item.dataset.maxTy);
-    
+
                     TweenMax.to(item, speed, {
                         ease: Expo.easeInOut,
                         delay: delay,
                         startAt: action === 'show' ? {y: direction === 'up' ? `+=${winsize.height + rect.height}` : `-=${winsize.height + rect.height}`, opacity:1} : null,
-                        y: action === 'show' ? item.dataset.cty : 
+                        y: action === 'show' ? item.dataset.cty :
                             direction === 'up' ? `-=${winsize.height + rect.height}` : `+=${winsize.height + rect.height}`
                     });
 
@@ -256,7 +256,7 @@
                                     }
                                     */
                                 }
-                            });    
+                            });
                         }
                     });
                 });
@@ -324,7 +324,7 @@
                 startAt: action === 'hide' ? null : {y: '103%'},
                 y: action === 'hide' ? '103%' : '0%'
             });
-            
+
             // Fade in/out the number and link.
             let extraElems = [this.DOM.number, this.DOM.link];
             if ( action === 'show' && !this.DOM.el.classList.contains('menu__item--current') ) {
@@ -337,7 +337,7 @@
             });
         }
 	}
-	
+
 	class ContentItem {
         constructor(el) {
             this.DOM = {el: el};
@@ -360,8 +360,7 @@
             // The back ctrl. For closing the grid/content view and go back to the main page.
             this.DOM.backCtrl = this.DOM.page.querySelector('button.gridback');
 			// The content items instances.
-            this.contentItems = [];
-            Array.from(this.DOM.page.querySelectorAll('.content > .content__item')).forEach((item) => this.contentItems.push(new ContentItem(item)));
+
             // The grid instances.
             this.grids = [];
             Array.from(this.DOM.gridWrap.querySelectorAll('.grid')).forEach((grid) => this.grids.push(new Grid(grid)));
@@ -375,7 +374,7 @@
             // Also show the current grid items.
             this.grids[this.current].DOM.items.forEach((item) => TweenMax.set(item, {opacity: 1}));
             // Add current class to the first content item.
-            this.contentItems[this.current].toggleCurrent();
+
 
             this.initEvents();
         }
@@ -399,7 +398,7 @@
             if ( this.isAnimating || pos === this.current ) return;
             const direction = this.current < pos ? 'up' : 'down';
 			this.menuItems[this.current].toggleCurrent(direction);
-			this.contentItems[this.current].toggleCurrent();
+
             this.isAnimating = true;
             // Disable the mousemove functionality.
             allowTilt = false;
@@ -408,7 +407,7 @@
             // Update current value.
             this.current = pos;
 			this.menuItems[this.current].toggleCurrent(direction);
-			this.contentItems[this.current].toggleCurrent();
+
 			// Show the next grid items.
             this.grids[this.current].showItems(direction).then(() => {
                 this.isAnimating = false;
@@ -444,7 +443,7 @@
                 ease: Expo.easeInOut,
                 opacity: 0
             });
-            
+
             scrollIt(0, 300, 'easeOutQuad', () => {
                 // Disabel scroll.
                 this.DOM.page.classList.add('page--preview');
@@ -459,7 +458,7 @@
                 // Show the menu items.
                 for (const item of this.menuItems) {
                     item.show();
-                } 
+                }
             });
         }
     }
