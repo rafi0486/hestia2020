@@ -124,20 +124,15 @@ if(isset($_COOKIE['redir']))
             class="links hestia-font cl-effect-1	"
             style="background-color:transparent !important"
           >
-            <a href="<?=base_url()?>events">EVENTS</a>
-            <a>ABOUT</a>
-            <a
-              ><img
-                style="max-height: 75px;position:relative;top:25px"
-                src="<?=  base_url("assets/main/")?>img/logo.png"
-            /></a>
-            <a>CONTACT</a>
-
-            <?php if($this->session->userdata('sess_logged_in')==0){ ?>
-            <a href="<?= $google_login_url ?>">LOGIN</a>
-            <?php } else{ ?>
-            <a href="<?=base_url()?>myprofile">MY PROFILE</a>
-            <?php } ?>
+          <a href="<?=base_url()?>events">EVENTS</a>
+          <a href="<?=base_url()?>sponsors">SPONSORS</a>
+          <a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
+          <a href="<?=base_url()?>about">ABOUT</a>
+          <?php if($this->session->userdata('sess_logged_in')==0){ ?>
+          <a href="<?= $google_login_url ?>">LOGIN</a>
+          <?php } else{ ?>
+          <a href="<?=base_url()?>myprofile">MY PROFILE</a>
+          <?php } ?>
           </nav>
         </section>
 
