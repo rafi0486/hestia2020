@@ -17,16 +17,16 @@ $remotehost = @getHostByAddr($ipaddress);
 $logline = $ipaddress . '|' . $referrer . '|' . $datetime . '|' . $useragent . '|' . $remotehost . '|' . $page . '|'.$logstr ."\n";
 
 // Write to log file:
-$logfile = 'hest19logfile.txt';
+$logfile = 'hest20logfile.txt';
 
 // Open the log file in "Append" mode
 if (!$handle = fopen($logfile, 'a+')) {
-    die("");
+    die("error creating log file");
 }
 
 // Write $logline to our logfile.
 if (fwrite($handle, $logline) === FALSE) {
-    die("");
+    die("error writing log file");
 }
   
 fclose($handle);

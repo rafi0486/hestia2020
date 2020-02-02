@@ -24,12 +24,38 @@
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/bs-modal.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+    <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style rel="stylesheet" type="text/css">
         .small-text{
             font-size:2.5rem;
         }
+    </style>
+    <style>
+      .overlay__item {
+        height: auto;
+        align-items: flex-start;
+      }
+      .overlay__content {
+        margin-top: 0px !important;
+      }
+      .box {
+        margin-top: 10vh !important;
+      }
+      .box__text {
+        top: auto;
+        bottom: -6rem;
+      }
+
+      @media screen and (max-width: 900px) {
+        .overlay__content {
+          margin-top: 17vh !important;
+        }
+        .box {
+          margin-top: 5vh !important;
+        }
+      }
     </style>
     <script>
       document.documentElement.className = "js";
@@ -92,7 +118,7 @@
       </symbol>
     </svg>
     <main>
-        <div class="modal modal-lg" id="myModal">
+        <div class="modal modal-lg  bootstrap-wrapper" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -109,6 +135,7 @@
                 <form id="team_form" method="post" action="<?=  base_url("payment/prepay.php")?>" name="team_form" style="display: none;">
 
                 <input type="hidden" id="json_data" name="json_data" hidden/>
+                <input type="hidden" id="evdd"  hidden/>
                     <div class="row" style='margin-bottom:10px;'>
                         <div class="col-md-8 col-sm-12" id="div_mail0"><input class="form-control" type="email" id="email0" placeholder="Email" value="<?php if(isset($_SESSION['email']))echo $_SESSION['email'];?>"; readonly></div>
                         <div class="col-md-4 col-sm-12" id="div_acm0"><label class="checkbox-inline chk_acommodation">
@@ -127,31 +154,49 @@
                         <button type="button" class="btn btn-warning my-2 " name="addMoreMembers" id="addmoreMembersBtn">Add Member&nbsp;<i class="fas fa-plus-square"></i></button><br>
 <input type="submit" id="team_form_hid_btn" hidden/>
 
-                        <div class="row ">
-                            <div class="col-xs-6 ml-3 mt-3">
-                                
-                            
-                                <div class="center"> 
-                                <label class="form-check-label">
-                                        Accommodation for
-                                    </label>
-                                    <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_1" value="1" >&nbsp;&nbsp;Feb 27
-                                    </label>
-                                    <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_2" value="2" >&nbsp;&nbsp;Feb 28
-                                    </label>
-                                    <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_3" value="3" >&nbsp;&nbsp;Feb 29
-                                    </label>
-                                    <label class="checkbox-inline chk_ac_day">
-                                    <input type="checkbox" id="day_4" value="4" >&nbsp;&nbsp;March 1
-                                    </label>
-                                </div>
-                               
-                            </div>
-                           
-                        </div>
+                        
+                  <div class="row container" style="margin: 10px 0px 15px 0px;">
+                    <div class="col-xs-6 ml-3 mt-3">
+                      <div class="center">
+                        <p class="form-check-label">
+                          Accommodation for: 
+                        </p>
+                        <label class="checkbox-inline chk_ac_day">
+                          <input
+                            type="checkbox"
+                            id="day_1"
+                            value="1"
+                            disabled=""
+                          />&nbsp;&nbsp;Feb 27
+                        </label>
+                        <label class="checkbox-inline chk_ac_day">
+                          <input
+                            type="checkbox"
+                            id="day_2"
+                            value="2"
+                            disabled=""
+                          />&nbsp;&nbsp;Feb 28
+                        </label>
+                        <label class="checkbox-inline chk_ac_day">
+                          <input
+                            type="checkbox"
+                            id="day_3"
+                            value="3"
+                            disabled=""
+                          />&nbsp;&nbsp;Feb 29
+                        </label>
+                        <label class="checkbox-inline chk_ac_day">
+                          <input
+                            type="checkbox"
+                            id="day_4"
+                            value="4"
+                            disabled=""
+                          />&nbsp;&nbsp;March 1
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
                         <div class="row" style='margin-bottom:10px;'>
                         <div class="col-md-12 col-sm-12"><input class="form-control" type="text" id="referralcode" placeholder="Referral Code" value=""; ></div>
                         <div class="col-md-12 col-sm-12 mt-3"><p><span class="text-danger">Note:</span> Schedule may change and accommodation dates can be changed accordingly </p></div>
@@ -189,7 +234,7 @@
           >
             <a href="<?=base_url()?>events">EVENTS</a>
             <a>SPONSORS</a>
-            <a
+            <a href="<?=  base_url()?>"
               ><img
                 style="max-height: 75px;position:relative;top:25px"
                 src="<?=base_url()?>/assets/front/img/logo.png"
@@ -289,6 +334,7 @@
             </h3>
             <?=$event->btn?>
             
+            
               
           </div>
                   <div class="overlay__content" style="margin-top:40vw;">
@@ -363,6 +409,7 @@
              </div>
              
             <br/>
+            
             <br/>
           </div>
         </div>
@@ -375,7 +422,7 @@
         ?>
         
  
-        <button class="overlay__close">
+        <button class="overlay__close" style="z-index:99">
           <svg class="icon icon--cross">
             <use xlink:href="#icon-cross"></use>
           </svg>
@@ -476,9 +523,10 @@ function checkBoxValidate(){
               $("#day_4").prop('checked',false);
             }
 }
-    $('.btn-custom').click(function(){
-   
-       $url="<?=base_url("process/")?>"+$(this).attr('id');
+    function vm(oid){
+        
+        var eid=oid;
+       $url="<?=base_url("process/")?>"+eid;
         $.ajax({
             type:'post',
             url:$url,
@@ -494,9 +542,9 @@ function checkBoxValidate(){
             },
             success:function(result){
 
-
+                $("#evdd").val(eid);
                 var array = JSON.parse(result);
-                console.log(array);
+               
                 switch(array[0]){
                     case 505:{
                         if (typeof(Storage) !== "undefined") {
@@ -583,7 +631,7 @@ function checkBoxValidate(){
 
 
 
-    });
+    }
     $('.btn-result').click(function(){
 
         $('.modal-title').text("Winners");
@@ -604,7 +652,7 @@ function checkBoxValidate(){
        // $('.close-href').show(); // Shows
          // hides
         if(cur_cnt<=rem_members){
-            var html=" <div class='row' style='margin-bottom:10px;' id='member_"+(minmemb+cur_cnt)+"'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb+cur_cnt)+"' placeholder='Email' required> </div><div class='col-md-4 col-sm-12'><a id='member_"+(minmemb+cur_cnt)+"_close' class='close-href text-white' style='border: 0;float:left;position:absolute;left:5px;' onclick='removeElement("+(minmemb+cur_cnt)+")'><button  class='btn btn-xs btn-danger'>X</button></a><label class='checkbox-inline chk_acommodation'><input type='checkbox'   class='chk_acm' id='chk_acm"+(minmemb+cur_cnt)+"'>&nbsp;&nbsp;Accommodation</label></div></div>";
+            var html=" <div class='row' style='margin-bottom:10px;' id='member_"+(minmemb+cur_cnt)+"'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb+cur_cnt)+"' placeholder='Email' required> </div><div class='col-md-4 col-sm-12'><a id='member_"+(minmemb+cur_cnt)+"_close' class='close-href text-white' style='border: 0;float:left;position:absolute;left:-50px;' onclick='removeElement("+(minmemb+cur_cnt)+")'><button  class='btn btn-xs btn-danger'>X</button></a><label class='checkbox-inline chk_acommodation'><input type='checkbox'   class='chk_acm' id='chk_acm"+(minmemb+cur_cnt)+"'>&nbsp;&nbsp;Accommodation</label></div></div>";
             $('#team_form_members_opt').html(old+html);
 
         }
@@ -666,7 +714,7 @@ function checkBoxValidate(){
         }
         jsonObj = [];
         item = {};
-        item ["event_id"] =<?=$event->event_id?>;
+        item ["event_id"] =$('#evdd').val();
         item ["referral_code"] = $('#referralcode').val();
         item ["reg_email"] = "<?php
         if(isset($_SESSION['email'])){

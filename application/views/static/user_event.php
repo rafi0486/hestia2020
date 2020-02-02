@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      <?=$title?> | <?=APP_TITLE?>
+      My Profile | <?=APP_TITLE?>
     </title>
     <meta
       name="description"
@@ -134,9 +134,152 @@
           <li class="menu__item"><a class="menu__link" href="#">Party</a></li>
         </ul>
       </nav>
-      <div class="content" >
-        <div class="grid" style="margin-top: 160px;">
-            
+        <div class="content" style="background-color: #d0cfc5;" >
+        <div class="grid" style="margin-top: 160px;grid-template-columns: repeat(1, 100%);">
+           
+            <div class="row event_listing_div"  style="text-align:left;padding-top: 5vh;">
+          <?php
+           //print_r($_SESSION['myev']);
+           //print_r($myevents[0]);
+           //print_r('hii222');
+           //print_r($myevents[0]['link']);
+           if (empty($myevents)) {
+
+                echo '<div class="col-12 listing1" style="padding-bottom: 20px;">';
+                echo '<p class="event-name-text text-light" >It looks empty here..</p>';
+                echo '<p class="text-danger text-light" >You havent registered for any event. Checkout the events catalogue and register soon..</p>';
+
+
+     // list is empty.
+            }
+          foreach($myevents as $row){
+          ?>
+
+               <div class="col-12 listing1" style="padding-bottom: 20px;">
+                   <p class="event-name-text text-light" onclick=<?php echo "'location.href =\"".base_url().'event/'.$row['link']."\"'"; ?> style="letter-spacing: 3px;color:white;text-align: left; cursor:pointer;"><?=$row['title']?></p>
+                   <?php
+
+                   if($row['result']){
+                       echo "<a href='#'  class='btn btn-success btn-result' onclick='viewresult(".$row['event_id'].")'>Result &nbsp;<i class='fas fa-trophy'></i></a>";
+                       echo "<div hidden><div id='".$row['event_id']."'>".$row['resulthtml']."</div></div>";
+                   }
+
+                   if($row['certificate']==1){
+                       echo "<a href='#'  class='btn btn-success btn-result' onclick='viewcertificate(".$row['event_id'].")'>Certificate &nbsp;<i class='fas fa-download'></i></a>";
+
+                   }else if($row['certificate']==0)
+                       echo "<a href='".base_url("myprofile")."'  class='btn btn-warning btn-result'>Verify Profile To Download Certificate &nbsp;<i class='fas fa-check'></i></a>";
+
+                   ?>
+                   <p class="event-desc"><?php
+                   if(strlen($row['venue'])!=0)
+                   {echo 'Venue: '.$row['venue'];}
+                   else
+                   {
+                    echo 'Check back later for more event details..';
+                   }
+
+                   ?></p>
+                   <?php //schedule
+
+                   if (count($row['time'])>0) {
+                    ?>
+                    <p class="event-desc">Schedule:</p>
+                    <?php
+                        foreach($row['time'] as $timerow){
+                            $timerow = (array) $timerow; ?>
+                            <div style="padding-left: 15px;">
+                            <p class="event-desc">
+
+                                <?php if ($timerow['label'] != NULL) echo $timerow['label'].": ";
+                                $start_time=date('d-M h:i A', strtotime($timerow['start_time']));
+                                $end_time=date('d-M h:i A', strtotime($timerow['end_time']));
+                                $dt_start=substr($start_time, 0, 5);
+                                $dt_end=substr($end_time, 0, 5);
+                                if ($dt_start == $dt_end) {
+                                    $end_time=date('h:i A', strtotime($timerow['end_time']));
+                                }
+                                ?>
+                                <?php
+                                 if ($timerow['end_time'] == NULL) {
+                                                echo 'Starts on '.$start_time;
+                                 }
+                                else
+                                    echo $start_time.' to '.$end_time;
+                                 
+                                 ?>
+                                </p>
+                            </div>
+
+                        <?php
+                        }
+                }
+
+
+                   ?>
+                   <?php
+                      $date_not_over=$this->report_model->check_files_lastdate($this->report_model->get_eid_by_link($row['link']));
+                   if ($row['file1'] != NULL && $row['u_file1'] == NULL && $date_not_over){
+                     echo "<form  class='form-inline row'  action='pages/url_submitted' method='post'>";
+                     echo "<input style='min-width:250px;' type='hidden' name='link' value=".$row['link'].'  />';
+
+                     echo "<div  class='form-group col-md-4 col-sm-12'><input  class='form-control'  style='min-width:250px;'  type='text' name='f1' placeholder='". $row['file1']."' required /></div>";
+
+                     if ($row['file2'] != NULL && $row['u_file2'] == NULL ){
+                      echo "<div style='min-width:250px;'  class='form-group col-md-4 col-sm-12 file2'><input  class='form-control'  style='min-width:250px;' style='' type='text' name='f2' placeholder='". $row['file2']."' required /></div>";
+                     }
+
+                     echo "<div class='form-group col-md-4 col-sm-12'><button type='submit' style='margin-top:20px;' class='btn btn-default' >Submit</button></div>";
+                    echo "</form>";
+
+                    echo "<p class=\"text-danger\">"?>
+                    <?php
+                    if($row['file_last_date']){
+                      echo "Last Date for submission is ".date('d-M', strtotime($row['file_last_date']))."<br>";
+                    }
+
+                    ?>
+                    <?php echo "Fill in the links to all required files and click submit. File links cannot be edited after submission</p>";
+                   }
+                   else
+                   {
+                     if(! $date_not_over)
+                     {
+                      echo "<p class=\"text-danger\">Last date to submit links over</p>";
+
+                     }
+                     if($row['u_file1']!=NULL)
+                     {
+                    echo "<form  class='form-inline'>";
+                    echo " <div class='form-group col-md-6 col-sm-12' style='min-width:250px;'>    <label>". $row['file1']."</label>                    <input type='text' style='min-width:250px;padding: 1px;'   class='form-control'  value='". $row['u_file1']."' disabled/></div>";
+                    if($row['u_file2']!=NULL)
+                     {
+                    echo " <div style='min-width:250px;'  class='form-group file2 col-md-6 col-sm-12'><label>". $row['file2']."</label><input type='text' style='min-width:250px;padding: 1px;'  class='form-control'  value='". $row['u_file2']."' disabled/></div>";
+                     }
+                    echo "</form>";
+                     }
+                   }
+
+
+                    ?>
+                    <hr/>
+               </div>
+                
+
+
+      <?php
+
+
+      }
+
+      ?>
+
+
+
+
+
+</div>
+           
         </div>
       </div>
      
@@ -181,7 +324,23 @@
             }
           });
         }
+        $("body").removeClass("loading");
       })();
+    </script>
+    <script>
+          function viewcertificate(elem){
+
+          var url="<?=base_url()?>";
+          url=url+"Certificate/Get/"+elem;
+          window.location=url;
+      }
+      function viewresult(elem){
+       $("#winner_form").html($("#"+elem).html());
+       $("#myModal").show();
+      }
+      $('.modal-close').click(function(){
+          $('#myModal').hide();
+      });
     </script>
 
 

@@ -109,6 +109,8 @@
             //tempreg INSERT
             for($i=0;$i<sizeof($marray);$i++)
             {
+
+
               $stmt = $conn->prepare("INSERT INTO regtemp1(reg_key,event_id,reg_email,member_email,referral_code,acc) VALUES (?,?,?,?,?,?)");
               //var_dump($stmt);
               if(!$stmt)
@@ -128,6 +130,7 @@
               }
               //include('errors/logit.php');
               //logme($p1.'|'. $p2.'|'.$p3.'|'.$p4."|".$p5.'|'.$p6);
+              
               $stmt->execute();
               if($stmt->affected_rows === 0)
                 exit('Missing data error');

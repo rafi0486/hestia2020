@@ -2,14 +2,14 @@
    include 'dbconnect.php';
    include 'errors/error_handle.php';
    session_start();
-   /* if(isset($_POST['json_data']))
+  /*  if(isset($_POST['json_data']))
     {
         $jstr=$_POST['json_data'];
         //var_dump($jstr);
     }
     else
     {
-        header("Location:https://www.hestia.live");
+        header("Location:<?=$base_app_url?>");
         exit("nologin");
     }*/
    $jstr='{"referral_code":"ref12","reg_email":"hyzamzz@gmail.com","event_id":"2","accommodation_days":"23","emails":[{"email":"hyzamzz@gmail.com","acc":"y"},{"email":"amaljossy1@gmail.com","acc":"n"}]}';

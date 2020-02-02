@@ -95,7 +95,7 @@ else {
      if($amount<2000)
      {
      include 'src/Instamojo.php';
-     $api = new Instamojo\Instamojo('b2188a4239de0355ac97a61d19d185f4', 'd44083fd641f6527043a57caa0b156fe');
+     $api = new Instamojo\Instamojo($private_api, $private_token);
      $response = $api->paymentRequestCreate(array(
          "purpose" => $purp,
          "amount" => $amount,
@@ -116,7 +116,7 @@ else {
       }
       else {
         include 'src2/Instamojo.php';
-        $api = new Instamojo\Instamojo('8985bf20083d979988ff0446c1e759dd', '7362c7547796d5b227fdefec8f6d425b');
+        $api = new Instamojo\Instamojo($private_api2, $private_token2);
         $response = $api->paymentRequestCreate(array(
             "purpose" => $purp,
             "amount" => $amount,

@@ -19,7 +19,7 @@ class Google {
 		$this->client->setRedirectUri($CI->config->item('redirect_uri', 'googleplus'));
 		$this->client->setDeveloperKey($CI->config->item('api_key', 'googleplus'));
 		$this->client->setScopes($CI->config->item('scopes', 'googleplus'));
-		$this->client->setAccessType('online');
+		$this->client->setAccessType('offline');
 		$this->client->setApprovalPrompt('auto');
 		$this->oauth2 = new apiOauth2Service($this->client);
 

@@ -76,6 +76,7 @@ class Report_model extends CI_Model {
             $btn_class="";
             $btn_extracss=" ";
             $btn_icon=" ";
+            $clickdata="";
             if(count($results)>0){
                 $btn="<a href='#' class='btn btn-success btn-result'>Result &nbsp;</a>";
                 $btn_text='Result';
@@ -83,6 +84,7 @@ class Report_model extends CI_Model {
                 $btn_extracss=" ";
                 $btn_icon="<i class='fas fa-trophy'></i>";
                 $resulthtml="<table class='table table-striped'>";
+                $clickdata="  onclick='vm(".$eid.")'  ";
                 foreach ($results as $rowresult){
                     $resulthtml=$resulthtml."<tr><td>".$rowresult['label']."</td><td>".$rowresult['fullname']."</td><td>".$rowresult['college']."</td></tr>";
                 }
@@ -91,7 +93,7 @@ class Report_model extends CI_Model {
             }else{
                 if($reg_fee !== NULL){
                     if($isbooked>=1) {
-                        $btn="<a href='#' id='' class='btn btn-warning btn-custom disabled'>Booked &nbsp;</i></a>";
+                        $btn="<a href='#'  class='btn btn-warning btn-custom disabled'>Booked &nbsp;</i></a>";
                         $btn_text='Booked';
                         $btn_class=" text-warning ";
                         $btn_extracss=" disabled";
@@ -104,8 +106,9 @@ class Report_model extends CI_Model {
                                 $btn_class=" text-primary";
                                 $btn_extracss=" ";
                                 $btn_icon="<i class='fas fa-shopping-cart'></i>";                                
-                                //$btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-primary'>BUY TICKET&nbsp;<i class='fas fa-shopping-cart'></i></a>";
+                                $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-primary'>BUY TICKET&nbsp;<i class='fas fa-shopping-cart'></i></a>";
                                 $reg_end = date('d-m-Y', strtotime($row->reg_end));
+                                $clickdata="  onclick='vm(".$eid.")'  ";
                             }else{
                                 $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-danger disabled'>Sold Out&nbsp;<i class='fas fa-shopping-cart'></i></a>";
                                 $btn_text='Sold Out';
@@ -144,9 +147,10 @@ class Report_model extends CI_Model {
             if(!$btn_text){
                 $btn_text="..";
             }
-            $row->btn="<h4 class='box__text box__text--bottom btn-custom ".$btn_extracss."' id='".$eid."'  > 
+            $row->btn="<h4 class='box__text box__text--bottom btn-custom ".$btn_extracss."' $clickdata > 
                                         <span class='box__text-inner ".$btn_class." ".$btn_extracss."' >".$btn_text."" ."</span>
                                       </h4>";
+            //$row->btn=$btn;
             $row->reg_end=$reg_end;
             array_push($newdata,$row);           
         }

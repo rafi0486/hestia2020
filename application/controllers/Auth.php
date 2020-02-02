@@ -16,7 +16,7 @@ class Auth extends CI_Controller {
 	}
 
 	public function oauth2callback(){
-                $test=$this->google->getAuthenticate();
+               $test=$this->google->getAuthenticate();
                 //var_dump($test);
 		$google_data=$this->google->getUserInfo();
 		$session_data=array(

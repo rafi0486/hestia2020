@@ -12,7 +12,8 @@ class Pages extends CI_Controller {
 
         if(isset($_SESSION['name']) && $this->user_model->is_registered($_SESSION['email'],"Y")==FALSE){
             $_SESSION['back_url']=$link;
-            redirect("Profile/complete");
+            
+            //redirect("Profile/complete");
         }
     }
     function index(){
@@ -65,8 +66,8 @@ header('Location: '.$data['google_login_url']);
     }
 
         $data['certificate']="";
-
-     $this->load->view('static/user_events',$data);
+        $this->load->view('static/user_event',$data);
+    // $this->load->view('static/user_events',$data);
 
     // var_dump($data);//htodo
     // $data['myevents']=[$row];
