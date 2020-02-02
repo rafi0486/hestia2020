@@ -141,25 +141,25 @@
                         <div class="col-md-4 col-sm-12" id="div_acm0"><label class="checkbox-inline chk_acommodation">
                                     <input type="checkbox" class="chk_acm"  id="chk_acm0">&nbsp;&nbsp;Accommodation
                                     </label></div>
-                    </div> 
+                    </div>
                     <div id="team_form_members">
 
                     </div>
                     <div id="team_form_members_opt">
                     </div>
-                    
+
                     <div>
                     <div class="col-md-12 col-sm-12 mt-3" id="email_note"><p><span class="text-danger">Only gmail addresses are allowed</span></p></div>
-                  
+
                         <button type="button" class="btn btn-warning my-2 " name="addMoreMembers" id="addmoreMembersBtn">Add Member&nbsp;<i class="fas fa-plus-square"></i></button><br>
 <input type="submit" id="team_form_hid_btn" hidden/>
 
-                        
+
                   <div class="row container" style="margin: 10px 0px 15px 0px;">
                     <div class="col-xs-6 ml-3 mt-3">
                       <div class="center">
                         <p class="form-check-label">
-                          Accommodation for: 
+                          Accommodation for:
                         </p>
                         <label class="checkbox-inline chk_ac_day">
                           <input
@@ -200,7 +200,7 @@
                         <div class="row" style='margin-bottom:10px;'>
                         <div class="col-md-12 col-sm-12"><input class="form-control" type="text" id="referralcode" placeholder="Referral Code" value=""; ></div>
                         <div class="col-md-12 col-sm-12 mt-3"><p><span class="text-danger">Note:</span> Schedule may change and accommodation dates can be changed accordingly </p></div>
-                    </div> 
+                    </div>
 
 
 
@@ -232,15 +232,15 @@
             class="links hestia-font cl-effect-1	"
             style="background-color:transparent !important"
           >
-            <a href="<?=base_url()?>events">EVENTS</a>
-            <a>SPONSORS</a>
-            <a href="<?=  base_url()?>"
-              ><img
-                style="max-height: 75px;position:relative;top:25px"
-                src="<?=base_url()?>/assets/front/img/logo.png"
-            /></a>
-            <a>ABOUT</a>
-            <a>CONTACT</a>
+          <a href="<?=base_url()?>events">EVENTS</a>
+          <a href="<?=base_url()?>sponsors">SPONSORS</a>
+          <a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
+          <a href="<?=base_url()?>about">ABOUT</a>
+          <?php if($this->session->userdata('sess_logged_in')==0){ ?>
+          <a href="<?= $google_login_url ?>">LOGIN</a>
+          <?php } else{ ?>
+          <a href="<?=base_url()?>myprofile">MY PROFILE</a>
+          <?php } ?>
           </nav>
         </section>
       </div>
@@ -251,10 +251,15 @@
           </svg>
         </button>
         <ul class="menu__inner">
-          <li class="menu__item"><a class="menu__link" href="#">Work</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Play</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Chat</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Party</a></li>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">SPONSORS</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
+          <li class="menu__item"><a class="menu__link" href="#">CONTACT</a></li>
+          <?php if($this->session->userdata('sess_logged_in')==0){ ?>
+          <li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
+          <?php }else { ?>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>myprofile">MY PROFILE</a></li>
+          <?php } ?>
         </ul>
       </nav>
       <div class="content" >
@@ -262,7 +267,7 @@
             <?php
             $cntr=-1;
           foreach($events as $row){
-              
+
               $cntr++;
           ?>
 
@@ -277,14 +282,14 @@
               <?php
               $extra_btitle="";
               if($cntr%4==0){
-                  
+
               }elseif($cntr%4==1){
-                  
-                  
+
+
               }
               elseif($cntr%4==2){
                   $extra_btitle="box__title--bottom";
-                 
+
               }
               elseif($cntr%4==3){
                   $extra_btitle="box__title--straight box__title--left";
@@ -294,14 +299,14 @@
               }else{
                   $extra_box__title="";
               }
-              
+
               ?>
               <h3 class="box__title <?=$extra_btitle?>">
                 <span class="box__title-inner <?=$extra_box__title?>" ><?=$row->short_title?></span>
               </h3>
             </div>
           </a>
-              
+
 
       <?php
 
@@ -316,11 +321,11 @@
         <?php
                         $cntr=-1;
           foreach($events as $event){
-              
+
               $cntr++;
               ?>
-              
-              
+
+
               <div class="overlay__item" id="preview-<?=$cntr?>">
           <div class="box">
             <div class="box__shadow"></div>
@@ -333,14 +338,14 @@
               <span class="box__title-inner"><?=$event->title?></span>
             </h3>
             <?=$event->btn?>
-            
-            
-              
+
+
+
           </div>
                   <div class="overlay__content" style="margin-top:40vw;">
-              
+
               <div>
-               
+
                       <?=$event->details?>
               </div>
               <?php
@@ -369,13 +374,13 @@
             }
             ?>
              <?php
-                        
+
                             $schedule=$event->schedule;
                             if (count($schedule)>0) {
                                 ?>
                                 <br>
                                     <h3>Schedule</h3>
-                                <?php 
+                                <?php
                                     foreach($schedule as $timerow){
                                         $timerow = (array) $timerow; ?>
                                         <div style="padding-left: 15px;">
@@ -397,7 +402,7 @@
                                             ?>
                                             </h5>
                                         </div>
-    
+
                                     <?php
                                     }
                             }
@@ -407,21 +412,21 @@
                  <a style="text-decoration: none;" href="tel:+91<?=$event->co1_no?>"><h5><?=$event->co1_name?> : <?=$event->co1_no?></h5></a>
                  <a style="text-decoration: none;" href="tel:+91<?=$event->co2_no?>"><h5><?=$event->co2_name?> : <?=$event->co2_no?></h5></a>
              </div>
-             
+
             <br/>
-            
+
             <br/>
           </div>
         </div>
-              
-              
-              
+
+
+
               <?php
           }
-        
+
         ?>
-        
- 
+
+
         <button class="overlay__close" style="z-index:99">
           <svg class="icon icon--cross">
             <use xlink:href="#icon-cross"></use>
@@ -472,7 +477,7 @@
         }
       })();
     </script>
-    
+
     <script type="text/javascript">
 
 
@@ -488,24 +493,24 @@
     });
 
         jQuery('.modal-body').on('change','.chk_acm',
-    function(){ 
-      
+    function(){
 
-       
+
+
         checkBoxValidate();
-        
+
     });
 
 function checkBoxValidate(){
 
     var flg=false;
         $('.chk_acm').each(function(i, obj) {
-         
+
             if($(obj).prop('checked')){
                 flg=true;
-             
+
             }
-           
+
             });
             if(flg==true){
                 $("#day_1").prop('disabled',false);
@@ -524,7 +529,7 @@ function checkBoxValidate(){
             }
 }
     function vm(oid){
-        
+
         var eid=oid;
        $url="<?=base_url("process/")?>"+eid;
         $.ajax({
@@ -544,17 +549,17 @@ function checkBoxValidate(){
 
                 $("#evdd").val(eid);
                 var array = JSON.parse(result);
-               
+
                 switch(array[0]){
                     case 505:{
                         if (typeof(Storage) !== "undefined") {
                             localStorage.setItem("pre_login_url", window.location.href);
-                        
+
                             document.cookie = "book=Clicked";
 
                         }
                       window.location="<?=$google_login_url?>";
-                       
+
                         break;
                     }
                     case 200:{
@@ -566,7 +571,7 @@ function checkBoxValidate(){
 
                         $('#div_mail0').addClass('col-md-12').removeClass('col-md-8');
 
-                        
+
                         $('.modal-title').text("Details");
                         $('#myModal').show();
                             $("#addmoreMembersBtn").css({
@@ -575,7 +580,7 @@ function checkBoxValidate(){
                             var acc=array[2];
                             for(var i=1;i<=4;i++){
                                     if(acc.includes(i+"")){
-                                  
+
                                         $("#day_"+i).prop('disabled','true');
                                         $("#day_"+i).prop('checked','true');
                                         $("#day_"+i).removeClass("chk_acm");
@@ -671,12 +676,12 @@ function checkBoxValidate(){
     }
     function team_form_sumbit(){
 
-      
+
         emails_josn = [];
         $("input[type=email]").each(function() {
             email = {};
             email["email"] = $(this).val();
-           
+
             if($(this).attr('id')!="email0"){
                 var email_regex = /^[a-zA-Z0-9._-]+@gmail.com$/i;
                 var mailid=$(this).val();
@@ -689,7 +694,7 @@ function checkBoxValidate(){
 
             }
 
-            
+
             var chkid=$(this).attr('id');
             chkid=chkid.replace("email","chk_acm");
             if($("#"+chkid).is(":checked")==true){
@@ -697,7 +702,7 @@ function checkBoxValidate(){
             }else{
                 email["acc"] = "N";
             }
-            
+
             emails_josn.push(email);
         });
         var days_cm="";
@@ -727,7 +732,7 @@ function checkBoxValidate(){
         $('#json_data').val(JSON.stringify(item));
 
 
-        
+
         $('#team_form_hid_btn').click();
 
 
