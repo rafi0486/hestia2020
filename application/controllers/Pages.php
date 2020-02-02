@@ -12,7 +12,7 @@ class Pages extends CI_Controller {
 
         if(isset($_SESSION['name']) && $this->user_model->is_registered($_SESSION['email'],"Y")==FALSE){
             $_SESSION['back_url']=$link;
-            
+
             //redirect("Profile/complete");
         }
     }
@@ -32,7 +32,8 @@ class Pages extends CI_Controller {
         if ( ! file_exists(APPPATH.'views/static/'.$page.'.php')){
             show_404();
         }
-        $this->load->view('static/'.$page);
+        $data['google_login_url']=$this->google->loginURL();
+        $this->load->view('static/'.$page,$data);
     }
     function Test($cat){
         $cat_name=$this->security->xss_clean($cat);
@@ -119,12 +120,12 @@ header('Location: '.$data['google_login_url']);
             return;
         }
 
-        
-        
+
+
         $data['schedule']=$this->report_model->get_event_schedule($eid);
-        
+
         $eid=$data['event']->event_id;
-        $isbooked=$this->report_model->get_book_status($eid);    
+        $isbooked=$this->report_model->get_book_status($eid);
         $data['parent']=$this->report_model->get_event_cat_details($eid)->cat_name;
         $today = date('Y-m-d');
         $startdate=date('Y-m-d', strtotime($data['event']->reg_start));
