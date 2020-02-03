@@ -63,7 +63,6 @@ $route['bookticket'] = 'Pages/ProcessBooking';
 $route['myevents'] = 'Pages/UserEvents';
 $route['myprofile'] = 'Profile/update';
 $route['Login'] = 'Login/index';
-$route['sponsors'] = 'Pages/Sponsors';
 $route['verify'] = 'Certificate/Verify';
 
 $route['get_all_users'] = 'Login_get_all_users/index';

@@ -210,21 +210,7 @@ header('Location: '.$data['google_login_url']);
     function ProcessBooking(){
         echo $this->input->post('json_data');
     }
-    function Sponsors(){
-
-      $data['sponsors1']=$this->report_model->get_sponsors('s_other');
-      $data['sponsors2']=$this->report_model->get_sponsors('s_chor');
-      $data['sponsors3']=$this->report_model->get_sponsors('s_pronite');
-      $data['sponsors4']=$this->report_model->get_sponsors('s_audio');
-      $data['sponsors5']=$this->report_model->get_sponsors('s_bevarage');
-      $data['sponsors6']=$this->report_model->get_sponsors('s_event');
-      $data['sponsors7']=$this->report_model->get_sponsors('s_hospital');
-
-      $this->load->view('static/sponsors',$data);
-
-
-  }
-
+  
 //    public function view($page = 'home'){
 //        if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php')){
 //            // Whoops, we don't have a page for that!
