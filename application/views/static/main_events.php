@@ -104,6 +104,9 @@ if(isset($_COOKIE['redir']))
 			max-height: calc(100vh - 10rem);
 			filter: none;
 		}
+                .a_coming{
+                    pointer-events: none !important;
+                }
 	</style>
 </head>
 
@@ -142,27 +145,27 @@ if(isset($_COOKIE['redir']))
 			<div class="menu__item">
 				<span class="menu__item-number">01</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">Workshops</span></span>
-				<a class="menu__item-link">Explore</a>
+				<a class="menu__item-link" href="<?=base_url("events/workshops")?>">Explore</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">02</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">Technical</span></span>
-				<a class="menu__item-link">Coming Soon</a>
+                                <a class="menu__item-link a_coming" >Coming Soon</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">03</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">Cultural</span></span>
-				<a class="menu__item-link">Coming Soon</a>
+				<a class="menu__item-link a_coming" >Coming Soon</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">04</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">Online</span></span>
-				<a class="menu__item-link">Coming Soon</a>
+				<a class="menu__item-link a_coming" >Coming Soon</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">05</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">General</span></span>
-				<a class="menu__item-link">Coming Soon</a>
+				<a class="menu__item-link a_coming">Coming Soon</a>
 			</div>
 		</nav>
 
