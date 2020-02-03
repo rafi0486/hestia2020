@@ -93,7 +93,7 @@
       </symbol>
     </svg>
     <main>
-       
+
       <header class="custom-header">
         <img
           class="custom-logo"
@@ -109,15 +109,15 @@
             class="links hestia-font cl-effect-1	"
             style="background-color:transparent !important"
           >
-            <a href="<?=base_url()?>events">EVENTS</a>
-            <a>SPONSORS</a>
-            <a
-              ><img
-                style="max-height: 75px;position:relative;top:25px"
-                src="<?=base_url()?>/assets/front/img/logo.png"
-            /></a>
-            <a>ABOUT</a>
-            <a>CONTACT</a>
+          <a href="<?=base_url()?>events">EVENTS</a>
+          <a href="<?=base_url()?>sponsors">SPONSORS</a>
+          <a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
+					<a href="<?=base_url()?>about">ABOUT</a>
+          <?php if($this->session->userdata('sess_logged_in')==0){ ?>
+          <a href="<?= $google_login_url ?>">LOGIN</a>
+          <?php } else{ ?>
+          <a href="<?=base_url()?>myevents">MY EVENTS</a>
+          <?php } ?>
           </nav>
         </section>
       </div>
@@ -128,15 +128,20 @@
           </svg>
         </button>
         <ul class="menu__inner">
-          <li class="menu__item"><a class="menu__link" href="#">Work</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Play</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Chat</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Party</a></li>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>sponsors">SPONSORS</a></li>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>about">ABOUT</a></li>
+
+          <?php if($this->session->userdata('sess_logged_in')==0){ ?>
+          <li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
+          <?php }else { ?>
+          <li class="menu__item"><a class="menu__link" href="<?=base_url()?>myevents">MY EVENTS</a></li>
+          <?php } ?>
         </ul>
       </nav>
         <div class="content" style="background-color: #d0cfc5;" >
         <div class="grid" style="margin-top: 160px;grid-template-columns: repeat(1, 100%);">
-           
+
             <div class="row event_listing_div"  style="text-align:left;padding-top: 5vh;">
           <?php
            //print_r($_SESSION['myev']);
@@ -206,7 +211,7 @@
                                  }
                                 else
                                     echo $start_time.' to '.$end_time;
-                                 
+
                                  ?>
                                 </p>
                             </div>
@@ -264,7 +269,7 @@
                     ?>
                     <hr/>
                </div>
-                
+
 
 
       <?php
@@ -279,10 +284,10 @@
 
 
 </div>
-           
+
         </div>
       </div>
-     
+
     </main>
     <script src="<?=  base_url("assets/main/")?>js/event-listing/imagesloaded.pkgd.min.js"></script>
     <script src="<?=  base_url("assets/main/")?>js/event-listing/TweenMax.min.js"></script>
