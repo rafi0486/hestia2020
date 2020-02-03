@@ -82,6 +82,31 @@
             font-size : 1.25rem;
         }
         </style>
+            <style>
+      .overlay__item {
+        height: auto;
+        align-items: flex-start;
+      }
+      .overlay__content {
+        margin-top: 0px !important;
+      }
+      .box {
+        margin-top: 10vh !important;
+      }
+      .box__text {
+        top: auto;
+        bottom: -6rem;
+      }
+
+      @media screen and (max-width: 900px) {
+        .overlay__content {
+          margin-top: 17vh !important;
+        }
+        .box {
+          margin-top: 5vh !important;
+        }
+      }
+    </style>
 	<script>
 		document.documentElement.className = "js";
 		var supportsCssVars = function() {
@@ -494,7 +519,9 @@
 		})();
 	</script>
         <script type="text/javascript">
-
+            $('.overlay__close').click(function(){
+                $('#myModal').hide();
+            });
 
           var maxmemb=0;
           var minmemb=0;

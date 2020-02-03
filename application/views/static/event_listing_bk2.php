@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/bs-modal.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style rel="stylesheet" type="text/css">
         .small-text{
@@ -479,9 +480,7 @@
 
     <script type="text/javascript">
 
-    $('.overlay__close').click(function(){
-        $('#myModal').hide();
-    });
+
     var maxmemb=0;
     var minmemb=0;
     var rem_members=0;
