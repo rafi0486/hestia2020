@@ -181,7 +181,8 @@ else {
   <link href="payment/vertical-nav.css" rel="stylesheet" />
   <style>
     body {
-      background: url('https://i.ibb.co/pnsqFdz/event-list-bg.jpg') no-repeat center center fixed;
+      /* background: url('https://i.ibb.co/pnsqFdz/event-list-bg.jpg') no-repeat center center fixed; */
+        background-color: #252323;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -210,7 +211,7 @@ else {
 
             </ul>
             <div style="position: absolute;  left: 50%;  transform: translate(-50%, -50%) ">
-          <a href="<?php echo $_SESSION['redir_url']; ?>"  rel="im-checkout" data-behaviour="remote" data-style="dark" data-text="Pay Now" ></a>
+          <a  href="<?php echo $_SESSION['redir_url']; ?>"  rel="im-checkout" data-behaviour="remote" data-style="dark" data-text="Pay Now" ></a>
           <script src="https://d2xwmjc4uy2hr5.cloudfront.net/im-embed/im-embed.min.js"></script>
         </div>
           </div>
