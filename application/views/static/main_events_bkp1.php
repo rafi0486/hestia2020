@@ -54,7 +54,8 @@ if(isset($_COOKIE['redir']))
         }
     </style>
     <link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
-    <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/EventsMain.css" />
+    <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/main-event.css" />
+    <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
     <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
     <script>
       document.documentElement.className = "js";
@@ -164,10 +165,21 @@ if(isset($_COOKIE['redir']))
               <?php
               foreach ($technical as $catrow){
                   ?>
-              <div class="grid__item" onclick="window.location=\"<?= base_url("events/").$catrow->cat_name ?>\"" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)"><div class="name-overlay"><?=$catrow->cat_text?></div></div>
-              
-              
-                        
+                        <a class="grid__item" href="<?= base_url("events/").$catrow->cat_name ?>">
+                    <div class="box">
+                      <div class="box__shadow"></div>
+                      <img
+                        class="box__img"
+                        src="<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>"
+                        alt="<?=$catrow->cat_text?>"
+                      />
+                      <h3 class="hestia-font box__title">
+                        <span class="box__title-inner" data-hover="<?=$catrow->cat_text?>"
+                          ><?=$catrow->cat_text?></span
+                        >
+                      </h3>
+                    </div>
+                  </a>
               <?php
               }
               ?>
@@ -179,8 +191,21 @@ if(isset($_COOKIE['redir']))
              <?php
               foreach ($cultural as $catrow){
                   ?>
-                      <div class="grid__item" onclick="window.location=\"<?= base_url("events/").$catrow->cat_name ?>\"" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)"><div class="name-overlay"><?=$catrow->cat_text?></div></div>
-              
+                        <a class="grid__item" href="<?= base_url("events/").$catrow->cat_name ?>">
+                    <div class="box">
+                      <div class="box__shadow"></div>
+                      <img
+                        class="box__img"
+                        src="<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>"
+                        alt="<?=$catrow->cat_text?>"
+                      />
+                      <h3 class="hestia-font box__title">
+                        <span class="box__title-inner" data-hover="<?=$catrow->cat_text?>"
+                          ><?=$catrow->cat_text?></span
+                        >
+                      </h3>
+                    </div>
+                  </a>
               <?php
               }
               ?>

@@ -811,3 +811,24 @@ main {
 
 
 }
+
+@media (max-width: 850px) {
+
+
+
+    .name-overlay {
+
+        -webkit-text-stroke: 1px #fff;
+        text-stroke: 1px #fff;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+        letter-spacing: 2px;
+
+
+
+        font-size: 14px;
+
+    }
+
+
+}
