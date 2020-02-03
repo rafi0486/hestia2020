@@ -1,196 +1,446 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="<?=base_url();?>assets/front/img/hestia-icon.png">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Sponsors <?=APP_TITLE?></title>
+	<meta
+		name="description"
+		content="<?=APP_META_CONTENT?>"
+	/>
+	<meta
+		name="keywords"
+		content="<?=APP_META_KEYWORDS?>"
+	/>
+	<link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>fonts/font-awesome.min.css" />
 
-
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" <?=APP_META_CONTENT?>>
-<meta name="keywords" content="<?=APP_META_KEYWORDS?>">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="<?=base_url();?>assets/uploads/sponsors/https://www.googletagmanager.com/gtag/js?id=UA-135958084-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-135958084-1');
-</script>
-  <title>
-  Sponsors - <?=APP_TITLE?>
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link href="<?=base_url();?>assets/front/fonts/Hestia.css?family=Hestia-Regular" rel="stylesheet">
-  <link href="<?=base_url();?>assets/front/fonts/Galgo.css?family=Galgo" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- CSS Files -->
-  <link href="<?=base_url();?>assets/front/css/material-kit.css?v=2.0.5" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="<?=base_url();?>assets/front/demo/demo.css" rel="stylesheet" />
-
-  <!-- <link rel="stylesheet" href="assets/css/main_style.css"> -->
-  <style>
-  .listing2 {
-    font-size: 2rem;
-    font-family: 'Hestia-Regular', sans-serif !important;
-    color: white;
-  }
-
-  .listing3 {
-    font-family: 'Hestia-Regular', sans-serif !important;
-    color: white;
-  }
-
-  body {
-    background: url('<?=base_url();?>assets/front/img/about_us_bg.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  .back_btn {
-    left: 10px;
-  }
-
-  @media screen and (min-width: 767px) {
-    .hid-block {
-      overflow: hidden;
-    }
-
-    .back_btn {
-      left: 40px;
-    }
-  }
-
-  .hid-block {
-    overflow: none;
-  }
-
-  .row-fluid {
-    /* display: block; */
-  }
-
-  .text-al {
-    text-align: center;
-    padding: 20px;
-    /* margin-bottom: 100px; */
-  }
-
-  .c1 {
-    display: block;
-    text-align: center;
-  }
-
-  .inline {
-    display: inline-block;
-  }
-  </style>
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/sponsor/demo2.css" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/demo.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/style6.css" />
+	<script src="<?=  base_url("assets/main/")?>js/sponsor/modernizr-custom.js"></script>
 </head>
 
-<body>
+<body class="demo-6">
+	<svg class="hidden">
+		<symbol id="icon-arrow" viewBox="0 0 24 24">
+			<title>arrow</title>
+			<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+		</symbol>
+		<symbol id="icon-drop" viewBox="0 0 24 24">
+			<title>drop</title>
+			<path
+			  d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+			<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
+		</symbol>
+		<symbol id="icon-menu" viewBox="0 0 17.6 9.9">
+			<title>menu</title>
+			<path d="M17.6,1H0V0h17.6V1z M17.6,4.3h-12v1h12V4.3z M17.6,8.9h-6.9v1h6.9V8.9z" />
+		</symbol>
+		<symbol id="icon-cross" viewBox="0 0 10.2 10.2">
+			<title>cross</title>
+			<path d="M5.8,5.1l4.4,4.4l-0.7,0.7L5.1,5.8l-4.4,4.4L0,9.5l4.4-4.4L0,0.7L0.7,0l4.4,4.4L9.5,0l0.7,0.7L5.8,5.1z" />
+		</symbol>
+	</svg>
+	<div class="container">
+		<header class="custom-header" style="position:absolute;top: 0;">
+			<img class="custom-logo" src="http://hestia-old.thameeem.com/assets/front/img/logo.png" />
+			<button class="btn btn--menu">
+				<svg class="icon icon--menu">
+					<use xlink:href="#icon-menu"></use>
+				</svg>
+			</button>
+		</header>
+		<div style="position:absolute;top:35px;z-index:100;width:100%;">
+			<section class="custom-nav">
+				<nav class="links hestia-font cl-effect-1	" style="background-color:transparent !important">
+					<a>EVENTS</a>
+					<a>SPONSORS</a>
+					<a><img style="max-height: 75px;position:relative;top:25px" src="http://hestia-old.thameeem.com/assets/front/img/logo.png" /></a>
+					<a>ABOUT</a>
+					<a>CONTACT</a>
+				</nav>
+			</section>
+		</div>
+		<nav class="menu">
+			<button class="btn btn--close">
+				<svg class="icon icon--cross">
+					<use xlink:href="#icon-cross"></use>
+				</svg>
+			</button>
+			<ul class="menu__inner">
+				<li class="menu__item"><a class="menu__link" href="#">Work</a></li>
+				<li class="menu__item"><a class="menu__link" href="#">Play</a></li>
+				<li class="menu__item"><a class="menu__link" href="#">Chat</a></li>
+				<li class="menu__item"><a class="menu__link" href="#">Party</a></li>
+			</ul>
+		</nav>
+		<div class="content" style="margin-top: 150px;">
+			<div class="sponsor-heading">
+				Title Sponsor
+			</div>
+			<div class="grid grid-1">
+				<div class="grid__item" data-size="1280x961">
+					<a href="img/sponsor/original/7.jpg" class="img-wrap"><img src="img/sponsor/thumbs/7.jpg" alt="img04" />
+						<div class="description description--grid">
+							Google
+							<span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
+						</div>
+					</a>
+				</div>
+				<div class="grid__item" data-size="1280x1131">
+					<a href="img/sponsor/original/8.jpg" class="img-wrap"><img src="img/sponsor/thumbs/8.jpg" alt="img05" />
+						<div class="description description--grid">Ephemeral</div>
+					</a>
+				</div>
+				<div class="grid__item" data-size="1280x857">
+					<a href="img/sponsor/original/9.jpg" class="img-wrap"><img src="img/sponsor/thumbs/9.jpg" alt="img06" />
+						<div class="description description--grid">Surreptitious</div>
+					</a>
+				</div>
+			</div>
+			<div class="sponsor-heading">
+				Title Sponsor
+			</div>
+			<div class="grid grid-2">
+				<div class="grid__item" data-size="1280x961">
+					<a href="img/sponsor/original/4.jpg" class="img-wrap"><img src="img/sponsor/thumbs/4.jpg" alt="img04" />
+						<div class="description description--grid">
+							Google
+							<span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
+						</div>
+					</a>
+				</div>
+				<div class="grid__item" data-size="1280x1131">
+					<a href="img/sponsor/original/5.jpg" class="img-wrap"><img src="img/sponsor/thumbs/5.jpg" alt="img05" />
+						<div class="description description--grid">Ephemeral</div>
+					</a>
+				</div>
+				<div class="grid__item" data-size="1280x857">
+					<a href="img/sponsor/original/6.jpg" class="img-wrap"><img src="img/sponsor/thumbs/6.jpg" alt="img06" />
+						<div class="description description--grid">Surreptitious</div>
+					</a>
+				</div>
+			</div>
+			<div class="sponsor-heading">
+				Title Sponsor
+			</div>
+			<div class="grid grid-3">
+				<div class="grid__item" data-size="1280x961">
+					<a href="img/sponsor/original/4.jpg" class="img-wrap"><img src="img/sponsor/thumbs/4.jpg" alt="img04" />
+						<div class="description description--grid">
+							Google
+							<span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
+						</div>
+					</a>
+				</div>
+				<div class="grid__item" data-size="1280x1131">
+					<a href="img/sponsor/original/5.jpg" class="img-wrap"><img src="img/sponsor/thumbs/5.jpg" alt="img05" />
+						<div class="description description--grid">Ephemeral</div>
+					</a>
+				</div>
+				<div class="grid__item" data-size="1280x857">
+					<a href="img/sponsor/original/6.jpg" class="img-wrap"><img src="img/sponsor/thumbs/6.jpg" alt="img06" />
+						<div class="description description--grid">Surreptitious</div>
+					</a>
+				</div>
+			</div>
+			<!-- /grid -->
+			<div class="preview">
+				<button class="action action--close">
+					<i class="fa fa-times"></i><span class="text-hidden">Close</span>
+				</button>
+				<div class="description description--preview"></div>
+			</div>
+			<!-- /preview -->
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /container -->
+	<script src="<?=  base_url("assets/main/")?>js/sponsor/imagesloaded.pkgd.min.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/sponsor/masonry.pkgd.min.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/sponsor/classie.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/sponsor/main.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/home/anime.min.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/home/main.js"></script>
+	<script>
+		(function() {
+			var navEl = document.querySelector("nav.menu"),
+				revealer = new RevealFx(navEl),
+				closeCtrl = navEl.querySelector(".btn--close");
 
-    <div class="container font-weight-bold ">
-      <div class="row c1 ">
-        <h2 class="listing2 pt-4"><a class="back_btn" style="position:absolute;text-decoration:none;color:white;" href="#" onclick="window.history.back();"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-          </a> SPONSORS</h2>
-      </div>
+			document
+				.querySelector(".btn--menu")
+				.addEventListener("click", function() {
+					revealer.reveal({
+						bgcolor: "#7f40f1",
+						duration: 400,
+						easing: "easeInOutCubic",
+						onCover: function(contentEl, revealerEl) {
+							navEl.classList.add("menu--open");
+							contentEl.style.opacity = 1;
+						},
+						onComplete: function() {
+							closeCtrl.addEventListener("click", closeMenu);
+						}
+					});
+				});
 
-      <div class="row pt-5 c1">
-        <h2 class="text-white listing3 mb-2">Choreonite partner</h2>
-        <?php
-          foreach($sponsors2 as $row){
-         ?>
-        <div class="inline  col-sm-3 mb-3 ">
-            <a href="<?=$row['s_link']?>" target="_blank"><img src="<?=base_url();?>assets/uploads/sponsors/<?=$row['s_logo']?>" height="50px"  alt=""></a>
-            <h3 class="text-white listing3"><?=$row['s_name']?></h3>
-          </div>
-        <?php } ?>
-      </div>
+			function closeMenu() {
+				closeCtrl.removeEventListener("click", closeMenu);
+				navEl.classList.remove("menu--open");
+				revealer.reveal({
+					bgcolor: "#7f40f1",
+					duration: 400,
+					easing: "easeInOutCubic",
+					onCover: function(contentEl, revealerEl) {
+						navEl.classList.remove("menu--open");
+						contentEl.style.opacity = 0;
+					}
+				});
+			}
+		})();
+	</script>
+	<script>
+		(function() {
+			var support = {
+					transitions: Modernizr.csstransitions
+				},
+				// transition end event name
+				transEndEventNames = {
+					WebkitTransition: "webkitTransitionEnd",
+					MozTransition: "transitionend",
+					OTransition: "oTransitionEnd",
+					msTransition: "MSTransitionEnd",
+					transition: "transitionend"
+				},
+				transEndEventName =
+				transEndEventNames[Modernizr.prefixed("transition")],
+				onEndTransition = function(el, callback) {
+					var onEndCallbackFn = function(ev) {
+						if (support.transitions) {
+							if (ev.target != this) return;
+							this.removeEventListener(transEndEventName, onEndCallbackFn);
+						}
+						if (callback && typeof callback === "function") {
+							callback.call(this);
+						}
+					};
+					if (support.transitions) {
+						el.addEventListener(transEndEventName, onEndCallbackFn);
+					} else {
+						onEndCallbackFn();
+					}
+				};
 
-      <div class="row pt-5 c1">
-        <h2 class="text-white listing3 mb-2">Pronite partner</h2>
-        <?php
-          foreach($sponsors3 as $row){
-         ?>
-        <div class="inline  col-sm-3 mb-3 ">
-            <a href="<?=$row['s_link']?>" target="_blank"><img src="<?=base_url();?>assets/uploads/sponsors/<?=$row['s_logo']?>" height="100px"  alt=""></a>
-            <h3 class="text-white listing3"><?=$row['s_name']?></h3>
-          </div>
-        <?php } ?>
-      </div>
+			var grid1 = new GridFx(document.querySelector(".grid-1"), {
+				imgPosition: {
+					x: 1,
+					y: -0.75
+				},
+				pagemargin: 50,
+				onOpenItem: function(instance, item) {
+					var win = {
+						width: window.innerWidth,
+						height: window.innerHeight
+					};
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							var delay = Math.floor(Math.random() * 150);
+							el.style.WebkitTransition =
+								"opacity .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), -webkit-transform .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+							el.style.transition =
+								"opacity .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), transform .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
 
-      <div class="row pt-5 c1">
-        <h2 class="text-white listing3 mb-2">Hospitality partner</h2>
-        <?php
-          foreach($sponsors7 as $row){
-         ?>
-        <div class="inline  col-sm-3 mb-3 ">
-            <a href="<?=$row['s_link']?>" target="_blank"><img src="<?=base_url();?>assets/uploads/sponsors/<?=$row['s_logo']?>" height="100px"  alt=""></a>
-            <h3 class="text-white listing3"><?=$row['s_name']?></h3>
-          </div>
-        <?php } ?>
-      </div>
+							el.style.WebkitTransform =
+								"translate3d(-" + win.width + "px,0,0)";
+							el.style.transform = "translate3d(-" + win.width + "px,0,0)";
+							el.style.opacity = 0;
+						}
+					});
+				},
+				onCloseItem: function(instance, item) {
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							var delay = Math.floor(Math.random() * 150);
+							el.style.WebkitTransition =
+								"opacity .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), -webkit-transform .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+							el.style.transition =
+								"opacity .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), transform .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
 
-      <div class="row pt-5 c1">
-        <h2 class="text-white listing3 mb-2">Audio partner</h2>
-        <?php
-          foreach($sponsors4 as $row){
-         ?>
-        <div class="inline  col-sm-3 mb-3 ">
-            <a href="<?=$row['s_link']?>" target="_blank"><img src="<?=base_url();?>assets/uploads/sponsors/<?=$row['s_logo']?>" height="100px"  alt=""></a>
-            <h3 class="text-white listing3"><?=$row['s_name']?></h3>
-          </div>
-        <?php } ?>
-      </div>
+							el.style.WebkitTransform = "translate3d(0,0,0)";
+							el.style.transform = "translate3d(0,0,0)";
+							el.style.opacity = 1;
 
-      <div class="row pt-5 c1 ">
-        <h2 class="text-white listing3 mb-1 ">Beverage partner</h2><br><br>
-        <?php
-          foreach($sponsors5 as $row){
-         ?>
-        <div class="inline  col-sm-3 mb-3 ">
-            <a href="<?=$row['s_link']?>" target="_blank"><img src="<?=base_url();?>assets/uploads/sponsors/<?=$row['s_logo']?>" height="100px"  alt=""></a>
-            <h3 class="text-white listing3"><?=$row['s_name']?></h3>
-          </div>
-        <?php } ?>
-      </div>
+							onEndTransition(el, function() {
+								el.style.transition = "none";
+								el.style.WebkitTransform = "none";
+							});
+						}
+					});
+				}
+			});
 
-      <div class="row pt-5 c1 ">
-        <h2 class="text-white listing3 mb-4">Event partner</h2>
-        <?php
-          foreach($sponsors6 as $row){
-         ?>
-          <div class="inline  col-sm-3 mb-3 ">
-            <a href="<?=$row['s_link']?>" target="_blank"><img src="<?=base_url();?>assets/uploads/sponsors/<?=$row['s_logo']?>" height="100px"  alt=""></a>
-            <h3 class="text-white listing3"><?=$row['s_name']?></h3>
-          </div>
-          <?php } ?>
-      </div>
+			var grid2 = new GridFx(document.querySelector(".grid-2"), {
+				imgPosition: {
+					x: 1,
+					y: -0.75
+				},
+				pagemargin: 50,
+				onOpenItem: function(instance, item) {
+					var win = {
+						width: window.innerWidth,
+						height: window.innerHeight
+					};
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							var delay = Math.floor(Math.random() * 150);
+							el.style.WebkitTransition =
+								"opacity .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), -webkit-transform .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+							el.style.transition =
+								"opacity .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), transform .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
 
-      <div class="row pt-5 c1 ">
-        <h2 class="text-white listing3 mb-4">Other partner</h2>
-         <?php
-          foreach($sponsors1 as $row){
-         ?>
-          <div class="inline  col-sm-3 mb-3 ">
-            <a href="<?=$row['s_link']?>" target="_blank"><img src="<?=base_url();?>assets/uploads/sponsors/<?=$row['s_logo']?>" height="100px"  alt=""></a>
-            <h3 class="text-white listing3"><?=$row['s_name']?></h3>
-          </div>
-          <?php } ?>
+							el.style.WebkitTransform =
+								"translate3d(-" + win.width + "px,0,0)";
+							el.style.transform = "translate3d(-" + win.width + "px,0,0)";
+							el.style.opacity = 0;
+						}
+					});
+				},
+				onCloseItem: function(instance, item) {
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							var delay = Math.floor(Math.random() * 150);
+							el.style.WebkitTransition =
+								"opacity .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), -webkit-transform .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+							el.style.transition =
+								"opacity .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), transform .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
 
-      </div>
+							el.style.WebkitTransform = "translate3d(0,0,0)";
+							el.style.transform = "translate3d(0,0,0)";
+							el.style.opacity = 1;
 
-      </div>
+							onEndTransition(el, function() {
+								el.style.transition = "none";
+								el.style.WebkitTransform = "none";
+							});
+						}
+					});
+				}
+			});
 
-    </div>
-    </div>
+			var grid3 = new GridFx(document.querySelector(".grid-3"), {
+				imgPosition: {
+					x: 1,
+					y: -0.75
+				},
+				pagemargin: 50,
+				onOpenItem: function(instance, item) {
+					var win = {
+						width: window.innerWidth,
+						height: window.innerHeight
+					};
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							var delay = Math.floor(Math.random() * 150);
+							el.style.WebkitTransition =
+								"opacity .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), -webkit-transform .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+							el.style.transition =
+								"opacity .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), transform .6s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+
+							el.style.WebkitTransform =
+								"translate3d(-" + win.width + "px,0,0)";
+							el.style.transform = "translate3d(-" + win.width + "px,0,0)";
+							el.style.opacity = 0;
+						}
+					});
+				},
+				onCloseItem: function(instance, item) {
+					instance.items.forEach(function(el) {
+						if (item != el) {
+							var delay = Math.floor(Math.random() * 150);
+							el.style.WebkitTransition =
+								"opacity .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), -webkit-transform .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+							el.style.transition =
+								"opacity .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1), transform .3s " +
+								delay +
+								"ms cubic-bezier(.5,1,.2,1)";
+
+							el.style.WebkitTransform = "translate3d(0,0,0)";
+							el.style.transform = "translate3d(0,0,0)";
+							el.style.opacity = 1;
+
+							onEndTransition(el, function() {
+								el.style.transition = "none";
+								el.style.WebkitTransform = "none";
+							});
+						}
+					});
+				}
+			});
+
+
+		})();
+
+		function openInNewTab(url) {
+			var win = window.open(url, "_blank");
+			win.focus();
+		}
+	</script>
 </body>
 
 </html>
