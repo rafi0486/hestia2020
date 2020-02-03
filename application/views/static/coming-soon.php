@@ -92,52 +92,11 @@
 				<?php } ?>
 			</ul>
 		</nav>
-		<div class="content" style="margin-top: 150px; margin-bottom:100px;">
-			<div class="sponsor-heading">
-				About Us
-			</div>
-			<p align="justify">
-				TKM College of Engineering, founded in 1958, is the first government
-				aided college in Kerala and the only engineering college in the state
-				under the government, aided and semi-government sector to have been
-				accredited with ‘A’ grade by NAAC. Located in the heart of the land of
-				cashews, Kollam, Kerala, TKMCE is undoubtedly an institution of
-				national importance and has been in the forefront in promoting new and
-				revolutionary ideas that aid mankind. Throughout its 60 year old
-				legacy, TKMCE has been a minefield of talents, brimming with
-				exceptional calibre, technological excellence and innovation.
-			</p>
-			<p align="justify">
-				Pursuing excellence, TKMCE is blessed with students who have proved
-				their mettle through a number of national and international stages,
-				and have used their innovative thinking capability and technical
-				know-how’s in socially relevant projects, products and events, and
-				boasts a plethora of organisations and student chapters like STEPS,
-				IEEE, IEDC, SAE, ACM etc. TKMCE has a rich tradition of eminence, and
-				has been continually re-inventing itself in terms of academics,
-				research and infrastructure.
-			</p>
-			<p align="justify">
-				Hestia’20 is an extraordinary vision, inspired by a great purpose and
-				conceived by a strong spark, which makes one’s thoughts break bonds,
-				mind transcend limitations, and consciousness expand in every single
-				direction, to finally empower everyone who nurtures it in a place
-				where nothing and absolutely nothing is impossible.
-			</p>
-			<p align="justify">
-				The national level techno-managerial cultural symposium, is a
-				rendezvous of the brain’s left and right sides, an amalgamation of all
-				that is science and all that is art, for science and art must embrace
-				each other to triumph the contemporary world’s challenges. It is
-				technology and innovation acting together, catalysed by creativity and
-				art, to create the elixir vitae.
-			</p>
-			<p align="justify">
-				The goal of Hestia’20 is to create the ultimate ensemble of
-				technology, innovation, business, culture and art.
-			</p>
+		<div class="content" style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);
+">
 
-			<!-- /preview -->
+      <h1 style="font-size:3rem">Coming Soon</h1>
+
 		</div>
 		<!-- /content -->
 	</div>
