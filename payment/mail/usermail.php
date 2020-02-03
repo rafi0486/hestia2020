@@ -133,7 +133,7 @@ $message = '
 										<p style="display:block;margin:13px 0">
 											<span>
 												<strong>
-													<span style="font-size:16px;text-transform:uppercase">WELCOME TO HESTIA 19</span>
+													<span style="font-size:16px;text-transform:uppercase">WELCOME TO HESTIA 20</span>
 												</strong>
 											</span>
 										</p>
@@ -363,12 +363,12 @@ Kerala, India</span>
 						<span style="font-size:13px">Show the QR code to check in to events during Hestia</span>
 							<br>
 							<span  style="font-size:12px ; color:red;">
-								Note: This is an automatic mail send to all users signing up to the Hestia19 website for the first time. This is not an event registration mail.
+								Note: This is an automatic mail send to all users signing up to the Hestia20 website for the first time. This is not an event registration mail.
 							</span>
 							<br>
 							<span style="font-size:12px">
 
-							Head over to <a href="https://www.hestia.live">Hestia 19 website</a> to browse and register for events.							</span>
+							Head over to <a href="https://www.hestia.live">Hestia 20 website</a> to browse and register for events.							</span>
 
 																											</label>
 
@@ -506,7 +506,7 @@ Kerala, India</span>
 													<a style="color:#1155cc">'.$email.'</a>
 												</span>
 												<br>
-												<span>Copyright @ 2019 Hestia 19
+												<span>Copyright @ 2020 Hestia 20
 												</span>
 											</p>
 										</div>
@@ -573,7 +573,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] = 'From: Hestia19 Registrations <noreply@hestia.live>';
+$headers[] = 'From: Hestia20 Registrations <noreply@hestia.live>';
 $headers[] ='Reply-To: admin@hestia.live';
 
 // Mail it

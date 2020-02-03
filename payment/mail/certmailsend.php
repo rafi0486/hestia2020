@@ -218,7 +218,7 @@ $message = '
 							<p style="display:block;margin:13px 0">
 								<strong>
 									<span style="font-size:18px;color:#ffffff">
-																											  <span style="color:#ffffff">Click on the link below to login and Download your participation certificate on Hestia19 Website </span>
+																											  <span style="color:#ffffff">Click on the link below to login and Download your participation certificate on Hestia20 Website </span>
 																	<br>		<a style="margin:8px 0;color: #FF0000;" href="https://www.hestia.live/myevents"> Get My Certificates</a> 							  </span><br><br>
 								</strong>
 							</p>
@@ -323,7 +323,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] = 'From: Hestia19 Doc Team <noreply@hestia.live>';
+$headers[] = 'From: Hestia20 Doc Team <noreply@hestia.live>';
 $headers[] ='Reply-To: admin@hestia.live';
 
 // Mail it

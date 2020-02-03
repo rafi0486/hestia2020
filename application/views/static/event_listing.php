@@ -28,7 +28,60 @@
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menu.css">
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/bs-modal.css">
+        <style rel="stylesheet" type="text/css">
+            .small-text{
+                font-size:2.5rem;
+            }
+            .box__text {
+                cursor: pointer !important;
+                pointer-events:auto;
 
+            }
+            .box__text-inner{        
+                   cursor: pointer !important;        
+                    pointer-events:auto;        
+            }
+            .overlay--open {
+                     overflow-y: scroll;
+                     background-color: #ececec;
+
+            }
+            
+
+        .modal {
+                position: fixed;
+                max-width: 700px;
+                width: 90%;
+                z-index: 1001;
+                font-size: 1.1em;
+                pointer-events: none;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%,-50%,0);
+        }
+
+        .modal--open {
+                pointer-events: visible;
+        }
+
+        .modal__inner {
+                padding: 2.5em;
+                color: #fff;
+                background: #aaa;
+        }
+
+        .modal__title {
+                font-size: 1.5em;
+                margin: 0 0 1em 0;
+        }
+        .overlay__content{
+            font-size : 1.25rem;
+        }
+        </style>
 	<script>
 		document.documentElement.className = "js";
 		var supportsCssVars = function() {
@@ -80,7 +133,106 @@
 		</symbol>
 	</svg>
 	<main>
+        <div class="modal modal-lg  bootstrap-wrapper" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Error</h4>
+                        <button type="button" class="close modal-close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" style="max-height: calc(100vh - 200px);overflow-y: auto;">
+
+
+                        <form id="team_form" method="post" action="<?=  base_url("payment/prepay.php")?>" name="team_form" style="display: none;">
+
+                        <input type="hidden" id="json_data" name="json_data" hidden/>
+                        <input type="hidden" id="evdd"  hidden/>
+                            <div class="row" style='margin-bottom:10px;'>
+                                <div class="col-md-8 col-sm-12" id="div_mail0"><input class="form-control" type="email" id="email0" placeholder="Email" value="<?php if(isset($_SESSION['email']))echo $_SESSION['email'];?>"; readonly></div>
+                                <div class="col-md-4 col-sm-12" id="div_acm0"><label class="checkbox-inline chk_acommodation">
+                                            <input type="checkbox" class="chk_acm"  id="chk_acm0">&nbsp;&nbsp;Accommodation
+                                            </label></div>
+                            </div>
+                            <div id="team_form_members">
+
+                            </div>
+                            <div id="team_form_members_opt">
+                            </div>
+
+                            <div>
+                            <div class="col-md-12 col-sm-12 mt-3" id="email_note"><p><span class="text-danger">Only gmail addresses are allowed</span></p></div>
+
+                                <button type="button" class="btn btn-warning my-2 " name="addMoreMembers" id="addmoreMembersBtn">Add Member&nbsp;<i class="fas fa-plus-square"></i></button><br>
+        <input type="submit" id="team_form_hid_btn" hidden/>
+
+
+                          <div class="row container" style="margin: 10px 0px 15px 0px;">
+                            <div class="col-xs-6 ml-3 mt-3">
+                              <div class="center">
+                                <p class="form-check-label">
+                                  Accommodation for:
+                                </p>
+                                <label class="checkbox-inline chk_ac_day">
+                                  <input
+                                    type="checkbox"
+                                    id="day_1"
+                                    value="1"
+                                    disabled=""
+                                  />&nbsp;&nbsp;Feb 27
+                                </label>&nbsp;&nbsp;
+                                <label class="checkbox-inline chk_ac_day">
+                                  <input
+                                    type="checkbox"
+                                    id="day_2"
+                                    value="2"
+                                    disabled=""
+                                  />&nbsp;&nbsp;Feb 28
+                                </label>&nbsp;&nbsp;
+                                <label class="checkbox-inline chk_ac_day">
+                                  <input
+                                    type="checkbox"
+                                    id="day_3"
+                                    value="3"
+                                    disabled=""
+                                  />&nbsp;&nbsp;Feb 29
+                                </label>&nbsp;&nbsp;
+                                <label class="checkbox-inline chk_ac_day">
+                                  <input
+                                    type="checkbox"
+                                    id="day_4"
+                                    value="4"
+                                    disabled=""
+                                  />&nbsp;&nbsp;March 1
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                                <div class="row" style='margin-bottom:10px;'>
+                                <div class="col-md-12 col-sm-12"><input class="form-control" type="text" id="referralcode" placeholder="Referral Code" value=""; ></div>
+                                <div class="col-md-12 col-sm-12 mt-3"><p><span class="text-danger">Note:</span> Schedule may change and accommodation dates can be changed accordingly </p></div>
+                            </div>
+
+
+
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary modal-redirect" data-dismiss="modal">OK</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+     
 		<div style="width:100%;">
 			<section>
 				<nav class="links hestia-font desktoponly cl-effect-1" style="background-color:transparent !important;">
@@ -128,177 +280,170 @@
 
 		<div class="">
 			<div class="grid" style="margin-top: 100px;padding-bottom: 100px">
-				<a class="grid__item" href="#preview-8">
+                            
+                            <?php
+            $cntr=-1;
+          foreach($events as $row){
+
+              $cntr++;
+          ?>
+
+                            <a class="grid__item" href="#preview-<?=$cntr?>">
 					<div class="box">
 						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/4.jpg" alt="Some image" />
-						<h3 class="hestia-font box__title">
-							<span class="box__title-inner" data-hover="Jack">Jack</span>
+						<img class="box__img" src="<?= base_url("assets/uploads/event_images/").$row->image_name ?>" alt="<?=$row->title?>" />
+						 <?php
+              $extra_btitle="";
+              if($cntr%4==0){
+
+              }elseif($cntr%4==1){
+
+
+              }
+              elseif($cntr%4==2){
+                  $extra_btitle="box__title--bottom";
+
+              }
+              elseif($cntr%4==3){
+                  $extra_btitle="box__title--straight box__title--left";
+              }
+              if(strlen($row->short_title)>12){
+                  $extra_box__title="small-text";
+              }else{
+                  $extra_box__title="";
+              }
+
+              ?>
+                                                <h3 class="hestia-font box__title <?=$extra_btitle?>">
+							<span class="box__title-inner <?=$extra_box__title?>" ><?=$row->short_title?></span>
 						</h3>
-						<h4 class="hestia-font box__text box__text--bottom">
-							<span class="box__text-inner">Bust</span>
-						</h4>
-						<div class="box__deco">&#10108;</div>
+						
+						
 					</div>
 				</a>
-				<a class="grid__item" href="#preview-9">
-					<div class="box">
-						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/10.jpg" alt="Some image" />
-						<h3 class="box__title">
-							<span class="box__title-inner" data-hover="Wild">Wild</span>
-						</h3>
-						<h4 class="box__text box__text--bottom">
-							<span class="box__text-inner">Zack</span>
-						</h4>
-					</div>
-				</a>
-				<a class="grid__item" href="#preview-10">
-					<div class="box">
-						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/11.jpg" alt="Some image" />
-						<h3 class="box__title box__title--bottom">
-							<span class="box__title-inner" data-hover="Lost">Lost</span>
-						</h3>
-						<h4 class="box__text">
-							<span class="box__text-inner box__text-inner--rotated2">Rust</span>
-						</h4>
-					</div>
-				</a>
-				<a class="grid__item" href="#preview-11">
-					<div class="box">
-						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/12.jpg" alt="Some image" />
-						<h3 class="box__title box__title--straight box__title--left">
-							<span class="box__title-inner" data-hover="Grit">Grit</span>
-						</h3>
-						<h4 class="box__text box__text--bottom box__text--right">
-							<span class="box__text-inner box__text-inner--rotated3">Mud</span>
-						</h4>
-						<div class="box__deco box__deco--top">&#10153;</div>
-					</div>
-				</a>
-				<a class="grid__item" href="#preview-8">
-					<div class="box">
-						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/4.jpg" alt="Some image" />
-						<h3 class="box__title">
-							<span class="box__title-inner" data-hover="Jack">Jack</span>
-						</h3>
-						<h4 class="box__text box__text--bottom">
-							<span class="box__text-inner">Bust</span>
-						</h4>
-						<div class="box__deco">&#10108;</div>
-					</div>
-				</a>
-				<a class="grid__item" href="#preview-9">
-					<div class="box">
-						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/10.jpg" alt="Some image" />
-						<h3 class="box__title">
-							<span class="box__title-inner" data-hover="Wild">Wild</span>
-						</h3>
-						<h4 class="box__text box__text--bottom">
-							<span class="box__text-inner">Zack</span>
-						</h4>
-					</div>
-				</a>
-				<a class="grid__item" href="#preview-10">
-					<div class="box">
-						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/11.jpg" alt="Some image" />
-						<h3 class="box__title box__title--bottom">
-							<span class="box__title-inner" data-hover="Lost">Lost</span>
-						</h3>
-						<h4 class="box__text">
-							<span class="box__text-inner box__text-inner--rotated2">Rust</span>
-						</h4>
-					</div>
-				</a>
-				<a class="grid__item" href="#preview-11">
-					<div class="box">
-						<div class="box__shadow"></div>
-						<img class="box__img" src="img/event-listing/12.jpg" alt="Some image" />
-						<h3 class="box__title box__title--straight box__title--left">
-							<span class="box__title-inner" data-hover="Grit">Grit</span>
-						</h3>
-						<h4 class="box__text box__text--bottom box__text--right">
-							<span class="box__text-inner box__text-inner--rotated3">Mud</span>
-						</h4>
-						<div class="box__deco box__deco--top">&#10153;</div>
-					</div>
-				</a>
+                            
+                            
+                      
+
+
+      <?php
+
+      }
+
+      ?>
 			</div>
 		</div>
 		<div class="overlay">
 			<div class="overlay__reveal"></div>
-			<div class="overlay__item" id="preview-8">
-				<div class="box">
-					<div class="box__shadow"></div>
-					<img class="box__img box__img--original" src="img/event-listing/original/9.jpg" alt="Some image" />
-					<h3 class="box__title">
-						<span class="box__title-inner">Jack</span>
-					</h3>
-					<h4 class="box__text box__text--bottom">
-						<span class="box__text-inner">Bust</span>
-					</h4>
-					<div class="box__deco">&#10108;</div>
-				</div>
-				<p class="overlay__content">
-					It's time the tale were told of how you took a child and you made
-					him old.
-				</p>
-			</div>
-			<div class="overlay__item" id="preview-9">
-				<div class="box">
-					<div class="box__shadow"></div>
-					<img class="box__img box__img--original" src="img/event-listing/original/10.jpg" alt="Some image" />
-					<h3 class="box__title">
-						<span class="box__title-inner">Wild</span>
-					</h3>
-					<h4 class="box__text box__text--bottom">
-						<span class="box__text-inner">Zack</span>
-					</h4>
-				</div>
-				<p class="overlay__content">
-					It's time the tale were told of how you took a child and you made
-					him old.
-				</p>
-			</div>
-			<div class="overlay__item" id="preview-10">
-				<div class="box">
-					<div class="box__shadow"></div>
-					<img class="box__img box__img--original" src="img/event-listing/original/11.jpg" alt="Some image" />
-					<h3 class="box__title box__title--bottom">
-						<span class="box__title-inner">Lost</span>
-					</h3>
-					<h4 class="box__text">
-						<span class="box__text-inner box__text-inner--rotated2">Rust</span>
-					</h4>
-				</div>
-				<p class="overlay__content">
-					It's time the tale were told of how you took a child and you made
-					him old.
-				</p>
-			</div>
-			<div class="overlay__item" id="preview-11">
-				<div class="box">
-					<div class="box__shadow"></div>
-					<img class="box__img box__img--original" src="img/event-listing/original/12.jpg" alt="Some image" />
-					<h3 class="box__title box__title--straight box__title--left">
-						<span class="box__title-inner">Grit</span>
-					</h3>
-					<h4 class="box__text box__text--bottom box__text--right">
-						<span class="box__text-inner box__text-inner--rotated3">Mud</span>
-					</h4>
-					<div class="box__deco box__deco--top">&#10153;</div>
-				</div>
-				<p class="overlay__content">
-					It's time the tale were told of how you took a child and you made
-					him old.
-				</p>
-			</div>
-			<button class="overlay__close">
+			  <?php
+                        $cntr=-1;
+          foreach($events as $event){
+
+              $cntr++;
+              ?>
+
+
+              <div class="overlay__item" id="preview-<?=$cntr?>">
+          <div class="box">
+            <div class="box__shadow"></div>
+            <img
+              class="box__img box__img--original"
+              src="<?= base_url("assets/uploads/event_images/").$row->image_name ?>"
+              alt="<?=$event->title?>"
+            />
+            <h3 class="box__title">
+              <span class="box__title-inner"><?=$event->title?></span>
+            </h3>
+            <?=$event->btn?>
+
+
+
+          </div>
+                  <div class="overlay__content" style="margin-top:40vw;">
+
+              <div>
+
+                      <?=$event->details?>
+              </div>
+              <?php
+                        if($event->prize!=NULL && $event->prize!="0"){
+
+                        ?> <h3>Prizes Worth : <?=$event->prize?></h3>
+                    <?php
+                    }
+              ?>
+            <?php
+            if($event->reg_fee){
+                ?>
+                <h4>Registration Fee: ₹<?=$event->reg_fee?> per <?=$event->fee_type?></h4>
+
+                <?php
+            }else if($event->reg_fee == 0){
+                ?>
+                <h4>Registration Fee: Free</h4>
+                <?php
+            }
+            if ($event->reg_fee !== NULL && $event->reg_end !== '') {
+                ?>
+                <h5>Online Registration closes on: <?=$event->reg_end?></h5>
+
+                <?php
+            }
+            ?>
+             <?php
+
+                            $schedule=$event->schedule;
+                            if (count($schedule)>0) {
+                                ?>
+                                <br>
+                                    <h3>Schedule</h3>
+                                <?php
+                                    foreach($schedule as $timerow){
+                                        $timerow = (array) $timerow; ?>
+                                        <div style="padding-left: 15px;">
+                                        <h5>
+                                            <?php
+                                            if ($timerow['label'] != NULL) echo $timerow['label'].": ";
+                                            $start_time=date('d-M h:i A', strtotime($timerow['start_time']));
+                                            if ($timerow['end_time'] == NULL) {
+                                                echo 'Starts on '.$start_time;
+                                            } else {
+                                                $end_time=date('d-M h:i A', strtotime($timerow['end_time']));
+                                                $dt_start=substr($start_time, 0, 5);
+                                                $dt_end=substr($end_time, 0, 5);
+                                                if ($dt_start == $dt_end) {
+                                                    $end_time=date('h:i A', strtotime($timerow['end_time']));
+                                                }
+                                                echo $start_time.' to '.$end_time;
+                                            }
+                                            ?>
+                                            </h5>
+                                        </div>
+
+                                    <?php
+                                    }
+                            }
+                            ?>
+            <h3>Coordinators</h3>
+             <div style="padding-left: 15px;">
+                 <a style="text-decoration: none;color:black;" href="tel:+91<?=$event->co1_no?>"><h5><?=$event->co1_name?> : <?=$event->co1_no?></h5></a>
+                 <a style="text-decoration: none;;color:black;" href="tel:+91<?=$event->co2_no?>"><h5><?=$event->co2_name?> : <?=$event->co2_no?></h5></a>
+             </div>
+
+            <br/>
+
+            <br/>
+          </div>
+        </div>
+
+
+
+              <?php
+          }
+
+        ?>
+			
+			<button class="overlay__close" style="z-index:99">
 				<svg class="icon icon--cross">
 					<use xlink:href="#icon-cross"></use>
 				</svg>
@@ -348,6 +493,270 @@
 			}
 		})();
 	</script>
+        <script type="text/javascript">
+
+
+          var maxmemb=0;
+          var minmemb=0;
+          var rem_members=0;
+          $('.modal-close').click(function(){
+              $('#myModal').hide();
+          });
+
+          $('.modal-redirect').click(function(){
+              window.location.href="<?=base_url();?>";
+          });
+
+              jQuery('.modal-body').on('change','.chk_acm',
+          function(){
+
+
+
+              checkBoxValidate();
+
+          });
+
+      function checkBoxValidate(){
+
+          var flg=false;
+              $('.chk_acm').each(function(i, obj) {
+
+                  if($(obj).prop('checked')){
+                      flg=true;
+
+                  }
+
+                  });
+                  if(flg==true){
+                      $("#day_1").prop('disabled',false);
+                    $("#day_2").prop('disabled',false);
+                    $("#day_3").prop('disabled',false);
+                    $("#day_4").prop('disabled',false);
+                  }else{
+                      $("#day_1").prop('disabled',true);
+                    $("#day_2").prop('disabled',true);
+                    $("#day_3").prop('disabled',true);
+                    $("#day_4").prop('disabled',true);
+                    $("#day_1").prop('checked',false);
+                    $("#day_2").prop('checked',false);
+                    $("#day_3").prop('checked',false);
+                    $("#day_4").prop('checked',false);
+                  }
+      }
+          function vm(oid){
+
+              var eid=oid;
+             $url="<?=base_url("process/")?>"+eid;
+              $.ajax({
+                  type:'post',
+                  url:$url,
+                  data:"",
+                  async: false,
+                  processData: false,
+                  contentType: false,
+                  beforeSend:function(){
+                      // launchpreloader();
+                  },
+                  complete:function(){
+                      //  stopPreloader();
+                  },
+                  success:function(result){
+                      
+                      $("#evdd").val(eid);
+                      var array = JSON.parse(result);
+
+                      switch(array[0]){
+                          case 505:{
+                              if (typeof(Storage) !== "undefined") {
+                                  localStorage.setItem("pre_login_url", window.location.href);
+
+                                  document.cookie = "book=Clicked";
+
+                              }
+                            window.location="<?=$google_login_url?>";
+
+                              break;
+                          }
+                          case 200:{
+                              $('.chk_team').css('display','inline');
+                              $('#team_form').css('display','block');
+                              $('#chk_acm0').prop('checked','true');
+                              $('.chk_acommodation').css('display','none');
+                              $('#div_acm0').css('display','none');
+
+                              $('#div_mail0').addClass('col-md-12').removeClass('col-md-8');
+
+
+                              $('.modal-title').text("Details");
+                              $('#myModal').show();
+                                  $("#addmoreMembersBtn").css({
+                                      "display": "none"
+                                  });
+                                  var acc=array[2];
+                                  for(var i=1;i<=4;i++){
+                                          if(acc.includes(i+"")){
+
+                                              $("#day_"+i).prop('disabled','true');
+                                              $("#day_"+i).prop('checked','true');
+                                              $("#day_"+i).removeClass("chk_acm");
+                                          }else{
+
+
+                                          }
+                                  }
+                              $('.modal-footer').html("<button type='button' class='btn btn-success' name='team_form_submit' class='team_form_submit' onclick='team_form_sumbit()' >Submit&nbsp;<i class='fas fa-check-circle'></i></button>");
+                              break;
+                          }
+                          case 201:{
+                              maxmemb=array[2];
+                              minmemb=array[1];
+                              $('.chk_team').css('display','inline');
+                              rem_members=maxmemb-minmemb-1;
+                              $("#day_1").prop('disabled',true);
+                              $("#day_2").prop('disabled',true);
+                              $("#day_3").prop('disabled',true);
+                              $("#day_4").prop('disabled',true);
+                              var n=minmemb-1;
+                              var html="";
+                              while(n>0){
+                                  html+=" <div class='row' style='margin-bottom:10px;'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb-n)+"' placeholder='Email' required></div><div class='col-md-4 col-sm-12'><label class='checkbox-inline chk_acommodation'><input type='checkbox'  class='chk_acm'  id='chk_acm"+(minmemb-n)+"'>&nbsp;&nbsp;Accommodation</label></div></div>";
+                                  n--;
+                              }
+                              $('#team_form_members').html(html);
+                              $('#team_form').css('display','block');
+
+                              $('.modal-title').text("Add Members");
+
+                              $('#myModal').show();
+                              if(rem_members<0){
+                                  $("#addmoreMembersBtn").css({
+                                      "display": "none"
+
+                                  });
+
+                              }
+                              $('.modal-footer').html("<button type='button' class='btn btn-success' name='team_form_submit' class='team_form_submit' onclick='team_form_sumbit()' >Submit&nbsp;<i class='fas fa-check-circle'></i></button>");
+
+
+                              break;
+                          }
+                          }
+
+
+
+
+                  }
+              });
+
+
+
+
+          }
+          $('.btn-result').click(function(){
+
+              $('.modal-title').text("Winners");
+              $('.modal-body').html("");
+
+
+              $('.modal-redirect').remove();
+              $('#myModal').show();
+
+
+
+          });
+          $("#addmoreMembersBtn").click(function() {
+              $('.close-href').hide();
+              var old=$('#team_form_members_opt').html();
+              var cur_cnt=$("#team_form_members_opt > div").length;
+              $('.close-href').css('display','none');
+             // $('.close-href').show(); // Shows
+               // hides
+              if(cur_cnt<=rem_members){
+                  var html=" <div class='row' style='margin-bottom:10px;' id='member_"+(minmemb+cur_cnt)+"'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb+cur_cnt)+"' placeholder='Email' required> </div><div class='col-md-4 col-sm-12'><a id='member_"+(minmemb+cur_cnt)+"_close' class='close-href text-white' style='border: 0;float:left;position:absolute;left:-50px;' onclick='removeElement("+(minmemb+cur_cnt)+")'><button  class='btn btn-xs btn-danger'>X</button></a><label class='checkbox-inline chk_acommodation'><input type='checkbox'   class='chk_acm' id='chk_acm"+(minmemb+cur_cnt)+"'>&nbsp;&nbsp;Accommodation</label></div></div>";
+                  $('#team_form_members_opt').html(old+html);
+
+              }
+              if(cur_cnt>=rem_members){
+                  $("#addmoreMembersBtn").prop("disabled",true);
+              }
+
+
+              });
+          function  removeElement(_id){
+                  $("#member_"+_id).remove();
+              $("#member_"+(_id-1)+"_close").css('display','block');
+
+              $("#addmoreMembersBtn").prop("disabled",false);
+              checkBoxValidate();
+          }
+          function team_form_sumbit(){
+
+
+              emails_josn = [];
+              $("input[type=email]").each(function() {
+                  email = {};
+                  email["email"] = $(this).val();
+
+                  if($(this).attr('id')!="email0"){
+                      var email_regex = /^[a-zA-Z0-9._-]+@gmail.com$/i;
+                      var mailid=$(this).val();
+                      if(!email_regex.test(mailid)){
+
+                          e.preventDefault();
+                          return false;
+
+                      }
+
+                  }
+
+
+                  var chkid=$(this).attr('id');
+                  chkid=chkid.replace("email","chk_acm");
+                  if($("#"+chkid).is(":checked")==true){
+                      email["acc"] = "Y";
+                  }else{
+                      email["acc"] = "N";
+                  }
+
+                  emails_josn.push(email);
+              });
+              var days_cm="";
+              for(var i=1;i<=4;i++){
+
+                  if($("#day_"+i).is(":checked")==true && $("#day_"+i).is(':enabled')){
+                      if(days_cm==""){
+                          days_cm=$("#day_"+i).val();
+                      }else{
+                          days_cm=days_cm+""+$("#day_"+i).val();
+                      }
+                      email["acc"] = "Y";
+                  }
+              }
+              jsonObj = [];
+              item = {};
+              item ["event_id"] =$('#evdd').val();
+              item ["referral_code"] = $('#referralcode').val();
+              item ["reg_email"] = "<?php
+              if(isset($_SESSION['email'])){
+                  echo $_SESSION['email'];
+              }
+              ?>";
+              item ["accommodation_days"] = days_cm;
+              item ["emails"] = emails_josn;
+              jsonObj.push(item);
+              $('#json_data').val(JSON.stringify(item));
+
+
+
+              $('#team_form_hid_btn').click();
+
+
+          }
+
+
+          </script>
+
+
 </body>
 
 </html>

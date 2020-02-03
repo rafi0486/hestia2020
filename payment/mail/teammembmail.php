@@ -256,7 +256,7 @@ Kerala, India</span>
 						</span>
 						<br><br>
 						<span style="font-size:14px">
-							'.$fullname.' ('.$reg_email.') registered you as a teammate for the event '.$event_name.' held as a part of Hestia19.<br> You need to register and complete your profile to proceed. Please visit the Official website of Hestia from the link below, login with your Google account and fill in the required details.
+							'.$fullname.' ('.$reg_email.') registered you as a teammate for the event '.$event_name.' held as a part of Hestia20.<br> You need to register and complete your profile to proceed. Please visit the Official website of Hestia from the link below, login with your Google account and fill in the required details.
 						</span>
 						<br>
 						<span class="text-danger" style="font-size:13px;color:red">
@@ -293,7 +293,7 @@ Kerala, India</span>
 							<p style="display:block;margin:13px 0">
 								<strong>
 									<span style="font-size:18px;color:#ffffff">
-																											  <span style="color:#ffffff">Click on the link below to complete your profile on Hestia19 Website </span>
+																											  <span style="color:#ffffff">Click on the link below to complete your profile on Hestia20 Website </span>
 																	<br>		<a style="margin:8px 0;color: #FF0000;" href="https://www.hestia.live/myevents"> Complete My Profile</a> 							  </span><br><br>
 								</strong>
 							</p>
@@ -334,7 +334,7 @@ Kerala, India</span>
 													<a style="color:#1155cc">'.$email.'</a>
 												</span>
 												<br>
-												<span>Copyright @ 2019 Hestia 19
+												<span>Copyright @ 2020 Hestia 19
 												</span>
 											</p>
 										</div>
@@ -401,7 +401,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] = 'From: Hestia19 Registrations <noreply@hestia.live>';
+$headers[] = 'From: Hestia20 Registrations <noreply@hestia.live>';
 $headers[] ='Reply-To: admin@hestia.live';
 
 // Mail it

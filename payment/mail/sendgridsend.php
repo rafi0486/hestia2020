@@ -369,7 +369,7 @@ Kerala, India</span>
 						<span style="font-size:13px">Show the QR code to check in to events during Hestia</span>
 							<br>
 							<span  style="font-size:12px ; color:red;">
-								Note: This is an automatic mail send to all users signing up to the Hestia19 website for the first time. This is not an event registration mail.
+								Note: This is an automatic mail send to all users signing up to the Hestia20 website for the first time. This is not an event registration mail.
 							</span>
 							<br>
 							<span style="font-size:12px">
@@ -582,7 +582,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 $headers[] ='Reply-To: admin@hestia.live';
 
 
-$from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia19 Registrations");
+$from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20 Registrations");
 $subject = new \SendGrid\Mail\Subject($subject);
 $to = new \SendGrid\Mail\To($email, $name);
 
