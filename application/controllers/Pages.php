@@ -24,6 +24,10 @@ class Pages extends CI_Controller {
         $data['google_login_url']=$this->google->loginURL();
         $data['technical']=$this->report_model->get_categorieslike("technical");
         $data['cultural']=$this->report_model->get_categorieslike("cultural");
+        $data['workshops']=$this->report_model->get_categorieslike("workshops");
+        $data['general']=$this->report_model->get_categorieslike("general");
+        $data['online']=$this->report_model->get_categorieslike("online");
+
 
         $this->load->view('static/main_events',$data);
     }
@@ -210,7 +214,7 @@ header('Location: '.$data['google_login_url']);
     function ProcessBooking(){
         echo $this->input->post('json_data');
     }
-  
+
 //    public function view($page = 'home'){
 //        if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php')){
 //            // Whoops, we don't have a page for that!
