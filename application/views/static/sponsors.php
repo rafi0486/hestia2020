@@ -83,7 +83,7 @@
 			<ul class="menu__inner">
 				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
 				<li class="menu__item"><a class="menu__link" href="#">SPONSORS</a></li>
-				<li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>			
+				<li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
 				<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
@@ -93,74 +93,21 @@
 		</nav>
 		<div class="content" style="margin-top: 150px;">
 			<div class="sponsor-heading">
-				Title Sponsor
+				<!-- Title Sponsor -->
 			</div>
 			<div class="grid grid-1">
-				<div class="grid__item" data-size="1280x961">
+
+				<!-- <div class="grid__item" data-size="1280x961">
 					<a href="img/sponsor/original/7.jpg" class="img-wrap"><img src="img/sponsor/thumbs/7.jpg" alt="img04" />
 						<div class="description description--grid">
 							Google
 							<span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
 						</div>
 					</a>
-				</div>
-				<div class="grid__item" data-size="1280x1131">
-					<a href="img/sponsor/original/8.jpg" class="img-wrap"><img src="img/sponsor/thumbs/8.jpg" alt="img05" />
-						<div class="description description--grid">Ephemeral</div>
-					</a>
-				</div>
-				<div class="grid__item" data-size="1280x857">
-					<a href="img/sponsor/original/9.jpg" class="img-wrap"><img src="img/sponsor/thumbs/9.jpg" alt="img06" />
-						<div class="description description--grid">Surreptitious</div>
-					</a>
-				</div>
+				</div> -->
+
 			</div>
-			<div class="sponsor-heading">
-				Title Sponsor
-			</div>
-			<div class="grid grid-2">
-				<div class="grid__item" data-size="1280x961">
-					<a href="img/sponsor/original/4.jpg" class="img-wrap"><img src="img/sponsor/thumbs/4.jpg" alt="img04" />
-						<div class="description description--grid">
-							Google
-							<span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
-						</div>
-					</a>
-				</div>
-				<div class="grid__item" data-size="1280x1131">
-					<a href="img/sponsor/original/5.jpg" class="img-wrap"><img src="img/sponsor/thumbs/5.jpg" alt="img05" />
-						<div class="description description--grid">Ephemeral</div>
-					</a>
-				</div>
-				<div class="grid__item" data-size="1280x857">
-					<a href="img/sponsor/original/6.jpg" class="img-wrap"><img src="img/sponsor/thumbs/6.jpg" alt="img06" />
-						<div class="description description--grid">Surreptitious</div>
-					</a>
-				</div>
-			</div>
-			<div class="sponsor-heading">
-				Title Sponsor
-			</div>
-			<div class="grid grid-3">
-				<div class="grid__item" data-size="1280x961">
-					<a href="img/sponsor/original/4.jpg" class="img-wrap"><img src="img/sponsor/thumbs/4.jpg" alt="img04" />
-						<div class="description description--grid">
-							Google
-							<span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
-						</div>
-					</a>
-				</div>
-				<div class="grid__item" data-size="1280x1131">
-					<a href="img/sponsor/original/5.jpg" class="img-wrap"><img src="img/sponsor/thumbs/5.jpg" alt="img05" />
-						<div class="description description--grid">Ephemeral</div>
-					</a>
-				</div>
-				<div class="grid__item" data-size="1280x857">
-					<a href="img/sponsor/original/6.jpg" class="img-wrap"><img src="img/sponsor/thumbs/6.jpg" alt="img06" />
-						<div class="description description--grid">Surreptitious</div>
-					</a>
-				</div>
-			</div>
+
 			<!-- /grid -->
 			<div class="preview">
 				<button class="action action--close">
