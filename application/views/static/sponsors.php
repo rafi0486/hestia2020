@@ -62,11 +62,15 @@
 		<div style="position:absolute;top:35px;z-index:100;width:100%;">
 			<section class="custom-nav">
 				<nav class="links hestia-font cl-effect-1	" style="background-color:transparent !important">
-					<a>EVENTS</a>
-					<a>SPONSORS</a>
-					<a><img style="max-height: 75px;position:relative;top:25px" src="http://hestia-old.thameeem.com/assets/front/img/logo.png" /></a>
-					<a>ABOUT</a>
-					<a>CONTACT</a>
+					<a href="<?=base_url()?>events">EVENTS</a>
+					<a href="<?=base_url()?>sponsors">SPONSORS</a>
+					<a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
+					<a href="<?=base_url()?>about">ABOUT</a>
+					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
+					<a href="<?= $google_login_url ?>">LOGIN</a>
+					<?php } else{ ?>
+					<a href="<?=base_url()?>myprofile">MY PROFILE</a>
+					<?php } ?>
 				</nav>
 			</section>
 		</div>
@@ -77,10 +81,14 @@
 				</svg>
 			</button>
 			<ul class="menu__inner">
-				<li class="menu__item"><a class="menu__link" href="#">Work</a></li>
-				<li class="menu__item"><a class="menu__link" href="#">Play</a></li>
-				<li class="menu__item"><a class="menu__link" href="#">Chat</a></li>
-				<li class="menu__item"><a class="menu__link" href="#">Party</a></li>
+				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
+				<li class="menu__item"><a class="menu__link" href="#">SPONSORS</a></li>
+				<li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>			
+				<?php if($this->session->userdata('sess_logged_in')==0){ ?>
+				<li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
+				<?php }else { ?>
+				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>myprofile">MY PROFILE</a></li>
+				<?php } ?>
 			</ul>
 		</nav>
 		<div class="content" style="margin-top: 150px;">
