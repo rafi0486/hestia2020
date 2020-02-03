@@ -1,0 +1,154 @@
+h2, .menu__link {
+	font-family: 'Poppins', sans-serif;
+}
+
+
+/* Icons */
+.icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+.icon--inline {
+	display: inline-block;
+	width: 1em;
+	height: 100%;
+	margin: 0 0.25em 0 0;
+}
+
+
+/* Demo specific styles */
+
+/* Buttons */
+.btn {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: none;
+	color: inherit;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+
+.btn--menu {
+	color: #fff;
+	pointer-events: visible;
+	margin-right: 20px;
+	z-index: 100;
+	margin-top: 15px;
+}
+
+.btn--close {
+	position: absolute;
+	top: 40px;
+	right: 25px;
+	font-size: 0.75em;
+    z-index: 100;
+    color: #000;
+}
+
+/* Menu */
+.menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 320px;
+	z-index: 10000000;
+}
+
+.js .menu {
+	pointer-events: none;
+}
+
+.js .menu--open {
+	pointer-events: visible;
+}
+
+.menu__inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	list-style-type: none;
+	padding: 20vh 3em;
+	margin: 0;
+	background: #fcf652;
+	overflow: hidden;
+}
+
+.menu__item {
+	padding: 0.35em;
+}
+
+.js .menu__item {
+	transform: translate3d(-13em,0,0);
+	transition: transform 0s 0.4s;
+}
+
+.btn--close {
+	opacity: 0;
+}
+
+.menu--open .menu__item,
+.menu--open .btn--close {
+	opacity: 1;
+	transform: translate3d(0,0,0);
+	transition: opacity 0.4s 0.135s, transform 0.4s 0.135s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.menu--open .menu__item:nth-child(2) {
+	transition-delay: 0.165s;
+}
+
+.menu--open .menu__item:nth-child(3) {
+	transition-delay: 0.195s;
+}
+
+.menu--open .menu__item:nth-child(4) {
+	transition-delay: 0.225s;
+}
+
+.menu .menu__link {
+	font-size: 3.5vw;
+	color: #4f4f54;
+	font-weight: bold;
+}
+
+.menu .menu__link:hover,
+.menu .menu__link:focus {
+	outline: none;
+	color: #000;
+	text-decoration: line-through;
+}
+
+
+
+/* Demo themes */
+
+.demo-menu { background: #4f4f54; color: #828282; }
+.demo-menu a { color: #c5c149; }
+.demo-menu a:hover, .demo-menu a:focus { color: #fcf652; }
+
+@media screen and (max-width: 56.250em) {
+	.btn--tool {
+		font-size: 3vw;
+	}
+	.media__toolbar {
+		padding: 3.5vw;
+	}
+}
+
+@media screen and (max-width: 50em) {
+
+	.menu .menu__link {
+		font-size: 2em;
+	}
+}

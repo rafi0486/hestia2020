@@ -448,6 +448,7 @@ main {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
+    border: 2px grey double ;
 }
 
 .grid--open .grid__item {
@@ -811,11 +812,19 @@ main {
 
 
 }
+.menu{
+    margin-top: 80px;
+}
 
 @media (max-width: 850px) {
 
 
+    .gridback {
+        margin-top: -190px !important;
+        font-size: 1.5em;
 
+
+    }
     .name-overlay {
 
         -webkit-text-stroke: 1px #fff;
@@ -829,6 +838,13 @@ main {
         font-size: 14px;
 
     }
+    .grid{
 
+        margin-top: -80px;
+        cursor: pointer;
+    }
+    .menu{
+        margin-top: -125px;
+    }
 
 }

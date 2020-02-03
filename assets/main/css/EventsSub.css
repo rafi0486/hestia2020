@@ -391,17 +391,10 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 1.75rem;
-  	
- cursor: pointer !important;
-	
- pointer-events:auto;
   margin: 0.5rem 1rem;
   font-family: 'Anton', sans-serif;
 }
-.box__text-inner{	
-    cursor: pointer !important;	
-       pointer-events:auto;	
-}
+
 .box__text-inner {
   position: relative;
   display: block;
@@ -467,14 +460,11 @@ main {
   top: 0;
   left: 0;
   z-index: 1000;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .overlay--open {
   pointer-events: auto;
-  overflow-y: scroll;
-  
 }
 
 .overlay__reveal {
@@ -544,7 +534,7 @@ main {
   .grid {
     display: grid;
     align-items: center;
-    padding: 3rem 3rem 1rem 3rem;
+    padding: 3rem 3rem 15rem 3rem;
     grid-row-gap: 2rem;
     grid-template-columns: repeat(3, calc(100% / 3));
   }
@@ -634,7 +624,7 @@ main {
   }
 
   .overlay__content {
-    font-size: 1.25rem;
+    font-size: 2.25rem;
     margin-top: 0;
   }
 
@@ -706,30 +696,3 @@ main {
   }
 }
 
-
-.modal {
-	position: fixed;
-	max-width: 500px;
-	width: 90%;
-	z-index: 100;
-	font-size: 1.1em;
-	pointer-events: none;
-	top: 50%;
-	left: 50%;
-	transform: translate3d(-50%,-50%,0);
-}
-
-.modal--open {
-	pointer-events: visible;
-}
-
-.modal__inner {
-	padding: 2.5em;
-	color: #fff;
-	background: #aaa;
-}
-
-.modal__title {
-	font-size: 1.5em;
-	margin: 0 0 1em 0;
-}
