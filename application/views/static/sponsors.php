@@ -125,7 +125,7 @@
 		</nav>
 		<div class="content" style="margin-top: 150px; margin-bottom:100px;">
 			<div style="	text-transform: uppercase;font-size: 1.5rem;" class="sponsor-heading">
-        <!-- Title Sponsor -->
+        COMING SOON
 			</div>
 
       <div class="grid grid-1">
