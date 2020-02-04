@@ -17,6 +17,7 @@
 	<link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/about/demo2.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/normalize.css" />
@@ -32,7 +33,7 @@
 
 </head>
 
-<body class="demo-6">
+<body class="demo-6" style="font-family: 'Montserrat', sans-serif;">
 	<svg class="hidden">
 		<symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>

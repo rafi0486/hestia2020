@@ -27,6 +27,7 @@
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menuMain.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"/>
@@ -131,7 +132,7 @@
 	</script>
 </head>
 
-<body class="loading">
+<body class="loading"  style="font-family: 'Montserrat', sans-serif;">
 	<svg class="hidden">
 		<symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>
