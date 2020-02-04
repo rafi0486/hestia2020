@@ -384,7 +384,7 @@
 
 
           </div>
-                  <div class="overlay__content" style="margin-top:40vw;">
+                  <div class="overlay__content" style="margin-top:40vw;font-family: 'Montserrat', sans-serif;">
 
               <div>
 
