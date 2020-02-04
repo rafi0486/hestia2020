@@ -86,6 +86,7 @@ $data['msg']="";
         }
         $records=$this->report_model->get_all_registrations_certificate($_SESSION['email'], $eventid);
        if(!$records){
+           echo "norec";
            return;
        }
         $pdf->SetLeftMargin(100);
