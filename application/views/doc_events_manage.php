@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
-    <script src="https://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script src="<?=base_url("assets/main/")?>js/admin/nicEdit-latest.js" type="text/javascript"></script>
 
   <title>Hestia 20</title>
 </head>
