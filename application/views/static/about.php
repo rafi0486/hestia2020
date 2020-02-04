@@ -90,7 +90,7 @@
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 					<a href="<?= $google_login_url ?>">LOGIN</a>
 					<?php } else{ ?>
-					<a href="<?=base_url()?>myprofile">MY PROFILE</a>
+					<a href="<?=base_url()?>myevents">MY EVENTS</a>
 					<?php } ?>
 				</nav>
 
@@ -113,9 +113,9 @@
 				</svg>
 			</button>
 			<ul class="Mobilemenu__inner">
-        <li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="#">SPONSORS</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="#">ABOUT</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
