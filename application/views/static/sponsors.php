@@ -124,19 +124,19 @@
 			</ul>
 		</nav>
 		<div class="content" style="margin-top: 150px; margin-bottom:100px;">
-			<div class="sponsor-heading">
-        
+			<div style="	text-transform: uppercase;font-size: 1.5rem;" class="sponsor-heading">
+        <!-- Title Sponsor -->
 			</div>
 
       <div class="grid grid-1">
 
         <div class="grid__item" data-size="1280x961">
-          <a href="img/sponsor/original/7.jpg" class="img-wrap"><img src="img/sponsor/thumbs/7.jpg" alt="img04" />
+          <!-- <a href="img/sponsor/original/7.jpg" class="img-wrap"><img src="img/sponsor/thumbs/7.jpg" alt="img04" />
             <div class="description description--grid">
               Google
               <span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
             </div>
-          </a>
+          </a> -->
         </div>
 
       </div>
