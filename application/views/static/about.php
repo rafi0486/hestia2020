@@ -88,7 +88,7 @@
 				<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
-				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>myprofile">MY PROFILE</a></li>
+				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>myevents">MY EVENTS</a></li>
 				<?php } ?>
 			</ul>
 		</nav>

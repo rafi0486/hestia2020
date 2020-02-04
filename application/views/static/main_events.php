@@ -110,6 +110,9 @@ if(isset($_COOKIE['redir']))
 			max-height: calc(100vh - 10rem);
 			filter: none;
 		}
+		.a_coming{
+				pointer-events: none !important;
+		}
 	</style>
 </head>
 
@@ -152,11 +155,15 @@ if(isset($_COOKIE['redir']))
 		<div style="width:100%;position: absolute;top:0;z-index: 100">
 			<section>
 				<nav class="links hestia-font desktoponly" style="background-color:transparent !important;">
-					<a>EVENTS</a>
-					<a>SPONSORS</a>
-					<a><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
-					<a>ABOUT</a>
-					<a>CONTACT</a>
+					<a href="<?=base_url()?>events">EVENTS</a>
+					<a href="<?=base_url()?>sponsors">SPONSORS</a>
+					<a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
+					<a href="<?=base_url()?>about">ABOUT</a>
+					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
+					<a href="<?= $google_login_url ?>">LOGIN</a>
+					<?php } else{ ?>
+					<a href="<?=base_url()?>myprofile">MY PROFILE</a>
+					<?php } ?>
 				</nav>
 
 
@@ -173,175 +180,81 @@ if(isset($_COOKIE['redir']))
 		<nav class="menu" style="background-color: transparent;height: 550px">
 			<div class="menu__item">
 				<span class="menu__item-number">01</span>
-				<span class="menu__item-textwrap"><span class="menu__item-text">Technical</span></span>
-				<a class="menu__item-link">Explore</a>
+				<span class="menu__item-textwrap"><span class="menu__item-text">Workshops</span></span>
+				<a class="menu__item-link" href="<?=base_url("events/workshops")?>">Explore</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">02</span>
-				<span class="menu__item-textwrap"><span class="menu__item-text">Cultural</span></span>
-				<a class="menu__item-link">Explore</a>
+				<span class="menu__item-textwrap"><span class="menu__item-text">Technical</span></span>
+																<a class="menu__item-link a_coming" >Coming Soon</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">03</span>
-				<span class="menu__item-textwrap"><span class="menu__item-text">Workshops</span></span>
-				<a class="menu__item-link">Explore</a>
+				<span class="menu__item-textwrap"><span class="menu__item-text">Cultural</span></span>
+				<a class="menu__item-link a_coming" >Coming Soon</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">04</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">Online</span></span>
-				<a class="menu__item-link">Explore</a>
+				<a class="menu__item-link a_coming" >Coming Soon</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">05</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">General</span></span>
-				<a class="menu__item-link">Explore</a>
+				<a class="menu__item-link a_coming">Coming Soon</a>
 			</div>
 		</nav>
 
 		<div class="page page--preview">
 			<div class="gridwrap" style="padding-bottom: 0">
 				<div class="grid grid--layout-1">
-					<div class="grid__item" style="background-image: url(img/event-listing/1.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
+					<?php
+					foreach ($workshops as $catrow){
+						?>
+					<div class="grid__item" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)">
+						<div class="name-overlay"><?=$catrow->cat_text?></div>
 					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/2.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/3.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/4.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/5.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/6.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/7.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/8.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/9.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
+				<?php } ?>
 				</div>
 				<div class="grid grid--layout-2">
-					<div class="grid__item" style="background-image: url(img/event-listing/2.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/3.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/4.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/5.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/6.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/7.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/8.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/9.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
 
+					<?php
+					 foreach ($technical as $catrow){
+					?>
+					<div class="grid__item" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)">
+						<div class="name-overlay"><?=$catrow->cat_text?></div>
+					</div>
+					<?php } ?>
 				</div>
 				<div class="grid grid--layout-3">
-					<div class="grid__item" style="background-image: url(img/event-listing/1.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
+					<?php
+					 foreach ($cultural as $catrow){
+					?>
+					<div class="grid__item" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)">
+						<div class="name-overlay"><?=$catrow->cat_text?></div>
 					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/2.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/3.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/4.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/5.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/6.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/7.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/8.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/9.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
+					<?php } ?>
 
 				</div>
 				<div class="grid grid--layout-4">
-					<div class="grid__item" style="background-image: url(img/event-listing/1.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
+					<?php
+					 foreach ($online as $catrow){
+					?>
+					<div class="grid__item" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)">
+						<div class="name-overlay"><?=$catrow->cat_text?></div>
 					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/2.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/3.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/4.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/5.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/6.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/7.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/9.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
+
+				<?php } ?>
 
 				</div>
 				<div class="grid grid--layout-5">
-					<div class="grid__item" style="background-image: url(img/event-listing/1.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
+					<?php
+					 foreach ($general as $catrow){
+					?>
+					<div class="grid__item" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)">
+						<div class="name-overlay"><?=$catrow->cat_text?></div>
 					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/2.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/3.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/4.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/5.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/6.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/7.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/8.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-					<div class="grid__item" style="background-image: url(img/event-listing/9.jpg)">
-						<div class="name-overlay">Lorem ipsum</div>
-					</div>
-
+				<?php } ?>
 				</div>
 				<button class="gridback">
 					<svg class="icon icon--arrow">
@@ -367,10 +280,15 @@ if(isset($_COOKIE['redir']))
 				</svg>
 			</button>
 			<ul class="Mobilemenu__inner ">
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="#">Work</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="#">Play</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="#">Chat</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="#">Party</a></li>
+				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
+				<li class="menu__item"><a class="menu__link" href="#">SPONSORS</a></li>
+				<li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
+
+				<?php if($this->session->userdata('sess_logged_in')==0){ ?>
+				<li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
+				<?php }else { ?>
+				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>myevents">MY EVENTS</a></li>
+				<?php } ?>
 			</ul>
 		</nav>
 		<!-- /page -->
