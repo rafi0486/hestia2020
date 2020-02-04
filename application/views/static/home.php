@@ -178,7 +178,7 @@ if(isset($_COOKIE['redir']))
 
 
 
-			<div style="position: absolute;bottom:50px;width: 100%">
+			<div style="position: absolute;bottom:80px;width: 100%">
 
 
 				<p style="letter-spacing:1px; text-align: center;width: 100%" class="hestia-font content__subtitle">
