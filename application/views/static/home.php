@@ -54,6 +54,8 @@ if(isset($_COOKIE['redir']))
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menuMain.css">
+  <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
+
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -138,7 +140,7 @@ if(isset($_COOKIE['redir']))
 
 
 			<section>
-				<nav class="links hestia-font desktoponly" style="background-color:transparent !important;">
+				<nav class="links hestia-font desktoponly  cl-effect-1" style="background-color:transparent !important;">
           <a href="<?=base_url()?>events">EVENTS</a>
           <a href="<?=base_url()?>sponsors">SPONSORS</a>
           <a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>

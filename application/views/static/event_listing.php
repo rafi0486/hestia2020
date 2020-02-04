@@ -41,16 +41,16 @@
                 pointer-events:auto;
 
             }
-            .box__text-inner{        
-                   cursor: pointer !important;        
-                    pointer-events:auto;        
+            .box__text-inner{
+                   cursor: pointer !important;
+                    pointer-events:auto;
             }
             .overlay--open {
                      overflow-y: scroll;
                      background-color: #ececec;
 
             }
-            
+
 
         .modal {
                 position: fixed;
@@ -257,7 +257,7 @@
                 </div>
             </div>
         </div>
-     
+
 		<div style="width:100%;">
 			<section>
 				<nav class="links hestia-font desktoponly cl-effect-1" style="background-color:transparent !important;">
@@ -305,7 +305,7 @@
 
 		<div class="">
 			<div class="grid" style="margin-top: 100px;padding-bottom: 100px">
-                            
+
                             <?php
             $cntr=-1;
           foreach($events as $row){
@@ -342,13 +342,13 @@
                                                 <h3 class="hestia-font box__title <?=$extra_btitle?>">
 							<span class="box__title-inner <?=$extra_box__title?>" ><?=$row->short_title?></span>
 						</h3>
-						
-						
+
+
 					</div>
 				</a>
-                            
-                            
-                      
+
+
+
 
 
       <?php
@@ -467,7 +467,7 @@
           }
 
         ?>
-			
+
 			<button class="overlay__close" style="z-index:99">
 				<svg class="icon icon--cross">
 					<use xlink:href="#icon-cross"></use>
@@ -588,7 +588,7 @@
                       //  stopPreloader();
                   },
                   success:function(result){
-                      
+
                       $("#evdd").val(eid);
                       var array = JSON.parse(result);
 
