@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menuMain.css">
-	
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -292,8 +292,8 @@
 			</button>
 			<ul class="Mobilemenu__inner ">
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="#">SPONSORS</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="#">ABOUT</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>

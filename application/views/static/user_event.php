@@ -32,24 +32,24 @@
 	<script src="<?=  base_url("assets/main/")?>js/sponsor/modernizr-custom.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <style type="text/css">
-            
+
             a.btn-custom{
                          padding:7px 8px;
                            border:1px solid transparent;
                            transition: all 0.5s
-                
+
             }
-            
+
             a.btn-custom:hover{
-                
+
                 border:1px solid white;
-                
-                
-                
-                
+
+
+
+
             }
-            
-            
+
+
         </style>
 </head>
 
@@ -111,7 +111,7 @@
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 					<a href="<?= $google_login_url ?>">LOGIN</a>
 					<?php } else{ ?>
-					<a href="<?=base_url()?>myprofile">MY PROFILE</a>
+					<a href="<?=base_url()?>myevents">MY EVENTS</a>
 					<?php } ?>
 				</nav>
 
@@ -134,9 +134,9 @@
 				</svg>
 			</button>
 			<ul class="Mobilemenu__inner">
-        <li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="#">SPONSORS</a></li>
-				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="#">ABOUT</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
@@ -148,7 +148,7 @@
 			<div class="sponsor-heading">
 				MY EVENTS
 			</div>
-			
+
 			<p align="justify">
  <?php
            //print_r($_SESSION['myev']);
@@ -168,8 +168,8 @@
           foreach($myevents as $row){
           ?>
 
-                            
-                            
+
+
                <div class="row listing1" style="padding-bottom: 20px;position:relative;">
                    <div class="col-md-8">
                        <h3 class="event-name-text text-light" onclick=<?php echo "'location.href =\"".base_url().'events/'.$row['link']."\"'"; ?> style="letter-spacing: 3px;color:white;text-align: left; cursor:pointer;"><?=$row['title']?></h3>
@@ -182,7 +182,7 @@
                    }
 
                    ?></p>
-                       
+
                         <?php //schedule
 
                    if (count($row['time'])>0) {
@@ -276,20 +276,20 @@
 
                    if($row['certificate']==1){
                        echo "<a href='#'  class='btn btn-success btn-result btn-custom' onclick='viewcertificate(".$row['event_id'].")'>Download Certificate &nbsp;<i class='material-icons' style='position:relative;top:4px;font-size: 18px;' >arrow_downward</i></a><br/><br/>";
-                      
+
 
                    }else if($row['certificate']==0)
                        echo "<a href='".base_url("myprofile")."'  class='btn btn-warning btn-result'>Verify Profile To Download Certificate &nbsp;<i class='fas fa-check'></i></a>";
 
                    ?>
-                       
-                      
-                   </div>                   
-                   
-                   
-                   
-                   
-                  
+
+
+                   </div>
+
+
+
+
+
                </div>
                           <hr/>
 
@@ -302,10 +302,10 @@
 
       ?>
 
-                            
-                            
+
+
 			</p>
-			
+
 
 			<!-- /preview -->
 		</div>
