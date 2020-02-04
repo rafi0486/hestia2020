@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="//www.hestia.live/assets/front/img/hestia-icon.png">
-  
+
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -17,9 +17,9 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    
-    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-						
+
+    <script src="https://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+
   <title>Hestia 20</title>
 </head>
 <style>
@@ -106,7 +106,7 @@
             <h4 class="text-center my-3">Events</h4>
             <div class=" style-1 eventsreg eventsreg_div">
                 <table cellpadding="3"style="width:100%;" cellspacing="2">
-                    
+
                 <?php
                 if($allevents){
                     foreach ($allevents as $sevent){
@@ -114,12 +114,12 @@
                     <tr class="bg bg-primary ev_row">
                         <td><?=$sevent->title?></td>
                     </tr>
-                    
-                        
+
+
                    <?php
                     }
                 }
-                
+
                 ?>
                 </table>
 
@@ -131,7 +131,7 @@
                         <h4 class="text-center my-3">Manage Events</h4>
                 <form action="<?=base_url("DocAdmin/SaveEvent")?>" method="post" enctype="multipart/form-data">
                 <div class="eventsreg style-1">
-                        
+
                 <div class="m-3">
                         <label for="cat_id">Event Category: </label>
                         <select id="cat_id"  name="cat_id" class="form-control">
@@ -144,14 +144,14 @@
                             }
                             ?>
                         </select>
-                        
+
                 </div>
                 <div class="m-3">
                         <label>Event Name: </label>
                         <input type="text" id="title"  name="title" class="form-control"/>
-                        
+
                 </div>
-               
+
                 <div class="m-3">
                         <label>Short Desc.: </label>
                         <textarea type="text" id="short_desc"  rows="4" name="short_desc" class="form-control">
@@ -161,111 +161,111 @@
                         <label>Details: </label>
                         <textarea type="text" id="details"  rows="6" name="details" class="form-control">
                         </textarea>
-                </div>  
+                </div>
                 <div class="m-3">
                         <label>Min. Members: </label>
-                        <input type="number" id="min_memb"  name="min_memb" value="1" class="form-control"/>  
+                        <input type="number" id="min_memb"  name="min_memb" value="1" class="form-control"/>
                 </div>
                 <div class="m-3">
                         <label>Max. Members: </label>
-                        <input type="number" id="max_memb"  name="max_memb" value="1" class="form-control"/>  
+                        <input type="number" id="max_memb"  name="max_memb" value="1" class="form-control"/>
                 </div>
                 <div class="m-3">
                         <label>Venue: </label>
-                        <input type="text" id="venue"  name="venue" class="form-control"/>  
+                        <input type="text" id="venue"  name="venue" class="form-control"/>
                 </div>
                 <div class="m-3">
                         <label>Reg. Fee: </label>
-                        <input type="number" id="reg_fee"  name="reg_fee"  class="form-control"/>  
+                        <input type="number" id="reg_fee"  name="reg_fee"  class="form-control"/>
                 </div>
                 <div class="m-3">
                         <label>Fee Type: </label>
                         <select  id="fee_type"  name="fee_type"  class="form-control">
                             <option value="head">Per Head</option>
-                        </select>  
+                        </select>
                 </div>
                 <div class="m-3">
                         <label>Prize: </label>
-                        <input type="text" id="prize"  name="prize" class="form-control"/>  
+                        <input type="text" id="prize"  name="prize" class="form-control"/>
                 </div>
                 <div class="m-3">
                         <label>File 1: </label>
-                        <input type="text" id="file1"  name="file1" class="form-control"/>  
+                        <input type="text" id="file1"  name="file1" class="form-control"/>
                 </div>
                 <div class="m-3">
                         <label>File 2: </label>
-                        <input type="text" id="file2"  name="file2" class="form-control"/>  
-                </div>                    
+                        <input type="text" id="file2"  name="file2" class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>File Submission Last Date: </label>
-                        <input type="date" id="file_last_date"  name="file_last_date" class="form-control"/>  
-                </div>                    
+                        <input type="date" id="file_last_date"  name="file_last_date" class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>Coordinator 1 Name: </label>
-                        <input type="text" id="co1_name"  name="co1_name" class="form-control"/>  
-                </div>                             
+                        <input type="text" id="co1_name"  name="co1_name" class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>Coordinator 1 Phone: </label>
-                        <input type="phone" id="co1_no"  name="co1_no" class="form-control"/>  
-                </div>  
+                        <input type="phone" id="co1_no"  name="co1_no" class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>Coordinator 2 Name: </label>
-                        <input type="text" id="co2_name"  name="co2_name" class="form-control"/>  
-                </div>                              
+                        <input type="text" id="co2_name"  name="co2_name" class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>Coordinator 2 Phone: </label>
-                        <input type="phone" id="co2_no"  name="co2_no" class="form-control"/>  
-                </div>                               
+                        <input type="phone" id="co2_no"  name="co2_no" class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>Seats: </label>
-                        <input type="number" id="seats"  name="seats" required class="form-control"/>  
-                </div>                         
+                        <input type="number" id="seats"  name="seats" required class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>Reg. Start: </label>
-                        <input type="text" id="reg_start"  name="reg_start" class="form-control"/>  
-                </div> 
+                        <input type="text" id="reg_start"  name="reg_start" class="form-control"/>
+                </div>
                 <div class="m-3">
                         <label>Reg. End: </label>
-                        <input type="text" id="reg_end"  name="reg_end" class="form-control"/>  
-                </div>   
+                        <input type="text" id="reg_end"  name="reg_end" class="form-control"/>
+                </div>
                     <div class="m-3">
                         <label>User Name: </label>
-                        <input type="text" id="username"  name="username" required class="form-control"/>  
-                </div>  
+                        <input type="text" id="username"  name="username" required class="form-control"/>
+                </div>
                     <div class="m-3">
                         <label>Link: </label>
-                        <input type="text" id="link"  name="link" required class="form-control"/>  
-                </div>  
+                        <input type="text" id="link"  name="link" required class="form-control"/>
+                </div>
                     <div class="m-3">
                         <label>Image: </label>
-                        <input type="file" id="photo"  name="photo" required class="form-control"/>  
-                </div> 
+                        <input type="file" id="photo"  name="photo" required class="form-control"/>
+                </div>
                     <div class="m-3">
-                        <input type="submit" id="btn_submit" name="btn_submit" value="Save" class="btn btn-primary"/>  
-                </div>  
+                        <input type="submit" id="btn_submit" name="btn_submit" value="Save" class="btn btn-primary"/>
+                </div>
                 </div>
                         </form>
-        
+
         </div>
 <!-- end of col-7 -->
-        
+
     </div>
-    
+
 </body>
 
 <script type="text/javascript">
 
              $(function () {
-                 
+
                  $('#reg_start').datetimepicker({
-             footer: true, modal: false 
+             footer: true, modal: false
         });
-        
+
         $('#reg_end').datetimepicker({
-            footer: true, modal: false 
+            footer: true, modal: false
         });
       bkLib.onDomLoaded(nicEditors.allTextAreas);
-                
+
             });
 
         var maxmemb=0;
@@ -274,28 +274,28 @@
         $('.modal-close').click(function(){
             $('#myModal').hide();
         });
-    
 
-    
+
+
             jQuery('.modal-body').on('change','.chk_acm',
-        function(){ 
-          
-    
-           
+        function(){
+
+
+
             checkBoxValidate();
-            
+
         });
-    
+
     function checkBoxValidate(){
-    
+
         var flg=false;
             $('.chk_acm').each(function(i, obj) {
-             
+
                 if($(obj).prop('checked')){
                     flg=true;
-                 
+
                 }
-               
+
                 });
                 if(flg==true){
                     $("#day_1").prop('disabled',false);
@@ -314,7 +314,7 @@
                 }
     }
         function LoadEventMembers(event_id){
-    
+
             $.ajax({
                 type:'post',
                 url:"<?=base_url()?>Spot/ProcessUserRequest/"+event_id,
@@ -333,7 +333,7 @@
 
 
                     var array = JSON.parse(result);
-    
+
                     switch(array[0]){
 
                         case 200:{
@@ -342,7 +342,7 @@
 
                             $('.chk_acommodation').css('display','none');
                             $('#div_acm0').css('display','none');
-    
+
                             $('#div_mail0').addClass('col-md-12').removeClass('col-md-8');
                             $('#team_form_members').html("");
 
@@ -352,13 +352,13 @@
                                 var acc=array[2];
                                 for(var i=1;i<=4;i++){
                                         if(acc.includes(i+"")){
-                                      
+
                                             $("#day_"+i).prop('disabled','true');
                                             $("#day_"+i).prop('checked','true');
                                             $("#day_"+i).removeClass("chk_acm");
                                         }else{
-    
-    
+
+
                                         }
                                 }
                             $('.modal-footer').html("<button type='button' class='btn btn-success' name='team_form_submit' class='team_form_submit' onclick='team_form_sumbit()' >Submit&nbsp;<i class='fas fa-check-circle'></i></button>");
@@ -386,9 +386,9 @@
                             if(rem_members<0){
                                 $("#addmoreMembersBtn").css({
                                     "display": "none"
-    
+
                                 });
-    
+
                             }else{
                                 $("#addmoreMembersBtn").css({
                                     "display": "inline"
@@ -400,16 +400,16 @@
                         }            $('#myModal').hide();
 
                         }
-    
-    
-    
-    
+
+
+
+
                 }
             });
-    
-    
-    
-    
+
+
+
+
         }
 
 
@@ -720,9 +720,9 @@ if(isvalid==true){
                 });
 
         }
-    
-    
+
+
     </script>
-    
-    
+
+
 </html>
