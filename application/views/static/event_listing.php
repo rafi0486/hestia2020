@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menuMain.css">
-	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
+	
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -260,12 +260,12 @@
 
 		<div style="width:100%;">
 			<section>
-				<nav class="links hestia-font desktoponly cl-effect-1" style="background-color:transparent !important;">
+				<nav class="links hestia-font desktoponly" style="background-color:transparent !important;">
 					<a href="<?=base_url()?>events">EVENTS</a>
 					<a href="<?=base_url()?>sponsors">SPONSORS</a>
 					<a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
-					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 					<a href="<?=base_url()?>about">ABOUT</a>
+					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 					<a href="<?= $google_login_url ?>">LOGIN</a>
 					<?php } else{ ?>
 					<a href="<?=base_url()?>myevents">MY EVENTS</a>

@@ -54,7 +54,6 @@ if(isset($_COOKIE['redir']))
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menuMain.css">
-  <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
 
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

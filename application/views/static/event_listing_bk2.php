@@ -16,7 +16,7 @@
     />
     <link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
     <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/event-listing.css" />
-    <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
+    
     <link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/demo.css" />
     <link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/normalize.css" />

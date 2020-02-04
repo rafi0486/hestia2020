@@ -20,7 +20,7 @@
 
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/about/demo2.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/linkStyles.css" />
+	
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
