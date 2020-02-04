@@ -82,6 +82,10 @@
         .overlay__content{
             font-size : 1.25rem;
         }
+        
+        .overlay__content * {
+           font-family: 'Montserrat', sans-serif;
+        }
         </style>
             <style>
       .overlay__item {
