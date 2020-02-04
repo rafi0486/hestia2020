@@ -21,6 +21,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /nbproject/
 .idea/*
 
+.htaccess
 ## Sublime Text cache files
 *.tmlanguage.cache
 *.tmPreferences.cache
@@ -34,4 +35,3 @@ user_guide/
 application/config/production/
 application/config/development/
 third_party/
-
