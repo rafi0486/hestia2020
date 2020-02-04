@@ -280,14 +280,13 @@ if(isset($_COOKIE['redir']))
 				</svg>
 			</button>
 			<ul class="Mobilemenu__inner ">
-				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
-				<li class="menu__item"><a class="menu__link" href="#">SPONSORS</a></li>
-				<li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
-
-				<?php if($this->session->userdata('sess_logged_in')==0){ ?>
-				<li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="#">SPONSORS</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="#">ABOUT</a></li>
+					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
-				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>myevents">MY EVENTS</a></li>
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>myevents">MY EVENTS</a></li>
 				<?php } ?>
 			</ul>
 		</nav>
