@@ -303,7 +303,7 @@
 		</nav>
 
 		<div class="">
-			<div class="grid" style="margin-top: 100px;padding-bottom: 100px">
+			<div class="grid" style="margin-top: 140px;padding-bottom: 100px">
 
                             <?php
             $cntr=-1;
