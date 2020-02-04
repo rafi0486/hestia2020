@@ -172,6 +172,12 @@ class Report_model extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result();
     }
+ 
+    public function get_categorieseventlike($catname){
+        $sql="SELECT a.image_name as cat_img,a.short_title as cat_text from events a,categories b where a.cat_id=b.cat_id and b.cat_name = '".$catname."' limit 5";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
     
     public function get_regmail_by_membmail($email,$eid)
     {
