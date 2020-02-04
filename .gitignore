@@ -35,3 +35,4 @@ user_guide/
 application/config/production/
 application/config/development/
 third_party/
+assets/main/js/home/demo2.js
