@@ -82,7 +82,7 @@
         .overlay__content{
             font-size : 1.25rem;
         }
-        
+
         .overlay__content * {
            font-family: 'Montserrat', sans-serif;
         }
@@ -279,7 +279,7 @@
 
 
 				<div class="mobileonly" style="width: 100%;padding:10px 20px;">
-					<a style="margin-right: 20px;">
+					<a href="<?=base_url()?>" style="margin-right: 20px;">
 						<img style="max-height: 65px;" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
 
 					<i class="material-icons btn--menu" style="cursor:pointer;color:white;font-size: 40px;float:right;margin:15px">
