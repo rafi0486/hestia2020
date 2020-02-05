@@ -191,7 +191,7 @@ if(isset($_COOKIE['redir']))
 			<div class="menu__item">
 				<span class="menu__item-number">01</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">Workshops</span></span>
-				<a class="menu__item-link" href="<?=base_url("events/workshops")?>">Explore</a>
+				<a class="menu__item-link">Explore</a>
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">02</span>
