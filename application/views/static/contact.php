@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0040)http://hestialocal.live/hestia2020/about -->
+
 <html lang="en" class="js csstransitions">
 
 <head>
@@ -145,6 +145,7 @@
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>					
 						<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 					<?php }else { ?>
