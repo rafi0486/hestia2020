@@ -96,6 +96,10 @@
         .overlay__content * {
            font-family: 'Montserrat', sans-serif;
         }
+        .box__text-inner.text-warning{
+                font-size: 1.2rem;
+
+        }
         </style>
             <style>
       .overlay__item {
