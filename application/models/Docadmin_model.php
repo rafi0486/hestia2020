@@ -27,6 +27,7 @@ class DocAdmin_model extends CI_Model {
         $data['seats']=$this->input->post('seats');
         $data['reg_start']=$this->input->post('reg_start');
         $data['reg_end']=$this->input->post('reg_end');
+        $data['syllabus_link']=$this->input->post('syllabus_link');
         $data['username']=$this->input->post('username');
         $configss['allowed_types'] = '*';
         $configss['max_filename'] = '255';
