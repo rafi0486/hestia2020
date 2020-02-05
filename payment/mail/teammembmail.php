@@ -46,7 +46,7 @@ if(isset($_GET['email']))
 }
 else
     exit("modded Mrequest");
-$to = $email; // note the comma
+
 // Subject
 $subject = 'Complete your Profile: Hestia\'20';
 
@@ -398,7 +398,7 @@ Kerala, India</span>
 // To send HTML mail, the Content-type header must be set
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-
+$name="";
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
 $headers[] ='Reply-To: webadmin@hestia.live';
