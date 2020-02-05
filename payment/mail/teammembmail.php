@@ -47,10 +47,9 @@ if(isset($_GET['email']))
 else
     exit("modded Mrequest");
 $to = $email; // note the comma
-
 // Subject
 $subject = 'Complete your Profile: Hestia\'20';
-
+echo $to;
 // Message
 $message = '
 <div style="background:#f3f3f3;margin:0;padding:0">
