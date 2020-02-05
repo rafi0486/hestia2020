@@ -8,38 +8,40 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script type="text/javascript" async="" src="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/analytics.js"></script>
-	<script async="" src="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157830270-1"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
-
-		gtag("config", "UA-157830270-1");
+	  gtag('config', 'UA-157830270-1');
 	</script>
 
-	<title>About Hestia 20 - National Level Techno-Cultural Fest of TKM</title>
-	<meta name="description" content="Hestia 20 - National level Techno Cultural fest organized by TKM College of Engineering. Feb 27- March 1" />
-	<meta name="keywords" content="hestia,hestia20,tkmce,hestiatkm,hestiatkmce,conjura,fest,event,technical,cultural,technocultural" />
-	<link rel="shortcut icon" href="http://hestialocal.live/hestia2020/assets/main/img/hestia-icon.png" />
-	<link rel="stylesheet" type="text/css" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/font-awesome.min.css" />
-	<link href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/css" rel="stylesheet" />
+	<title>About <?=APP_TITLE?></title>
+	<meta
+		name="description"
+		content="<?=APP_META_CONTENT?>"
+	/>
+	<meta
+		name="keywords"
+		content="<?=APP_META_KEYWORDS?>"
+	/>
+	<link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+				<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/demo2.css" />
-	<link rel="stylesheet" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/normalize(1).css" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/about/demo2.css" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/normalize.css" />
 
-	<link rel="stylesheet" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/pater.css" />
-	<link rel="stylesheet" type="text/css" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/common.css" />
-	<link rel="stylesheet" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/revealer.css" />
-	<link rel="stylesheet" type="text/css" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/demo.css" />
-	<link rel="stylesheet" type="text/css" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/style6.css" />
-	<link rel="stylesheet" href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/menuMain.css" />
-	<script src="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/modernizr-custom.js"></script>
-	<link href="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/icon" rel="stylesheet" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/demo.css" />
+	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/style6.css" />
+	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menuMain.css">
+	<script src="<?=  base_url("assets/main/")?>js/sponsor/modernizr-custom.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css" />
 
 	<style>
@@ -111,22 +113,25 @@
 		<div style="position:absolute;top:35px;z-index:100;width:100%;">
 			<section>
 				<nav class="links hestia-font desktoponly" style="background-color:transparent !important;">
-					<a href="http://hestialocal.live/hestia2020/events">EVENTS</a>
-					<a href="http://hestialocal.live/hestia2020/sponsors">SPONSORS</a>
-					<a href="http://hestialocal.live/hestia2020/"><img style="max-height: 75px;position:relative;top:25px" src="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/logo.png" /></a>
-					<a href="http://hestialocal.live/hestia2020/about">ABOUT</a>
-					<a
-					  href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=http%3A%2F%2Fhestialocal.live%2Fhestia2020%2FAuth%2Foauth2callback&amp;client_id=173091640103-aitt7me3m05lt0ov89hsposqi7iaen6f.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;access_type=offline&amp;approval_prompt=auto">LOGIN</a>
-				</nav>
+					<a href="<?=base_url()?>events">EVENTS</a>
+					<a href="<?=base_url()?>sponsors">SPONSORS</a>
+					<a href="<?=base_url()?>"><img style="max-height: 75px;position:relative;top:25px" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
+					<a href="<?=base_url()?>about">ABOUT</a>
+					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
+					<a href="<?= $google_login_url ?>">LOGIN</a>
+					<?php } else{ ?>
+					<a href="<?=base_url()?>myevents">MY EVENTS</a>
+					<?php } ?>
 
-				<div class="mobileonly" style="width: 100%;padding:10px 20px;">
-					<a href="http://hestialocal.live/hestia2020/" style="margin-right: 20px;">
-						<img style="max-height: 65px;" src="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/logo.png" /></a>
+					<div class="mobileonly" style="width: 100%;padding:10px 20px;">
+						<a href="<?=base_url()?>" style="margin-right: 20px;">
+							<img style="max-height: 65px;" src="<?=  base_url("assets/main/")?>img/logo.png" /></a>
 
-					<i class="material-icons btn--menu" style="cursor:pointer;font-size: 40px;float:right;margin:15px">
-						menu
-					</i>
-				</div>
+						<i class="material-icons btn--menu" style="cursor:pointer;font-size: 40px;float:right;margin:15px">
+							menu
+						</i>
+
+					</div>
 			</section>
 		</div>
 		<nav class="Mobilemenu block-revealer">
@@ -137,19 +142,14 @@
 					</svg>
 				</button>
 				<ul class="Mobilemenu__inner">
-					<li class="Mobilemenu__item">
-						<a class="Mobilemenu__link  " href="http://hestialocal.live/hestia2020/events">EVENTS</a>
-					</li>
-					<li class="Mobilemenu__item">
-						<a class="Mobilemenu__link" href="http://hestialocal.live/hestia2020/sponsors">SPONSORS</a>
-					</li>
-					<li class="Mobilemenu__item">
-						<a class="Mobilemenu__link" href="http://hestialocal.live/hestia2020/about">ABOUT</a>
-					</li>
-					<li class="Mobilemenu__item">
-						<a class="Mobilemenu__link"
-						  href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=http%3A%2F%2Fhestialocal.live%2Fhestia2020%2FAuth%2Foauth2callback&amp;client_id=173091640103-aitt7me3m05lt0ov89hsposqi7iaen6f.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;access_type=offline&amp;approval_prompt=auto">LOGIN</a>
-					</li>
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
+						<?php if($this->session->userdata('sess_logged_in')==0){ ?>
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
+					<?php }else { ?>
+						<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>myevents">MY EVENTS</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 			<div class="block-revealer__element"></div>
@@ -250,7 +250,7 @@
 						<div class="col-md-4 col-sm-12" style=" letter-spacing: 2px;">
 							<p style="font-weight: 600; font-size: .75em; text-align: center;">
 								Web-related queries?
-								<a class="text-white" href="mailto:admin@hestia.live">admin@hestia.live</a>
+								<a class="text-white" href="mailto:webadmin@hestia.live">webadmin@hestia.live</a>
 							</p>
 						</div>
 						<div class="col-md-4 col-sm-12"></div>
@@ -261,8 +261,8 @@
 		<!-- /content -->
 	</div>
 	<!-- /container -->
-	<script src="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/anime.min.js"></script>
-	<script src="./workshops _ Hestia 20 - National Level Techno-Cultural Fest of TKM_files/main.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/home/anime.min.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/home/main.js"></script>
 	<script>
 		(function() {
 			var navEl = document.querySelector("nav.Mobilemenu"),
