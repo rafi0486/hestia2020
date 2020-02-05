@@ -331,7 +331,7 @@
               $cntr++;
           ?>
 
-                            <a class="grid__item" href="#preview-<?=$cntr?>">
+                            <a style="z-index:99;" class="grid__item" href="#preview-<?=$cntr?>">
 					<div class="box">
 						<div class="box__shadow"></div>
 						<img class="box__img" src="<?= base_url("assets/uploads/event_images/").$row->image_name ?>" alt="<?=$row->title?>" />
