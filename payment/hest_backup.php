@@ -57,5 +57,5 @@ $return='';
     fclose($handle);
 }
 
-backupDatabaseTables('localhost','iedctkmc_hestiaU','l$_Kj}kK-iScK5)e','iedctkmc_hestiaDB');
+backupDatabaseTables('localhost','root','Thameem@8123','hestia20_DB');
 ?>
