@@ -1,5 +1,6 @@
 <?php
 include './../dbconnect.php';
+require("sendgrid-php/sendgrid-php.php");
 $mails=array();
 
 if(isset($_GET['eid']))
