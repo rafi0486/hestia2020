@@ -6,6 +6,9 @@ class DocAdmin_model extends CI_Model {
         $data['cat_id']=$this->input->post('cat_id');
         $data['title']=$this->input->post('title');
         $data['short_title']=$this->input->post('short_title');
+        if(!$data['short_title']){
+             $data['short_title']=$this->input->post('title');
+        }
         $data['short_desc']=$this->input->post('short_desc');
         $data['details']=$this->input->post('details');
         $data['min_memb']=$this->input->post('min_memb');
