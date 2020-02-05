@@ -18,7 +18,7 @@ else
 $to = $email; // note the comma
 
 // Subject
-$subject = 'Hestia\'19 - Your Certificates are ready';
+$subject = 'Hestia\'20 - Your Certificates are ready';
 
 // Message
 $message = '
@@ -181,7 +181,7 @@ $message = '
 						</span>
 						<br>
 						<span style="font-size:14px">
-							You may now download your participation certificate for the event '.$title.'. <br>Visit \'My Events\' section of Hestia\'19 website to download the certificates of the events you have participated.
+							You may now download your participation certificate for the event '.$title.'. <br>Visit \'My Events\' section of Hestia\'20 website to download the certificates of the events you have participated.
 						</span>
 						<br>
 						<span class="text-danger" style="font-size:13px;color:red">

@@ -29,7 +29,7 @@ else
 $to = $email; // note the comma
 
 // Subject
-$subject = 'Your Details: Hestia\'19';
+$subject = 'Your Details: Hestia\'20';
 
 // Message
 $message = '
