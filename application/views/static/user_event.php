@@ -121,7 +121,7 @@
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 					<a href="<?= $google_login_url ?>">LOGIN</a>
 					<?php } else{ ?>
-					<a href="<?=base_url()?>myevents">MY EVENTS</a>
+					<a href="<?=base_url()?>Auth/logout">LOGOUT</a>
 					<?php } ?>
 				</nav>
 
@@ -150,7 +150,7 @@
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
-					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>myevents">MY EVENTS</a></li>
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>Auth/logout">LOGOUT</a></li>
 				<?php } ?>
 			</ul>
 		</nav>
