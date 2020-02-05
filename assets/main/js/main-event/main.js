@@ -415,6 +415,10 @@
             });
         }
         showContent(pos) {
+
+            if(pos==0){
+              return
+            }
             if ( this.isAnimating || this.grids[this.current].DOM.el.classList.contains('grid--open') ) return;
 			this.isAnimating = true;
 			// Disable the mousemove functionality.
