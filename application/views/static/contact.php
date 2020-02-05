@@ -145,7 +145,7 @@
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
-					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>					
+					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>
 						<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 					<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 					<?php }else { ?>
@@ -180,7 +180,7 @@
 							</p>
 							<p class="text-center" style=" letter-spacing: 1px;  text-align: center; ">
 								Marketing Head<br />
-								HESTIA'19<br />
+								 HESTIA'20<br />
 								<a class="text-white" href="tel:+919947490833">+919947490833</a><br />
 								<a class="text-white" href="mailto:yaseenyusuf2@gmail.com">yaseenyusuf2@gmail.com</a><br />
 							</p>
@@ -216,7 +216,7 @@
 							</p>
 							<p class="text-center" style=" letter-spacing: 1px;  text-align: center; ">
 								Technical Head<br />
-								Hestia'19<br />
+								 HESTIA'20<br />
 								<a class="text-white" href="tel:+919072860030">+919072860030</a><br />
 								<a class="text-white" href="mailto:amosmaliakal@gmail.com">amosmaliakal@gmail.com</a><br />
 							</p>
@@ -227,7 +227,7 @@
 							</p>
 							<p class="text-center" style=" letter-spacing: 1px;  text-align: center; ">
 								Cultural Head<br />
-								Hestia'19<br />
+								 HESTIA'20<br />
 								<a class="text-white" href="tel:+918891231850">+918891231850</a><br />
 								<a class="text-white" href="mailto:rohithcnss@gmail.com">rohithcnss@gmail.com</a><br />
 							</p>
