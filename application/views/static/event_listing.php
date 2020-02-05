@@ -125,12 +125,12 @@
           margin-top: 5vh !important;
         }
       }
-			 .show-button{
+			/* .show-button{
 					 display: block;
 			 }
 			 .box__text-inner{
 					 display: none;
-			 }
+			 } */
     </style>
 	<script>
 		document.documentElement.className = "js";
@@ -320,7 +320,7 @@
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>
-				
+
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
