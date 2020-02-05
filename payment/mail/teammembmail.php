@@ -2,6 +2,8 @@
 <?php
 // Multiple recipients
 include './../dbconnect.php';
+require("sendgrid-php/sendgrid-php.php");
+$email="";
 if(isset($_GET['email']))
 {
     $email=$_GET['email'];
