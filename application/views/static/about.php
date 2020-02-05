@@ -238,7 +238,7 @@
 								 style=" letter-spacing: 1px;  text-align: center; "
 							 >
 								 Marketing Head<br />
-								 HESTIA'19<br />
+								  HESTIA'20<br />
 								 <a class="text-white" href="tel:+919947490833"
 									 >+919947490833</a
 								 ><br />
@@ -304,7 +304,7 @@
 								 style=" letter-spacing: 1px;  text-align: center; "
 							 >
 								 Technical Head<br />
-								 Hestia'19<br />
+								  HESTIA'20<br />
 								 <a class="text-white" href="tel:+919072860030"
 									 >+919072860030</a
 								 ><br />
@@ -325,7 +325,7 @@
 								 style=" letter-spacing: 1px;  text-align: center; "
 							 >
 								 Cultural Head<br />
-								 Hestia'19<br />
+								  HESTIA'20<br />
 								 <a class="text-white" href="tel:+918891231850"
 									 >+918891231850</a
 								 ><br />
