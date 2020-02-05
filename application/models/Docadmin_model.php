@@ -6,6 +6,9 @@ class DocAdmin_model extends CI_Model {
         $data['cat_id']=$this->input->post('cat_id');
         $data['title']=$this->input->post('title');
         $data['short_title']=$this->input->post('short_title');
+        if(!$data['short_title']){
+             $data['short_title']=$this->input->post('title');
+        }
         $data['short_desc']=$this->input->post('short_desc');
         $data['details']=$this->input->post('details');
         $data['min_memb']=$this->input->post('min_memb');
@@ -24,6 +27,7 @@ class DocAdmin_model extends CI_Model {
         $data['seats']=$this->input->post('seats');
         $data['reg_start']=$this->input->post('reg_start');
         $data['reg_end']=$this->input->post('reg_end');
+        $data['syllabus_link']=$this->input->post('syllabus_link');
         $data['username']=$this->input->post('username');
         $configss['allowed_types'] = '*';
         $configss['max_filename'] = '255';
