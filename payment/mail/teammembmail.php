@@ -49,7 +49,7 @@ else
 $to = $email; // note the comma
 // Subject
 $subject = 'Complete your Profile: Hestia\'20';
-echo $to;
+
 // Message
 $message = '
 <div style="background:#f3f3f3;margin:0;padding:0">
@@ -403,7 +403,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 //$headers[] = 'To:  <'.$email.'>';
 $headers[] ='Reply-To: webadmin@hestia.live';
 
-
+echo $email.".".$name;
 $from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20 Registrations");
 $subject = new \SendGrid\Mail\Subject($subject);
 $to = new \SendGrid\Mail\To($email, $name);
