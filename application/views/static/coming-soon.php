@@ -5,6 +5,16 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157830270-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-157830270-1');
+</script>
+
 	<title>About <?=APP_TITLE?></title>
 	<meta
 		name="description"
@@ -20,7 +30,7 @@
 
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/about/demo2.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/normalize.css" />
-	
+
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
@@ -84,7 +94,7 @@
 				<li class="menu__item"><a class="menu__link" href="<?=base_url()?>events">EVENTS</a></li>
 				<li class="menu__item"><a class="menu__link" href="#">SPONSORS</a></li>
 				<li class="menu__item"><a class="menu__link" href="#">ABOUT</a></li>
-				
+
 				<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="menu__item"><a class="menu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
