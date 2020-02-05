@@ -2,6 +2,8 @@
 <?php
 // Multiple recipients
 include './../dbconnect.php';
+require("sendgrid-php/sendgrid-php.php");
+$email="";
 if(isset($_GET['email']))
 {
     $email=$_GET['email'];
@@ -46,7 +48,8 @@ if(isset($_GET['email']))
 }
 else
     exit("modded Mrequest");
-$to = $email; // note the comma
+$to_mail = $email; // note the comma
+
 // Subject
 $subject = 'Complete your Profile: Hestia\'20';
 
@@ -394,19 +397,22 @@ Kerala, India</span>
 
 ';
 
-
 // To send HTML mail, the Content-type header must be set
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
+$headers[] = 'From: Hestia20 Registrations <noreply@hestia.live>';
 $headers[] ='Reply-To: webadmin@hestia.live';
 
-echo $email.".".$name;
+// Mail it
+//mail($to_mail, $subject, $message, implode("\r\n", $headers));
+
+
 $from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20 Registrations");
 $subject = new \SendGrid\Mail\Subject($subject);
-$to = new \SendGrid\Mail\To($email, $name);
+$to = new \SendGrid\Mail\To($to_mail, "User");
 
 $htmlContent = new \SendGrid\Mail\HtmlContent($message);
 $email = new \SendGrid\Mail\Mail(
@@ -438,6 +444,5 @@ try {
 } catch (Exception $e) {
     echo 'Caught exception: '.  $e->getMessage(). "\n";
 }
-
 
 ?>

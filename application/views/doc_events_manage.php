@@ -153,7 +153,7 @@
                 </div>
   <div class="m-3">
                         <label>Short Name: </label>
-                        <input type="text" id="title"  name="short_title" class="form-control"/>
+                        <input type="text" id="short_title"  name="short_title" class="form-control"/>
 
                 </div>
                 <div class="m-3">
