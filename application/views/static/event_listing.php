@@ -483,7 +483,7 @@
         ?>
 
 			<button class="overlay__close" style="z-index:99">
-				<svg class="icon icon--cross">
+				<svg style="color:black;"class="icon icon--cross">
 					<use xlink:href="#icon-cross"></use>
 				</svg>
 			</button>
