@@ -5,7 +5,7 @@ include './../dbconnect.php';
 if(isset($_GET['email']))
 {
     $email=$_GET['email'];
-    
+
       $sql = 'SELECT event_id,reg_email from registration where member_email='."'".$email."'"." LIMIT 1";
          $result = mysqli_query($conn, $sql);
 
@@ -17,7 +17,7 @@ if(isset($_GET['email']))
          } else {
             exit("invalid Mrequest");
          }
-    
+
    // $qrurl="boo";
    // $name="Muhammed Shahr";
    // $phone="1122333";
@@ -31,7 +31,7 @@ if(isset($_GET['email']))
          } else {
             exit("invalid Mrequest2");
          }
-         
+
     $sql = 'SELECT fullname from users where email='."'".$reg_email."'";
          $result = mysqli_query($conn, $sql);
 
@@ -49,7 +49,7 @@ else
 $to = $email; // note the comma
 
 // Subject
-$subject = 'Complete your Profile: Hestia\'19';
+$subject = 'Complete your Profile: Hestia\'20';
 
 // Message
 $message = '
@@ -153,7 +153,7 @@ $message = '
 										<p style="display:block;margin:13px 0">
 											<span>
 												<strong>
-													<span style="font-size:16px;text-transform:uppercase">COMPLETE YOUR PROFILE - HESTIA 19</span>
+													<span style="font-size:16px;text-transform:uppercase">COMPLETE YOUR PROFILE - HESTIA 20</span>
 												</strong>
 											</span>
 										</p>
@@ -334,7 +334,7 @@ Kerala, India</span>
 													<a style="color:#1155cc">'.$email.'</a>
 												</span>
 												<br>
-												<span>Copyright @ 2020 Hestia 19
+												<span>Copyright @ 2020 Hestia 20
 												</span>
 											</p>
 										</div>
@@ -402,7 +402,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
 $headers[] = 'From: Hestia20 Registrations <noreply@hestia.live>';
-$headers[] ='Reply-To: admin@hestia.live';
+$headers[] ='Reply-To: webadmin@hestia.live';
 
 // Mail it
 mail($to, $subject, $message, implode("\r\n", $headers));

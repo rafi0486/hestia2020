@@ -11,7 +11,7 @@ include './../dbconnect.php';
 if(isset($_GET['email']))
 {
     $email=$_GET['email'];
-    
+
       $sql = 'SELECT phone,hashcode,fullname FROM users where email='."'".$email."'";
          $result = mysqli_query($conn, $sql);
 
@@ -24,7 +24,7 @@ if(isset($_GET['email']))
          } else {
             exit("invalid Mrequest");
          }
-    
+
    // $qrurl="boo";
    // $name="Muhammed Shahr";
    // $phone="1122333";
@@ -35,7 +35,7 @@ else
 $to = $email; // note the comma
 
 // Subject
-$subject = 'Your Details: Hestia\'19';
+$subject = 'Your Details: Hestia\'20';
 
 // Message
 $message = '
@@ -139,7 +139,7 @@ $message = '
 										<p style="display:block;margin:13px 0">
 											<span>
 												<strong>
-													<span style="font-size:16px;text-transform:uppercase">WELCOME TO HESTIA 19</span>
+													<span style="font-size:16px;text-transform:uppercase">WELCOME TO HESTIA 20</span>
 												</strong>
 											</span>
 										</p>
@@ -374,7 +374,7 @@ Kerala, India</span>
 							<br>
 							<span style="font-size:12px">
 
-							Head over to <a href="https://www.hestia.live">Hestia 19 website</a> to browse and register for events.							</span>
+							Head over to <a href="https://www.hestia.live">Hestia 20 website</a> to browse and register for events.							</span>
 
 																											</label>
 
@@ -478,7 +478,7 @@ Kerala, India</span>
 						</div>
 					</td>
 				</tr>
-				
+
 			</tbody>
 		</table>
 	</div>
@@ -512,7 +512,7 @@ Kerala, India</span>
 													<a style="color:#1155cc">'.$email.'</a>
 												</span>
 												<br>
-												<span>Copyright @ 2019 Hestia 19
+												<span>Copyright @ 2019 Hestia 20
 												</span>
 											</p>
 										</div>
@@ -579,7 +579,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] ='Reply-To: admin@hestia.live';
+$headers[] ='Reply-To: webadmin@hestia.live';
 
 
 $from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20 Registrations");
@@ -599,14 +599,14 @@ $email = new \SendGrid\Mail\Mail(
 
 $email->setReplyTo(
     new \SendGrid\Mail\ReplyTo(
-        "admin@hestia.live",
+        "webadmin@hestia.live",
         "Hestia Web Admin"
     )
 );
-$sendgrid = new \SendGrid('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');
+$sendgrid = new \SendGrid('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');
 //$email->addHeader("X-Test1", "Test1");
 $email->addHeader("X-Mailer", "hestia.live");
-// "X-Accept-Language": "en", 
+// "X-Accept-Language": "en",
        // "X-Mailer": "MyApp"
 try {
     $response = $sendgrid->send($email);

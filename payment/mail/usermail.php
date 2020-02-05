@@ -574,7 +574,7 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
 $headers[] = 'From: Hestia20 Registrations <noreply@hestia.live>';
-$headers[] ='Reply-To: admin@hestia.live';
+$headers[] ='Reply-To: webadmin@hestia.live';
 
 // Mail it
 mail($to, $subject, $message, implode("\r\n", $headers));
