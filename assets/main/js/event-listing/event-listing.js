@@ -198,8 +198,6 @@
         }
         revealItem() {
             this.contentItem.style.opacity = 1;
-                        this.contentItem.style.zIndex = 99;
-
 
             let itemElems = [];
             itemElems.push(this.contentItem.querySelector('.box__shadow'));
@@ -241,7 +239,6 @@
                     document.body.classList.remove('preview-open');
                     // hide preview
                     this.contentItem.style.opacity = 0;
-                    this.contentItem.style.zIndex = 0;
                     // hide revealer
                     TweenMax.to(this.DOM.reveal, .5, {
                         delay: 0,
@@ -277,6 +274,9 @@
             allowTilt = false;
             this.overlay.show(contentItem);
             // "explode" grid..
+            document.querySelectorAll('.box__text-inner').forEach(el => {
+                el.classList.add('show-button');
+            });
             for (let item of this.items) {
                 for (let key in item.DOM.animatable) {
                     const el = item.DOM.animatable[key];
@@ -321,7 +321,9 @@
             if ( !this.isPreviewOpen ) return;
             this.isPreviewOpen = false;
             this.overlay.hide();
-
+            document.querySelectorAll('.box__text-inner').forEach(el => {
+                el.classList.remove('show-button');
+            });
             for (let item of this.items) {
                 for (let key in item.DOM.animatable) {
                     const el = item.DOM.animatable[key];

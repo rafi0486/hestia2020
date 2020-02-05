@@ -125,6 +125,12 @@
           margin-top: 5vh !important;
         }
       }
+			 .show-button{
+					 display: block;
+			 }
+			 .box__text-inner{
+					 display: none;
+			 }
     </style>
 	<script>
 		document.documentElement.className = "js";
