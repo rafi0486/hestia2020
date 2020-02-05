@@ -175,6 +175,13 @@ class Appapi_Model extends CI_Model {
         return json_encode($query->result_array());
     }
 
+    public function get_event_details_by_cat(){
+        $id=$this->security->xss_clean($this->input->post('id'));
+        $this->db->select('event_id, title, prize,venue,image_name');
+        $this->db->where('cat_id', $id );
+        $query = $this->db->get('events');
+        return json_encode($query->result_array());
+    }
 
     public function set_file_urls($mem_email,$f1,$evid,$f2 = NULL)
     {
