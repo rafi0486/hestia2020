@@ -395,15 +395,50 @@ Kerala, India</span>
 
 ';
 
+
 // To send HTML mail, the Content-type header must be set
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] = 'From: Hestia20 Registrations <noreply@hestia.live>';
 $headers[] ='Reply-To: webadmin@hestia.live';
 
-// Mail it
-mail($to, $subject, $message, implode("\r\n", $headers));
+
+$from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20 Registrations");
+$subject = new \SendGrid\Mail\Subject($subject);
+$to = new \SendGrid\Mail\To($email, $name);
+
+$htmlContent = new \SendGrid\Mail\HtmlContent($message);
+$email = new \SendGrid\Mail\Mail(
+    $from,
+    $to,
+    $subject,
+    $htmlContent
+);
+//$email->addHeaders($headers);
+//$email->addHeader("MIME-Version", "1.0");
+//$email->addHeader("Content-type", "text/html; charset=iso-8859-1");
+
+$email->setReplyTo(
+    new \SendGrid\Mail\ReplyTo(
+        "webadmin@hestia.live",
+        "Hestia Web Admin"
+    )
+);
+$sendgrid = new \SendGrid('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');
+//$email->addHeader("X-Test1", "Test1");
+$email->addHeader("X-Mailer", "hestia.live");
+// "X-Accept-Language": "en",
+       // "X-Mailer": "MyApp"
+try {
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "\n";
+    print_r($response->headers());
+    print $response->body() . "\n";
+} catch (Exception $e) {
+    echo 'Caught exception: '.  $e->getMessage(). "\n";
+}
+
+
 ?>
