@@ -236,11 +236,12 @@
                         <label>User Name: </label>
                         <input type="text" id="username"  name="username" required class="form-control"/>
                 </div>
-                </div>
                     <div class="m-3">
                         <label>Syllabus: </label>
                         <input type="text" id="syllabus_link"  name="syllabus_link" required class="form-control"/>
+                    </div>
                 </div>
+                    
                     <div class="m-3">
                         <label>Link: </label>
                         <input type="text" id="link"  name="link" required class="form-control"/>
