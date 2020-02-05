@@ -4,7 +4,7 @@ include './../dbconnect.php';
 if(isset($_GET['email']))
 {
     $email=$_GET['email'];
-    
+
       $sql = 'SELECT phone,hashcode,fullname FROM users where email='."'".$email."'";
          $result = mysqli_query($conn, $sql);
 
@@ -17,7 +17,7 @@ if(isset($_GET['email']))
          } else {
             exit("invalid Mrequest");
          }
-    
+
    // $qrurl="boo";
    // $name="Muhammed Shahr";
    // $phone="1122333";
@@ -471,7 +471,7 @@ Kerala, India</span>
 						</div>
 					</td>
 				</tr>
-				
+
 			</tbody>
 		</table>
 	</div>

@@ -387,7 +387,7 @@
             <div class="box__shadow"></div>
             <img
               class="box__img box__img--original"
-              src="<?= base_url("assets/uploads/event_images/").$row->image_name ?>"
+              src="<?= base_url("assets/uploads/event_images/").$event->image_name ?>"
               alt="<?=$event->title?>"
             />
             <h3 class="box__title">
