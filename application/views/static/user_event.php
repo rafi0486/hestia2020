@@ -185,7 +185,7 @@
                        <h3 class="event-name-text text-light" onclick=<?php echo "'location.href =\"".base_url().'events/'.$row['link']."\"'"; ?> style="letter-spacing: 3px;color:white;text-align: left; cursor:pointer;"><?=$row['title']?></h3>
                        <p class="event-desc"><?php
                    if(strlen($row['venue'])!=0)
-                   {echo 'Venue: '.$row['venue'].'<br/>jdhfhsdgfhjg sdh gfhsjdgf hsdgfhj sd';}
+                   {echo 'Venue: '.$row['venue'].'<br/>';}
                    else
                    {
                     echo 'Check back later for more event details..';
