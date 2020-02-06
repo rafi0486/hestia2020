@@ -15,7 +15,7 @@
   gtag('config', 'UA-157830270-1');
 </script>
 
-	<title>About <?=APP_TITLE?></title>
+	<title>Sponsors | <?=APP_TITLE?></title>
 	<meta
 		name="description"
 		content="<?=APP_META_CONTENT?>"
@@ -127,7 +127,7 @@
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>
-				
+
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
@@ -142,16 +142,18 @@
 
       <div class="grid grid-1">
 
-        <div class="grid__item" data-size="1280x961">
-          <!-- <a href="img/sponsor/original/7.jpg" class="img-wrap"><img src="img/sponsor/thumbs/7.jpg" alt="img04" />
+        <!-- <div class="grid__item" data-size="1280x961">
+          <a href="https://i.imgur.com/KJPLh5L.png" class="img-wrap"><img src="https://i.imgur.com/KJPLh5L.png" alt="img04" />
             <div class="description description--grid">
               Google
               <span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
             </div>
-          </a> -->
-        </div>
+          </a>
+        </div> -->
+
 
       </div>
+
 
 
 			<!-- /preview -->

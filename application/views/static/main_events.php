@@ -58,6 +58,9 @@ if(isset($_COOKIE['redir']))
 		name="keywords"
 		content="<?=APP_META_KEYWORDS?>"
 	/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="<?=base_url("assets/main/")?>js/Loader.js"></script>
+  <link rel="stylesheet" href="<?=base_url("assets/main/")?>css/Loader.css"/>
 	<link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/EventsMain.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
@@ -126,7 +129,10 @@ if(isset($_COOKIE['redir']))
 	</style>
 </head>
 
-<body class="loading">
+<body>
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
 	<svg class="hidden">
 		<symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>
@@ -303,7 +309,7 @@ if(isset($_COOKIE['redir']))
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
         <li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>
-        
+
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>

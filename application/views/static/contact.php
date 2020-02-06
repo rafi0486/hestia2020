@@ -26,6 +26,9 @@
 		name="keywords"
 		content="<?=APP_META_KEYWORDS?>"
 	/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="<?=base_url("assets/main/")?>js/Loader.js"></script>
+  <link rel="stylesheet" href="<?=base_url("assets/main/")?>css/Loader.css"/>
 	<link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
@@ -61,6 +64,9 @@
 </head>
 
 <body class="demo-6" style="font-family: &#39;Montserrat&#39;, sans-serif;" data-gr-c-s-loaded="true">
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
 	<svg class="hidden">
 		<symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>
