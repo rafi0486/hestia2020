@@ -5,7 +5,7 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color: #fff;
+background-color: #101010;
 width: 100%;
 /* change if the mask should have another color then white */
 z-index: 1000000000;
@@ -20,7 +20,7 @@ left: 50%;
 /* centers the loading animation horizontally one the screen */
 top: 50%;
 /* centers the loading animation vertically one the screen */
-background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+background-image: url(loader.gif);
 /* path to your loading animation */
 background-repeat: no-repeat;
 background-position: center;
