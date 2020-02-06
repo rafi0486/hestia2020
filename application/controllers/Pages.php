@@ -41,7 +41,7 @@ class Pages extends CI_Controller {
     }
     function Test($cat){
         $cat_name=$this->security->xss_clean($cat);
-        $data['title']=$cat_name;
+        $data['title']=ucfirst($cat_name);
         $data['google_login_url']=$this->google->loginURL();
         //$data['title']=$this->report_model->get_events_detail($cat_name);
         $data['events']=$this->report_model->get_events_detail($cat_name);
@@ -49,7 +49,7 @@ class Pages extends CI_Controller {
     }
     function Event($cat){
         $cat_name=$this->security->xss_clean($cat);
-        $data['title']=$cat_name;
+        $data['title']=ucfirst($cat_name);
         $data['google_login_url']=$this->google->loginURL();
         //$data['title']=$this->report_model->get_events_detail($cat_name);
         $data['events']=$this->report_model->get_events_detail($cat_name);

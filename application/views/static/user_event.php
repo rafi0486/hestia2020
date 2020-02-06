@@ -24,6 +24,9 @@
 		name="keywords"
 		content="<?=APP_META_KEYWORDS?>"
 	/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="<?=base_url("assets/main/")?>js/Loader.js"></script>
+  <link rel="stylesheet" href="<?=base_url("assets/main/")?>css/Loader.css"/>
 	<link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
@@ -64,6 +67,9 @@
 </head>
 
 <body class="demo-6" style="min-height: 100vh;overflow-y: auto;">
+	<div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
 	<svg class="hidden">
 		<symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>
@@ -147,6 +153,8 @@
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>
+
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>

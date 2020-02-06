@@ -24,6 +24,9 @@
 		name="keywords"
 		content="<?=APP_META_KEYWORDS?>"
 	/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="<?=base_url("assets/main/")?>js/Loader.js"></script>
+  <link rel="stylesheet" href="<?=base_url("assets/main/")?>css/Loader.css"/>
 	<link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/sponsor/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
@@ -40,10 +43,30 @@
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/menuMain.css">
 	<script src="<?=  base_url("assets/main/")?>js/sponsor/modernizr-custom.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link
+		 rel="stylesheet"
+		 href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css"
+	 />
+	 <style>
+		 .person {
+			 font-size: 0.85rem;
+		 }
+
+		 .name {
+			 font-size: 1.3rem !important;
+		 }
+
+		 .bootstrap-wrapper a {
+			 color: #75a6dc !important;
+		 }
+	 </style>
 
 </head>
 
 <body class="demo-6" style="font-family: 'Montserrat', sans-serif;">
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
 	<svg class="hidden">
 		<symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>
@@ -127,6 +150,8 @@
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>
+
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
@@ -180,6 +205,196 @@
 			</p>
 
 			<!-- /preview -->
+			<div class="sponsor-heading desktoponly" style="margin-top: 70px;">
+				 CONTACT US
+			 </div>
+			 <div class="bootstrap-wrapper desktoponly">
+				 <div class="text-white">
+					 <div class="row mb-4 pt-4">
+						 <div class="col-md-4 col-sm-12 person">
+							 <p
+								 class="name"
+								 style="font-weight: 500; letter-spacing: 1px; font-size: 1.2em; text-align: center; "
+							 >
+								 JOEL JOHN
+							 </p>
+							 <p
+								 class="text-center"
+								 style=" letter-spacing: 1px;  text-align: center; "
+							 >
+								 Arts Club Secretary<br />
+								 College Union<br />
+								 <a class="text-white" href="tel:+919745577594"
+									 >+919745577594</a
+								 ><br />
+								 <a class="text-white" href="mailto:joeljosephjohn@gmail.com"
+									 >joeljosephjohn@gmail.com</a
+								 ><br />
+							 </p>
+						 </div>
+						 <div class="col-md-4 col-sm-12 person">
+							 <p
+								 class="name"
+								 style="font-weight: 500; letter-spacing: 1px; font-size: 1.2em; text-align: center; "
+							 >
+								 MUHAMMED YASEEN
+							 </p>
+							 <p
+								 class="text-center"
+								 style=" letter-spacing: 1px;  text-align: center; "
+							 >
+								 Marketing Head<br />
+								  HESTIA'20<br />
+								 <a class="text-white" href="tel:+919947490833"
+									 >+919947490833</a
+								 ><br />
+								 <a class="text-white" href="mailto:yaseenyusuf2@gmail.com"
+									 >yaseenyusuf2@gmail.com</a
+								 ><br />
+							 </p>
+						 </div>
+						 <div class="col-md-4 col-sm-12 person">
+							 <p
+								 class="name"
+								 style="font-weight: 500; letter-spacing: 1px; font-size: 1.2em; text-align: center; "
+							 >
+								 AZAD RAHUL
+							 </p>
+							 <p
+								 class="text-center"
+								 style=" letter-spacing: 1px;  text-align: center; "
+							 >
+								 General Secretary<br />
+								 College Union<br />
+								 <a class="text-white" href="tel:+918592032761"
+									 >+918592032761</a
+								 ><br />
+								 <a class="text-white" href="mailto:azadrahulp@gmail.com"
+									 >azadrahulp@gmail.com</a
+								 ><br />
+							 </p>
+						 </div>
+					 </div>
+
+					 <div class="row ">
+						 <div class="col-md-4 col-sm-12 person">
+							 <p
+								 class="name"
+								 style="font-weight: 500; letter-spacing: 1px; font-size: 1.2em; text-align: center; "
+							 >
+								 AJMAL N
+							 </p>
+							 <p
+								 class="text-center"
+								 style=" letter-spacing: 1px;  text-align: center; "
+							 >
+								 Chairman<br />
+								 College Union<br />
+								 <a class="text-white" href="tel:+919207534855"
+									 >+919207534855</a
+								 ><br />
+								 <a class="text-white" href="mailto:ajmalnattingal@gmail.com"
+									 >ajmalnattingal@gmail.com</a
+								 ><br />
+							 </p>
+						 </div>
+						 <div class="col-md-4 col-sm-12 person">
+							 <p
+								 class="name"
+								 style="font-weight: 500; letter-spacing: 1px; font-size: 1.2em; text-align: center; "
+							 >
+								 AMOS MALIAKAL
+							 </p>
+							 <p
+								 class="text-center"
+								 style=" letter-spacing: 1px;  text-align: center; "
+							 >
+								 Technical Head<br />
+								  HESTIA'20<br />
+								 <a class="text-white" href="tel:+919072860030"
+									 >+919072860030</a
+								 ><br />
+								 <a class="text-white" href="mailto:amosmaliakal@gmail.com"
+									 >amosmaliakal@gmail.com</a
+								 ><br />
+							 </p>
+						 </div>
+						 <div class="col-md-4 col-sm-12 person">
+							 <p
+								 class="name"
+								 style="font-weight: 500; letter-spacing: 1px; font-size: 1.2em; text-align: center; "
+							 >
+								 ROHITH P
+							 </p>
+							 <p
+								 class="text-center"
+								 style=" letter-spacing: 1px;  text-align: center; "
+							 >
+								 Cultural Head<br />
+								  HESTIA'20<br />
+								 <a class="text-white" href="tel:+918891231850"
+									 >+918891231850</a
+								 ><br />
+								 <a class="text-white" href="mailto:rohithcnss@gmail.com"
+									 >rohithcnss@gmail.com</a
+								 ><br />
+							 </p>
+						 </div>
+					 </div>
+
+					 <div class="row mb-4 pt-2">
+						 <div class="col-md-4 col-sm-12"></div>
+						 <div
+							 class="col-md-4 col-sm-12"
+							 style=" letter-spacing: 2px; padding-top:5%;"
+						 >
+							 <p style="font-size: 2rem; text-align: center;">
+								 <a href="https://facebook.com/hestiatkmce/" target="_blank"
+									 ><i
+										 class="pr-2 text-white fa fa-facebook-f"
+										 aria-hidden="true"
+									 ></i
+								 ></a>
+								 <a href="https://instagram.com/hestia.20" target="_blank"
+									 ><i
+										 class="text-white fa fa-instagram"
+										 style="padding-left:7px;"
+									 ></i
+								 ></a>
+								 <a href="mailto:info@hestia.live" target="_blank"
+									 ><i
+										 style="padding-left:10px;"
+										 class=" text-white fa fa-envelope"
+									 ></i
+								 ></a>
+								 <a
+									 href="https://www.youtube.com/channel/UC1S22VbH648c6TT4jJe6sgQ"
+									 target="_blank"
+									 ><i
+										 style="padding-left:10px;"
+										 class=" text-white fa fa-youtube"
+									 ></i
+								 ></a>
+							 </p>
+						 </div>
+						 <div class="col-md-4 col-sm-12"></div>
+					 </div>
+					 <div class="row">
+						 <div class="col-md-4 col-sm-12"></div>
+						 <div class="col-md-4 col-sm-12" style=" letter-spacing: 2px;">
+							 <p
+								 style="font-weight: 600; font-size: .75em; text-align: center;"
+							 >
+								 Web-related queries?
+								 <a class="text-white" href="mailto:webadmin@hestia.live"
+									 >webadmin@hestia.live</a
+								 >
+							 </p>
+						 </div>
+						 <div class="col-md-4 col-sm-12"></div>
+					 </div>
+				 </div>
+			 </div>
 		</div>
 		<!-- /content -->
 	</div>

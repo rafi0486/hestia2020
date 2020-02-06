@@ -125,6 +125,12 @@
           margin-top: 5vh !important;
         }
       }
+			/* .show-button{
+					 display: block;
+			 }
+			 .box__text-inner{
+					 display: none;
+			 } */
     </style>
 	<script>
 		document.documentElement.className = "js";
@@ -150,7 +156,10 @@
 	</script>
 </head>
 
-<body class="loading"  style="font-family: 'Montserrat', sans-serif;">
+<body style="font-family: 'Montserrat', sans-serif;">
+	<!-- <div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div> -->
 	<svg class="hidden">
 		<symbol id="icon-arrow" viewBox="0 0 24 24">
 			<title>arrow</title>
@@ -313,6 +322,8 @@
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link  " href="<?=base_url()?>events">EVENTS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link"  href="<?=base_url()?>sponsors">SPONSORS</a></li>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>about">ABOUT</a></li>
+				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?=base_url()?>contact">CONTACT</a></li>
+
 					<?php if($this->session->userdata('sess_logged_in')==0){ ?>
 				<li class="Mobilemenu__item"><a class="Mobilemenu__link" href="<?= $google_login_url ?>">LOGIN</a></li>
 				<?php }else { ?>
