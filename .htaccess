@@ -6,3 +6,4 @@ RewriteRule ^(.*)$ ./index.php?/$1 [L]
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule (.*) https://www.hestia.live%{REQUEST_URI} [R=301,L]
+
