@@ -17,7 +17,7 @@
 	  gtag('config', 'UA-157830270-1');
 	</script>
 
-	<title>About <?=APP_TITLE?></title>
+	<title>Contact <?=APP_TITLE?></title>
 	<meta
 		name="description"
 		content="<?=APP_META_CONTENT?>"
