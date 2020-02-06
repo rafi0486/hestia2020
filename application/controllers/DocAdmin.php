@@ -36,6 +36,17 @@ class DocAdmin extends CI_Controller {
 
         $this->load->view('doc_events_manage',$data);
     }
+    public function edit($eid)
+    {
+        if(!$eid){
+            return;
+        }
+        $data['edetails']=$this->report_model->get_eventsbyId($eid);
+        $data['categories']=$this->report_model->get_categories();
+        $data['allevents']=$this->report_model->get_events(NULL);
+
+        $this->load->view('doc_events_edit',$data);
+    }
     
     public function SaveEvent(){
         if($this->docadmin_model->saveEvent()){
@@ -43,15 +54,12 @@ class DocAdmin extends CI_Controller {
         }
     }
 
+  public function UpdateEvent(){
+        if($this->docadmin_model->updateEvent()){
+            redirect("DocAdmin/home");
+        }
+    }
 
-    
-    
-    
-    
-    
-    
-    
-    
     public function event_current_status_get($eid){
 
         echo $this->report_model->GetEventCurrentStatus_Spot($eid);

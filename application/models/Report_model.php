@@ -47,6 +47,15 @@ class Report_model extends CI_Model {
         $query = $this->db->get ();
         return $query->result();
     }
+    public function get_eventsbyId($id){
+        $this->db->select ( '*' );
+        $this->db->from ( 'events' );
+        if( $id != NULL ){
+            $this->db->where ( 'event_id',$id);
+        }
+        $query = $this->db->get ();
+        return $query->row();
+    }
     public function get_events_detail($id){
         $this->db->select ( '*' );
         $this->db->from ( 'events' );
