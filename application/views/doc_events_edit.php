@@ -24,7 +24,7 @@
 </head>
 <style>
     body{
-        overflow: hidden;
+       // overflow: hidden;
     }
     .custom-button{
         width: 50%;
@@ -77,7 +77,7 @@
             <div class="modal-body" style="max-height: calc(100vh - 200px);overflow-y: auto;">
 
 
-                <form id="amnt_form12" method="post" action="<?=base_url("DocAdmin/SaveEvent")?>" name="team_form1" style="">
+                <form id="amnt_form12" method="post" action="<?=base_url("DocAdmin/UpdateEvent")?>" name="team_form1" style="">
 
                     <input type="hidden" id="json_data1" name="json_data1" hidden/>
 
@@ -101,9 +101,10 @@
         </div>
     </div>
 </div>
-    <div class="row">
-        <div class="col-3 p-1  ">
-            <h4 class="text-center my-3">Events</h4>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <h4 class="text-center my-3"><a href="<?=  base_url("DocAdmin/home")?>">Events</a></h4>
             <div class=" style-1 eventsreg eventsreg_div">
                 <table cellpadding="3"style="width:100%;" cellspacing="2">
 
@@ -122,14 +123,15 @@
 
                 ?>
                 </table>
-
             </div>
-        </div>
-        <div class="col-9 p-1">
-            <div style="float: right;">Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
+            </div>
+            
+            <div class="col-9">
+               <div style="float: right;">Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
                </div>
                         <h4 class="text-center my-3">Manage Events</h4>
-                <form action="<?=base_url("DocAdmin/SaveEvent")?>" method="post" enctype="multipart/form-data">
+                        
+                        <form action="<?=base_url("DocAdmin/UpdateEvent")?>" method="post" enctype="multipart/form-data">
                 <div class="eventsreg style-1">
 
                 <div class="m-3">
@@ -146,117 +148,128 @@
                         </select>
 
                 </div>
+               
+                        <input type="hidden" id="event_id"  name="event_id" value="<?=$edetails->event_id?>"/>
+               
                 <div class="m-3">
                         <label>Event Name: </label>
-                        <input type="text" id="title"  name="title" class="form-control"/>
+                        <input type="text" id="title"  name="title" class="form-control" value="<?=$edetails->title?>"/>
 
                 </div>
   <div class="m-3">
                         <label>Short Name: </label>
-                        <input type="text" id="short_title"  name="short_title" class="form-control"/>
+                        <input type="text" id="short_title"  name="short_title" class="form-control" value="<?=$edetails->short_title?>"/>
 
                 </div>
                 <div class="m-3">
                         <label>Short Desc.: </label>
-                        <textarea type="text" id="short_desc"  rows="4" name="short_desc" class="form-control">
+                        <textarea type="text" id="short_desc"  rows="4" name="short_desc" class="form-control"><?=$edetails->short_desc?>
                         </textarea>
                 </div>
                 <div class="m-3">
                         <label>Details: </label>
-                        <textarea type="text" id="details"  rows="6" name="details" class="form-control">
+                        <textarea type="text" id="details"  rows="6" name="details" class="form-control"><?=$edetails->details?>
                         </textarea>
                 </div>
                 <div class="m-3">
                         <label>Min. Members: </label>
-                        <input type="number" id="min_memb"  name="min_memb" value="1" class="form-control"/>
+                        <input type="number" id="min_memb"  name="min_memb" value="1" class="form-control"  value="<?=$edetails->min_memb?>"/>
                 </div>
                 <div class="m-3">
                         <label>Max. Members: </label>
-                        <input type="number" id="max_memb"  name="max_memb" value="1" class="form-control"/>
+                        <input type="number" id="max_memb"  name="max_memb" value="1" class="form-control"  value="<?=$edetails->max_memb?>"/>
                 </div>
                 <div class="m-3">
                         <label>Venue: </label>
-                        <input type="text" id="venue"  name="venue" class="form-control"/>
+                        <input type="text" id="venue"  name="venue" class="form-control" value="<?=$edetails->venue?>"/>
                 </div>
                 <div class="m-3">
                         <label>Reg. Fee: </label>
-                        <input type="number" id="reg_fee"  name="reg_fee"  class="form-control"/>
+                        <input type="number" id="reg_fee"  name="reg_fee"  class="form-control"  value="<?=$edetails->reg_fee?>"/>
                 </div>
                 <div class="m-3">
                         <label>Fee Type: </label>
                         <select  id="fee_type"  name="fee_type"  class="form-control">
                             <option value="head">Per Head</option>
+                            <option value="team">Per Team</option>
                         </select>
                 </div>
                 <div class="m-3">
                         <label>Prize: </label>
-                        <input type="text" id="prize"  name="prize" class="form-control"/>
+                        <input type="text" id="prize"  name="prize" class="form-control"  value="<?=$edetails->prize?>"/>
                 </div>
                 <div class="m-3">
                         <label>File 1: </label>
-                        <input type="text" id="file1"  name="file1" class="form-control"/>
+                        <input type="text" id="file1"  name="file1" class="form-control" value="<?=$edetails->file1?>" />
                 </div>
                 <div class="m-3">
                         <label>File 2: </label>
-                        <input type="text" id="file2"  name="file2" class="form-control"/>
+                        <input type="text" id="file2"  name="file2" class="form-control"  value="<?=$edetails->file2?>" />
                 </div>
                 <div class="m-3">
                         <label>File Submission Last Date: </label>
-                        <input type="date" id="file_last_date"  name="file_last_date" class="form-control"/>
+                        <input type="date" id="file_last_date"  name="file_last_date" class="form-control" value="<?=$edetails->file_last_date?>"/>
                 </div>
                 <div class="m-3">
                         <label>Coordinator 1 Name: </label>
-                        <input type="text" id="co1_name"  name="co1_name" class="form-control"/>
+                        <input type="text" id="co1_name"  name="co1_name" class="form-control"  value="<?=$edetails->co1_name?>" />
                 </div>
                 <div class="m-3">
                         <label>Coordinator 1 Phone: </label>
-                        <input type="phone" id="co1_no"  name="co1_no" class="form-control"/>
+                        <input type="phone" id="co1_no"  name="co1_no" class="form-control"   value="<?=$edetails->co1_no?>"/>
                 </div>
                 <div class="m-3">
                         <label>Coordinator 2 Name: </label>
-                        <input type="text" id="co2_name"  name="co2_name" class="form-control"/>
+                        <input type="text" id="co2_name"  name="co2_name" class="form-control"   value="<?=$edetails->co2_name?>"  />
                 </div>
                 <div class="m-3">
                         <label>Coordinator 2 Phone: </label>
-                        <input type="phone" id="co2_no"  name="co2_no" class="form-control"/>
+                        <input type="phone" id="co2_no"  name="co2_no" class="form-control"   value="<?=$edetails->co2_no?>" />
                 </div>
                 <div class="m-3">
                         <label>Seats: </label>
-                        <input type="number" id="seats"  name="seats" required class="form-control"/>
+                        <input type="number" id="seats"  name="seats" required class="form-control"  value="<?=$edetails->seats?>"  />
                 </div>
                 <div class="m-3">
                         <label>Reg. Start: </label>
-                        <input type="text" id="reg_start"  name="reg_start" class="form-control"/>
+                        <input type="text" id="reg_start"  name="reg_start" class="form-control"  value="<?=$edetails->reg_start?>"  />
                 </div>
                 <div class="m-3">
                         <label>Reg. End: </label>
-                        <input type="text" id="reg_end"  name="reg_end" class="form-control"/>
+                        <input type="text" id="reg_end"  name="reg_end" class="form-control"  value="<?=$edetails->reg_end?>"  />
                 </div>
                     <div class="m-3">
                         <label>User Name: </label>
-                        <input type="text" id="username"  name="username" required class="form-control"/>
+                        <input type="text" id="username"  name="username" required class="form-control" value="<?=$edetails->username?>"  />
                 </div>
                     <div class="m-3">
                         <label>Syllabus: </label>
-                        <input type="text" id="syllabus_link"  name="syllabus_link"  class="form-control"/>
+                        <input type="text" id="syllabus_link"  name="syllabus_link"  class="form-control" value="<?=$edetails->syllabus_link?>"/>
                     </div>
-                </div>
+               
                     
                     <div class="m-3">
                         <label>Link: </label>
-                        <input type="text" id="link"  name="link" required class="form-control"/>
+                        <input type="text" id="link"  name="link" required class="form-control"  value="<?=$edetails->link?>" />
                 </div>
                     <div class="m-3">
                         <label>Image: </label>
-                        <input type="file" id="photo"  name="photo" required class="form-control"/>
+                        <input type="file" id="photo"  name="photo"  class="form-control"  />
                 </div>
                     <div class="m-3">
-                        <input type="submit" id="btn_submit" name="btn_submit" value="Save" class="btn btn-primary"/>
+                        <input type="submit" id="btn_submit" name="btn_submit" value="Update" class="btn btn-primary"/>
                 </div>
                 </div>
                         </form>
 
+                
+            </div>
+            
+            
         </div>
+        
+        
+    </div>
 <!-- end of col-7 -->
 
     </div>
