@@ -600,7 +600,7 @@
                   }
       }
           function vm(oid){
-
+                $("#team_form").trigger("reset");
               var eid=oid;
              $url="<?=base_url("process/")?>"+eid;
               $.ajax({
@@ -642,7 +642,10 @@
 
                               $('#div_mail0').addClass('col-md-12').removeClass('col-md-8');
 
-
+                                $("#day_1").prop('disabled',false);
+                                $("#day_2").prop('disabled',false);
+                                $("#day_3").prop('disabled',false);
+                                $("#day_4").prop('disabled',false);
                               $('.modal-title').text("Details");
                               $('#myModal').show();
                                   $("#addmoreMembersBtn").css({
