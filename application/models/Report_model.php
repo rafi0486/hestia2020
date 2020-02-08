@@ -22,7 +22,7 @@ class Report_model extends CI_Model {
                     'lid' => $row->lid,
                     'username' => $row->username,
                     'loginname' => $row->name,
-                    'user_type' => $row->user_type,                    
+                    'user_type' => $row->user_type,
                     'validated' => true
                 );
                 $this->session->set_userdata($data);
@@ -70,7 +70,7 @@ class Report_model extends CI_Model {
         foreach ($data as $row){
             $row->schedule=$this->get_event_schedule($row->event_id);
             $eid=$row->event_id;
-            $isbooked=$this->get_book_status($eid);    
+            $isbooked=$this->get_book_status($eid);
             $row->parent=$this->get_event_cat_details($eid)->cat_name;
 
             $startdate=date('Y-m-d', strtotime($row->reg_start));
@@ -109,22 +109,35 @@ class Report_model extends CI_Model {
                         $btn_icon="<i class='fas fa-ticket-alt'></i>";
                     } else {
                         if (($today >= $startdate) && ($today <= $enddate)){
-
                             if($cnt<$row->seats || $row->seats == 0){
+                              if($row->cat_id==1){
                                 $btn_text='BUY TICKET';
                                 $btn_class=" text-primary";
                                 $btn_extracss=" ";
-                                $btn_icon="<i class='fas fa-shopping-cart'></i>";                                
+                                $btn_icon="<i class='fas fa-shopping-cart'></i>";
+                                $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-primary'>BUY TICKET&nbsp;<i class='fas fa-shopping-cart'></i></a>";
+                                $reg_end = date('d-m-Y', strtotime($row->reg_end));
+                                // $clickdata="  onclick='alert(echo fsdgf)' ";
+                                $clickdata= $row->yepdesk_link;
+                                // $clickdata="  onclick='window.open(".$row->yepdesk_link.")' ";
+                                // $clickdata="  onclick='vm(".$row->yepdesk_link.")'  ";
+                              }
+                              else{
+                                $btn_text='BUY TICKET';
+                                $btn_class=" text-primary";
+                                $btn_extracss=" ";
+                                $btn_icon="<i class='fas fa-shopping-cart'></i>";
                                 $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-primary'>BUY TICKET&nbsp;<i class='fas fa-shopping-cart'></i></a>";
                                 $reg_end = date('d-m-Y', strtotime($row->reg_end));
                                 $clickdata="  onclick='vm(".$eid.")'  ";
+                              }
                             }else{
                                 $btn="<a href='#'  id='".$eid."' class='btn btn-custom btn-danger disabled'>Sold Out&nbsp;<i class='fas fa-shopping-cart'></i></a>";
                                 $btn_text='Sold Out';
                                 $btn_class=" text-danger";
                                 $btn_extracss=" disabled ";
-                                $btn_icon="<i class='fas fa-shopping-cart'></i>";  
-                                
+                                $btn_icon="<i class='fas fa-shopping-cart'></i>";
+
                             }
                         }else{
                             if(($startdate  > $today)){
@@ -133,14 +146,14 @@ class Report_model extends CI_Model {
                                 $btn_text="Registration Starts on ".date_format($dtstart, 'd-m-Y');
                                 $btn_class=" text-warning";
                                 $btn_extracss=" disabled ";
-                                $btn_icon="<i class='fas fa-clock'></i>"; 
+                                $btn_icon="<i class='fas fa-clock'></i>";
                             }
                             if(($today > $enddate)){
                                 $btn="<a href='#'  id='".$eid."' class='btn btn-danger btn-custom disabled'>Registration Closed&nbsp;<i class='fas fa-shopping-cart'></i></a>";
                                 $btn_text="Registration Closed";
                                 $btn_class=" text-danger";
                                 $btn_extracss=" disabled ";
-                                $btn_icon="<i class='fas fa-shopping-cart'></i>";                                
+                                $btn_icon="<i class='fas fa-shopping-cart'></i>";
                             }
                         }
                     }
@@ -155,13 +168,19 @@ class Report_model extends CI_Model {
             $row->certificate="";
             if(!$btn_text){
                 $btn_text="..";
+            }elseif($row->cat_id==1){
+              $row->btn="<a class='box__text box__text--bottom btn-custom ".$btn_extracss."' href=".$clickdata." target='_blank' >
+                                          <span class='box__text-inner ".$btn_class." ".$btn_extracss."' >".$btn_text."" ."</span>
+                                        </a>";
             }
-            $row->btn="<h4 class='box__text box__text--bottom btn-custom ".$btn_extracss."' $clickdata > 
+            else {
+            $row->btn="<h4 class='box__text box__text--bottom btn-custom ".$btn_extracss."' $clickdata >
                                         <span class='box__text-inner ".$btn_class." ".$btn_extracss."' >".$btn_text."" ."</span>
                                       </h4>";
+            }
             //$row->btn=$btn;
             $row->reg_end=$reg_end;
-            array_push($newdata,$row);           
+            array_push($newdata,$row);
         }
         return $newdata;
     }
@@ -181,18 +200,18 @@ class Report_model extends CI_Model {
         $query = $this->db->query($sql);
         return $query->result();
     }
- 
+
     public function get_categorieseventlike($catname){
         $sql="SELECT a.image_name as cat_img,a.short_title as cat_text from events a,categories b where a.cat_id=b.cat_id and b.cat_name = '".$catname."' limit 5";
         $query = $this->db->query($sql);
         return $query->result();
     }
-    
+
     public function get_regmail_by_membmail($email,$eid)
     {
         $this->db->select ( 'reg_email' );
         $this->db->from ( 'registration' );
-        $array = array('member_email' =>$email , 'event_id' => $eid); 
+        $array = array('member_email' =>$email , 'event_id' => $eid);
 
       $this->db->where ( $array );
       $query = $this->db->get ();
@@ -219,7 +238,7 @@ class Report_model extends CI_Model {
     {
         $this->db->select ( 'file_last_date' );
         $this->db->from ( 'events' );
-        $array = array( 'event_id' => $eid); 
+        $array = array( 'event_id' => $eid);
         $this->db->where ( $array );
         $query = $this->db->get ();
         if($query->result()[0]->file_last_date===NULL){
@@ -271,8 +290,8 @@ class Report_model extends CI_Model {
     {
         $this->db->set('file1', $f1);
         $reg_mail=$this->get_regmail_by_membmail($_SESSION['email'],$evid);
-    
-        $array = array('reg_email' =>$reg_mail , 'event_id' => $evid); 
+
+        $array = array('reg_email' =>$reg_mail , 'event_id' => $evid);
         $this->db->where($array);
         $this->db->update('registration');
         if($f2!== NULL)
@@ -288,7 +307,7 @@ class Report_model extends CI_Model {
         $data['event']=$this->report_model->get_single_event($link);
         return $data['event']->event_id;
     }
-    
+
     public function get_user_events($email=''){
         $this->db->select ( 'e.*,r.file1 as u_file1, r.file2 as u_file2,e.is_certificate_pub' );
         $this->db->from ( 'events as e' );
@@ -416,7 +435,7 @@ class Report_model extends CI_Model {
         $cnt=$this->db->query("SELECT min_memb,max_memb from events where event_id=".$eid);
         return $cnt->row();
     }
-    
+
     public function get_user_accomodations($email){
         $cnt=$this->db->query("SELECT accommodation from users where email='".$email."'");
         if($cnt->num_rows()==1){
