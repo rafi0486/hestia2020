@@ -198,7 +198,7 @@
         }
         revealItem() {
             this.contentItem.style.opacity = 1;
-
+            this.contentItem.style.zIndex = 99;
             let itemElems = [];
             itemElems.push(this.contentItem.querySelector('.box__shadow'));
             itemElems.push(this.contentItem.querySelector('.box__img'));
@@ -239,6 +239,8 @@
                     document.body.classList.remove('preview-open');
                     // hide preview
                     this.contentItem.style.opacity = 0;
+                    this.contentItem.style.zIndex = 0;
+
                     // hide revealer
                     TweenMax.to(this.DOM.reveal, .5, {
                         delay: 0,
