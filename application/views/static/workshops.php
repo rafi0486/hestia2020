@@ -440,6 +440,7 @@
             if($event->syllabus_link){
               ?>
               <h4><a href="<?=$event->syllabus_link?>" target="_blank">Syllabus</a><h4>
+                <?php
             }
 
             if ($event->reg_fee !== NULL && $event->reg_end !== '') {
