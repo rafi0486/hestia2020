@@ -439,7 +439,7 @@
             }
             if($event->syllabus_link){
               ?>
-              <h4><a href="<?=$event->syllabus_link?>" target="_blank">Syllabus</a><h4>
+              <h4><a  style="color:#0064cf;" href="<?=$event->syllabus_link?>" target="_blank">Download Syllabus</a><h4>
                 <?php
             }
 
