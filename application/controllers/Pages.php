@@ -31,6 +31,14 @@ class Pages extends CI_Controller {
 
         $this->load->view('static/main_events',$data);
     }
+
+    function workshops(){
+      $data['google_login_url']=$this->google->loginURL();
+      $data['events']=$this->report_model->get_events_detail('workshops');
+      $data['title']= 'Workshops';
+      $this->load->view('static/workshops',$data);
+    }
+
     function view($page){
 
         if ( ! file_exists(APPPATH.'views/static/'.$page.'.php')){
