@@ -506,7 +506,7 @@
 	</main>
 	<script src="<?=  base_url("assets/main/")?>js/event-listing/imagesloaded.pkgd.min.js"></script>
 	<script src="<?=  base_url("assets/main/")?>js/event-listing/TweenMax.min.js"></script>
-	<script src="<?=  base_url("assets/main/")?>js/event-listing/event-listing.js"></script>
+	<script src="<?=  base_url("assets/main/")?>js/event-listing/event-listing.js?v=1"></script>
 	<script src="<?=  base_url("assets/main/")?>js/home/anime.min.js"></script>
 	<script src="<?=  base_url("assets/main/")?>js/home/main.js"></script>
 	<script>
