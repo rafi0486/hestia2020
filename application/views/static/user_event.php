@@ -179,7 +179,7 @@
                 echo '<div class="col-12 listing1" style="padding-bottom: 20px;">';
                 echo '<p class="event-name-text text-light" >It looks empty here..</p>';
                 echo '<p class="text-danger text-light" >You havent registered for any event. Checkout the events catalogue and register soon..</p>';
-								echo '<p style="color:red" class="text-danger text-light ">If you are registered for any workshops, it will not reflect here!!</p>';
+								echo '<p style="color:#0064cf" class="text-danger text-light ">Your registered workshops won\'t be shown here!!</p>';
 
 
      // list is empty.
