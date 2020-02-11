@@ -183,6 +183,12 @@ class Appapi_Model extends CI_Model {
         return json_encode($query->result_array());
     }
 
+    public function get_top_event_details(){
+        $this->db->select('event_id, title, prize,venue,image_name');
+        $query = $this->db->limit(5);
+        $query = $this->db->get('events');
+        return json_encode($query->result_array());
+    }
     public function set_file_urls($mem_email,$f1,$evid,$f2 = NULL)
     {
         $this->db->set('file1', $f1);
