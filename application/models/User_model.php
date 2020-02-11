@@ -156,7 +156,7 @@ class User_model extends CI_Model {
     }
 
     public function get_us_rh_sh($email) {
-        $this->db->select('hashcode');
+        $this->db->select('hashcode,college');
         $this->db->from('users');
         $this->db->where('email', $email);
         $query=$this->db->get();
