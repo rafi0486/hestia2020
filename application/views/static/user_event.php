@@ -242,7 +242,7 @@
                    <?php
                       $date_not_over=$this->report_model->check_files_lastdate($this->report_model->get_eid_by_link($row['link']));
                    if ($row['file1'] != NULL && $row['u_file1'] == NULL && $date_not_over){
-                     echo "<form  class='form-inline row'  action='pages/url_submitted' method='post'>";
+                     echo "<form  class='form-inline row'  action='".base_url("pages/url_submitted")."' method='post'>";
                      echo "<input style='min-width:250px;' type='hidden' name='link' value=".$row['link'].'  />';
 
                      echo "<div style='margin-right:auto' class='form-group col-md-4 col-sm-12'><input  class='form-control'  style='padding:.2em;min-width:250px;'  type='text' name='f1' placeholder='". $row['file1']."' required /></div>";
