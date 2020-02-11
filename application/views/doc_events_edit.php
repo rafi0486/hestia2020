@@ -173,11 +173,11 @@
                 </div>
                 <div class="m-3">
                         <label>Min. Members: </label>
-                        <input type="number" id="min_memb"  name="min_memb" value="1" class="form-control"  value="<?=$edetails->min_memb?>"/>
+                        <input type="number" id="min_memb"  name="min_memb" class="form-control"  value="<?=$edetails->min_memb?>"/>
                 </div>
                 <div class="m-3">
                         <label>Max. Members: </label>
-                        <input type="number" id="max_memb"  name="max_memb" value="1" class="form-control"  value="<?=$edetails->max_memb?>"/>
+                        <input type="number" id="max_memb"  name="max_memb"  class="form-control"  value="<?=$edetails->max_memb?>"/>
                 </div>
                 <div class="m-3">
                         <label>Venue: </label>
