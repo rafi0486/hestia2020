@@ -29,7 +29,7 @@ else{
 }
 // You can get the 'salt' from Instamojo's developers page(make sure to log in first): https://www.instamojo.com/developers
 // Pass the 'salt' without <>
-$mac_calculated = hash_hmac("sha1", implode("|", $data), "4b3ace9e8c234b8d9d050f74523de7c6");
+$mac_calculated = hash_hmac("sha1", implode("|", $data), "011a9a4bcb564ca69a116189385d458c");
 if($mac_provided == $mac_calculated)
 {
     if($data['status'] == "Credit")
