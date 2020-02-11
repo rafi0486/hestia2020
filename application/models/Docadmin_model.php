@@ -19,7 +19,10 @@ class DocAdmin_model extends CI_Model {
         $data['prize']=$this->input->post('prize');
         $data['file1']=$this->input->post('file1');
         $data['file2']=$this->input->post('file2');
-        $data['file_last_date']=$this->input->post('file_last_date');
+        if($this->input->post('file_last_date')){
+                    $data['file_last_date']=$this->input->post('file_last_date');
+
+        }
         $data['co1_name']=$this->input->post('co1_name');
         $data['co1_no']=$this->input->post('co1_no');
         $data['co2_name']=$this->input->post('co2_name');
@@ -72,7 +75,10 @@ class DocAdmin_model extends CI_Model {
     $data['prize']=$this->input->post('prize');
     $data['file1']=$this->input->post('file1');
     $data['file2']=$this->input->post('file2');
-    $data['file_last_date']=$this->input->post('file_last_date');
+    if($this->input->post('file_last_date')){
+        $data['file_last_date']=$this->input->post('file_last_date');
+
+    }
     $data['co1_name']=$this->input->post('co1_name');
     $data['co1_no']=$this->input->post('co1_no');
     $data['co2_name']=$this->input->post('co2_name');
