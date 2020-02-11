@@ -185,7 +185,7 @@ class Appapi_Model extends CI_Model {
 
     public function get_top_event_details(){
         $this->db->select('event_id, title, prize,venue,image_name');
-        $query = $this->db->limit(5);
+        $this->db->limit(5);
         $query = $this->db->get('events');
         return json_encode($query->result_array());
     }
