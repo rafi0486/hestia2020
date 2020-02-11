@@ -245,13 +245,13 @@
                      echo "<form  class='form-inline row'  action='pages/url_submitted' method='post'>";
                      echo "<input style='min-width:250px;' type='hidden' name='link' value=".$row['link'].'  />';
 
-                     echo "<div  class='form-group col-md-4 col-sm-12'><input  class='form-control'  style='min-width:250px;'  type='text' name='f1' placeholder='". $row['file1']."' required /></div>";
+                     echo "<div style='margin-right:auto' class='form-group col-md-4 col-sm-12'><input  class='form-control'  style='padding:.2em;min-width:250px;'  type='text' name='f1' placeholder='". $row['file1']."' required /></div>";
 
                      if ($row['file2'] != NULL && $row['u_file2'] == NULL ){
-                      echo "<div style='min-width:250px;'  class='form-group col-md-4 col-sm-12 file2'><input  class='form-control'  style='min-width:250px;' style='' type='text' name='f2' placeholder='". $row['file2']."' required /></div>";
+                      echo "<div style='min-width:250px;'  class='form-group col-md-4 col-sm-12 file2'><input  class='form-control'  style='padding:.2em;min-width:250px;' style='' type='text' name='f2' placeholder='". $row['file2']."' required /></div>";
                      }
 
-                     echo "<div class='form-group col-md-4 col-sm-12'><button type='submit' style='margin-top:20px;' class='btn btn-default' >Submit</button></div>";
+                     echo "<div class='form-group col-md-4 col-sm-12'><button type='submit' style='margin-top:20px;border: 2px solid #fff;padding: .2em;' class='btn btn-default' >Submit</button></div>";
                     echo "</form>";
 
                     echo "<p class=\"text-danger\">"?>
