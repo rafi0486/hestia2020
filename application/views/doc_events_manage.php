@@ -186,6 +186,7 @@
                         <label>Fee Type: </label>
                         <select  id="fee_type"  name="fee_type"  class="form-control">
                             <option value="head">Per Head</option>
+                            <option value="team">Per Team</option>
                         </select>
                 </div>
                 <div class="m-3">
