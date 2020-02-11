@@ -11,11 +11,11 @@ include 'errors/error_handle.php';
 $data = $_POST;
 
 
- $logstr=implode("|",$data); 
+ $logstr=implode("|",$data);
 logme($logstr);
 
 
- 
+
 $mac_provided = $data['mac'];  // Get the MAC from the POST data
 unset($data['mac']);  // Remove the MAC key from the data.
 $ver = explode('.', phpversion());
@@ -29,7 +29,7 @@ else{
 }
 // You can get the 'salt' from Instamojo's developers page(make sure to log in first): https://www.instamojo.com/developers
 // Pass the 'salt' without <>
-$mac_calculated = hash_hmac("sha1", implode("|", $data), "4850469ff3884d07afb5d47e15c34421");
+$mac_calculated = hash_hmac("sha1", implode("|", $data), "4b3ace9e8c234b8d9d050f74523de7c6");
 if($mac_provided == $mac_calculated)
 {
     if($data['status'] == "Credit")
@@ -38,51 +38,51 @@ if($mac_provided == $mac_calculated)
         // You can acess payment_request_id, purpose etc here.
         $sql = 'SELECT reg_key FROM payments where prid='."'".$data['payment_request_id']."'";
         $result = mysqli_query($conn, $sql);
-        
-        
+
+
         $sql = 'SELECT reg_key FROM payments where prid='."'".$data['payment_request_id']."'";
         $result = mysqli_query($conn, $sql);
         $rkey='';
-        if (mysqli_num_rows($result) > 0) 
+        if (mysqli_num_rows($result) > 0)
         {
             while($row = mysqli_fetch_assoc($result))
-            
-            {       
-                
+
+            {
+
                      $rkey=$row["reg_key"];
 
             }
-            
+
             //registration copy
             $sql2 = 'INSERT INTO `registration`( `event_id`, `reg_email`, `member_email`, `file1`, `file2`, `referral_code`) SELECT  `event_id`, `reg_email`, `member_email`, `file1`, `file2`, `referral_code` FROM `regtemp1` WHERE reg_key='."'".$rkey."'";
             $result = mysqli_query($conn, $sql2);
-            
+
             //update pid
             $sql3 = 'UPDATE payments SET pid='."'".$data['payment_id']."'".' where prid='."'".$data['payment_request_id']."'";
             $result3 = mysqli_query($conn, $sql3);
-            
+
             //update status
             $sql3 = 'UPDATE payments SET status='."'".$data['status']."'".' where prid='."'".$data['payment_request_id']."'";
             $result3 = mysqli_query($conn, $sql3);
-            
+
             //get mails
             $sql3 = 'SELECT reg_email,member_email FROM regtemp1 where reg_key='."'".$rkey."'";
             $result3 = mysqli_query($conn, $sql3);
 
-         if (mysqli_num_rows($result3) > 0) 
+         if (mysqli_num_rows($result3) > 0)
          {
              $i=0;
              $mails=array();
-            while($row = mysqli_fetch_assoc($result3)) 
+            while($row = mysqli_fetch_assoc($result3))
             {
-                $omail=$row["reg_email"];  
-                
+                $omail=$row["reg_email"];
+
                 if($i>0)
                 {
-                
+
                         $mails[$i-1]=$row["member_email"];
                 }
-                
+
                 $i++;
             }
          }
@@ -91,35 +91,35 @@ if($mac_provided == $mac_calculated)
          {
              $hsh=password_hash($mails[$j], PASSWORD_BCRYPT);
              $ml=$mails[$j];
-             
+
                 $sql0='INSERT IGNORE INTO users (email, hashcode) values('."'$ml'".','."'$hsh'".')' ;
 
             // $sql0='INSERT INTO users (email, hashcode) SELECT * FROM (SELECT'. "'$ml'".','. "'$hsh'".') AS tmp WHERE NOT EXISTS ( SELECT email FROM users WHERE email = '."'$ml'".') LIMIT 1';
             $result0 = mysqli_query($conn, $sql0);
-            
+
 
          }
-         
+
          //mail to unreg
          for($j=0;$j<sizeof($mails);$j++)
          {
              //$hsh=password_hash($mails[$j], PASSWORD_BCRYPT);
              $ml=$mails[$j];
-             
+
                 $sql5='SELECT phone FROM users where email='."'".$ml."'" ;
 
             // $sql0='INSERT INTO users (email, hashcode) SELECT * FROM (SELECT'. "'$ml'".','. "'$hsh'".') AS tmp WHERE NOT EXISTS ( SELECT email FROM users WHERE email = '."'$ml'".') LIMIT 1';
             $result5 = mysqli_query($conn, $sql5);
-            if (mysqli_num_rows($result5) > 0) 
+            if (mysqli_num_rows($result5) > 0)
             {
                 while($row = mysqli_fetch_assoc($result5))
-            
-                {       
-                
+
+                {
+
                      $ph=$row["phone"];
 
                 }
-            
+
 
             }
             if ($ph == NULL)
@@ -139,10 +139,10 @@ if($mac_provided == $mac_calculated)
                 curl_close($curl);
             }
          }
-         
+
          //add main regstrnt also
          $mails[sizeof($mails)]=$omail;
-         
+
          //acco write to users
          for($j=0;$j<sizeof($mails);$j++)
          {
@@ -150,22 +150,22 @@ if($mac_provided == $mac_calculated)
              $a2='';
              $sql = 'SELECT accommodation FROM users WHERE email='."'".$mails[$j]."'";
              $result = mysqli_query($conn, $sql);
-             if (mysqli_num_rows($result) > 0) 
+             if (mysqli_num_rows($result) > 0)
             {
-              while($row = mysqli_fetch_assoc($result)) 
+              while($row = mysqli_fetch_assoc($result))
               {
                     if($row['accommodation'])
-                        {$a1=$row['accommodation'];}                
-                  
+                        {$a1=$row['accommodation'];}
+
               }
             }
              $sql = 'SELECT acc FROM regtemp1 WHERE member_email='."'".$mails[$j]."' AND reg_key="."'".$rkey."'";
              $result = mysqli_query($conn, $sql);
-             
-             if (mysqli_num_rows($result) > 0) 
+
+             if (mysqli_num_rows($result) > 0)
             {
-                
-              while($row = mysqli_fetch_assoc($result)) 
+
+              while($row = mysqli_fetch_assoc($result))
               {
                     if($row['acc'])
                         {$a2=$row['acc'];}
@@ -175,7 +175,7 @@ if($mac_provided == $mac_calculated)
             $ains='';
             for($b=1;$b<5;$b++)
             {
-                if (strpos($atot, strval($b)) !== false) 
+                if (strpos($atot, strval($b)) !== false)
                 {
                     $ains=$ains.$b;
                 }
@@ -187,16 +187,16 @@ if($mac_provided == $mac_calculated)
             }
 
          }
-         
-         
+
+
           //remove tempreg status
             $sql3 = 'DELETE from regtemp1 where reg_key='."'".$rkey."'";
             $result3 = mysqli_query($conn, $sql3);
 
-        
-            
+
+
         }
-        
+
     }
     else
     {
@@ -205,8 +205,8 @@ if($mac_provided == $mac_calculated)
                     //update status
             $sql3 = 'UPDATE payments SET status='."'".$data['status']."'".' where prid='."'".$data['payment_request_id']."'";
             $result3 = mysqli_query($conn, $sql3);
- 
-        
+
+
     }
 }
 else
