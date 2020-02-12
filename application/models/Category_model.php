@@ -95,7 +95,7 @@ class Category_model extends CI_Model {
         if($query->num_rows() == 1){
             $row = $query->row();
             $hash = $row->pswd;
-            if(password_verify($pswd,$hash)){
+            if(password_verify($oldpswd,$hash)){
               
                 $this->db->set('pswd', password_hash($pswd,PASSWORD_BCRYPT));
                 $this->db->where('cat_id', $row->cat_id);
