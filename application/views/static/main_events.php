@@ -246,12 +246,10 @@ if(isset($_COOKIE['redir']))
 				<div class="grid grid--layout-3">
 					<?php
 					 foreach ($cultural as $catrow){
-					?>
-          <!-- <a href="<?base_url()?>events/<?=$catrow->cat_name?>"> -->
+					?>          
 					<div onclick="window.open('<?base_url()?>events/<?=$catrow->cat_name?>')" class="grid__item" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)">
 						<div class="name-overlay"><?=$catrow->cat_text?></div>
 					</div>
-          <!-- </a> -->
 					<?php } ?>
 
 				</div>
