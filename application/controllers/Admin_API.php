@@ -15,6 +15,18 @@ class Admin_API extends REST_Controller {
         }
         $this->response($data);
     }
+    function login_change_post(){
+        $this->load->model('category_model');
+        $this->load->model('event_model');
+        $username=$this->post('username');
+        $oldpassword=$this->post('oldpassword');
+        $password=$this->post('password');
+        $data = $this->category_model->update_coordinator_pass($username,$oldpassword,$password);
+        if( $data == FALSE ){
+            $data = $this->event_model->update_pass($username,$oldpassword,$password);
+        }
+        $this->response($data);
+    }    
     function login_delete(){
         $this->session->sess_destroy();
         $this->response(true);
