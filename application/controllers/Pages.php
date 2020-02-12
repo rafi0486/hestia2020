@@ -33,6 +33,8 @@ class Pages extends CI_Controller {
     }
 
     function workshops(){
+      // $num = $this->db->query('SELECT * FROM registration WHERE event_id=2');
+      // $data['remaining'] = $num->num_rows();
       $data['google_login_url']=$this->google->loginURL();
       $data['events']=$this->report_model->get_events_detail('workshops');
       $data['title']= 'Workshops';
