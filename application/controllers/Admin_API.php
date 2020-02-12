@@ -21,7 +21,7 @@ class Admin_API extends REST_Controller {
         $username=$this->post('username');
         $oldpassword=$this->post('oldpassword');
         $password=$this->post('password');
-        $data = $this->category_model->update_coordinator_pass($username,$oldpassword,$password);
+        $data = $this->category_model->update_pass($username,$oldpassword,$password);
         if( $data == FALSE ){
             $data = $this->event_model->update_pass($username,$oldpassword,$password);
         }
