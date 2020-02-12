@@ -440,7 +440,7 @@
 						// $num = $this->db->query('SELECT * FROM registration WHERE event_id=2');
 						// echo $num->num_rows();
 						?>
-						<h4  style="color:#0064cf;">Total Seats :<? $event->seats?><h4>
+						<h4  style="color:#0064cf;">Total Seats :<?= $event->seats ?><h4>
 						<?php
             if($event->syllabus_link){
               ?>
