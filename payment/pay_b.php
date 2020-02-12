@@ -204,10 +204,11 @@ else {
         <div class=" card card-pricing">
           <div class="card-content">
             <h6 class="category ">CONFIRM PAYMENT</h6>
-            <h1 class="card-title"><small>₹</small>  <?php echo $_SESSION['event_cost']?></h1>
+            <h1 class="card-title"><small>₹</small>  <?php echo $_SESSION['event_cost']+ $_SESSION['acco_cost'] ?></h1>
             <ul style="margin-bottom: 10%;">
               <li><b>Event Registration : &nbsp;&nbsp;₹ <?php echo $_SESSION['event_cost']; ?> </li></b>
-              <li><b>Pay your accommodation fee (Breakfast included) at the venue  </li></b>
+              <li><b>Accommodation Charge (Breakfast included) : &nbsp;&nbsp;₹ <?php echo $_SESSION['acco_cost']; ?></li></b>
+
             </ul>
             <div style="position: absolute;  left: 50%;  transform: translate(-50%, -50%) ">
           <a  href="<?php echo $_SESSION['redir_url']; ?>"  rel="im-checkout" data-behaviour="remote" data-style="dark" data-text="Pay Now" ></a>
