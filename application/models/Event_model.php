@@ -110,5 +110,19 @@ class Event_model extends CI_Model {
         }
         return FALSE;
     }
+    public function update_pass($username,$oldpswd,$pswd){
+        $query = $this->db->get_where('events', array('username' => $username));
+        if($query->num_rows() == 1){
+            $row = $query->row();
+            $hash = $row->pswd;
+            if(password_verify($pswd,$hash)){
+                $this->db->set('pswd', password_hash($pswd,PASSWORD_BCRYPT));
+                $this->db->where('event_id', $row->event_id);
+                $this->db->update('events');
+                return TRUE;
+            }
+        }
+        return FALSE;
+    }    
 }
 ?>

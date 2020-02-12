@@ -90,5 +90,22 @@ class Category_model extends CI_Model {
         }
         return FALSE;
     }
+    public function update_pass($username,$oldpswd,$pswd){
+        $query = $this->db->get_where('categories', array('username' => $username));
+        if($query->num_rows() == 1){
+            $row = $query->row();
+            $hash = $row->pswd;
+            if(password_verify($pswd,$hash)){
+              
+                $this->db->set('pswd', password_hash($pswd,PASSWORD_BCRYPT));
+                $this->db->where('cat_id', $row->cat_id);
+                $this->db->update('categories');
+                return TRUE;
+            }
+        }
+ 
+        return FALSE;
+    }    
+    
 }
 ?>
