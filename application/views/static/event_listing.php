@@ -457,7 +457,7 @@
                                         <div style="padding-left: 15px;">
                                         <h5>
                                             <?php
-                                            if ($timerow['label'] != NULL) echo $timerow['label'].": ";
+                                            // if ($timerow['label'] != NULL) echo $timerow['label'].": ";
                                             $start_time=date('d-M h:i A', strtotime($timerow['start_time']));
                                             if ($timerow['end_time'] == NULL) {
                                                 // echo 'Starts on '.$start_time;
