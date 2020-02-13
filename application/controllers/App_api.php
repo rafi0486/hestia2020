@@ -50,6 +50,10 @@ class App_Api extends CI_Controller {
     function GetEventsByCat(){
         echo $this->appapi_Model->get_event_details_by_cat();
     }
+
+    function GetEventsByCatLike(){
+        echo $this->appapi_Model->get_event_details_by_catlike();
+    }
     function GetTopEvents(){
         echo $this->appapi_Model->get_top_event_details();
     }  

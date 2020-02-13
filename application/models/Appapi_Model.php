@@ -183,6 +183,18 @@ class Appapi_Model extends CI_Model {
         return json_encode($query->result_array());
     }
 
+    
+    public function get_event_details_by_catlike(){
+        $catname=$this->security->xss_clean($this->input->post('id'));
+        $this->db->select('e.event_id, e.title, e.prize,e.venue,e.image_name');
+        $this->db->from ( 'events as e' );
+        $this->db->join ( 'categories', 'categories.cat_id = e.cat_id' , 'inner' );
+        $this->db->order_by("categories.cat_name asc,e.title asc");
+        $this->db->like('cat_name', $catname, 'after'); 
+        $query = $this->db->get();
+        return json_encode($query->result_array());
+    }
+    
     public function get_top_event_details(){
         $this->db->select('event_id, title, prize,venue,image_name');
         $this->db->limit(5);
