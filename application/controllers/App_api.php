@@ -53,6 +53,7 @@ class App_Api extends CI_Controller {
 
     function GetEventsByCatLike(){
         //echo $this->input->post('id');
+        
         $catname=$this->security->xss_clean($this->input->post('catname'));
         echo $this->appapi_Model->get_event_details_by_catlike($catname);
     }
