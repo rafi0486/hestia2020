@@ -52,6 +52,7 @@ class App_Api extends CI_Controller {
     }
 
     function GetEventsByCatLike(){
+        echo "here<br>";
         foreach ($_POST as $key => $value) {
     echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 }
