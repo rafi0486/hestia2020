@@ -10,4 +10,4 @@
 |
 */
 $config['super_user']='su_admin';
-$config['super_pass']='$2y$13$.zeAqQWiUhogFWf8tPgNuOXLmNVs1smCv98KNXWijyq7rQEeXEvpi';
+$config['super_pass']='$2y$10$c9cjiUzbyREh1VhMP7hlxOsfxkAND8ha5nt0j9QSkvUq9sQ0zeJ36';

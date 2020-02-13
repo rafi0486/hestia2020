@@ -379,6 +379,8 @@ main {
 }
 
 .menu__item-link {
+border-bottom: 1px solid white;
+padding-bottom:5px;
     pointer-events: none;
     font-weight: bold;
     align-self: flex-end;
@@ -387,7 +389,13 @@ main {
     cursor: pointer;
     text-align: center;
 }
+.menu__item-link:hover i{
+  color:blue !important
+}
+.menu__item-link:hover{
 
+  border-bottom: 1px solid transparent ;
+}
 .menu__item--current .menu__item-link {
     pointer-events: auto;
 }
@@ -834,176 +842,176 @@ main {
     .grid--open .grid__item:first-child {
         grid-area: 3 / 1 / 8 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(2) {
         grid-area: 1 / 2 / 3 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(3) {
         grid-area: 5 / 4 / 8 / 8;
     }
-    
+
     .grid--open .grid__item:nth-child(4) {
         grid-area: 2 / 7 / 5 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(5) {
         grid-area: 1 / 4 / 5 / 7;
     }
-    
+
     .grid--open .grid__item:nth-child(6) {
         grid-area: 8 / 5 / 11 / 2;
     }
-    
+
     .grid--open .grid__item:nth-child(7) {
         grid-area: 10 / 9 / 8 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(8) {
         grid-area: 5 / 8 / 8 / 10;
     }
-    
+
     .grid--open .grid__item:nth-child(9) {
         grid-area: 8 / 5 / 11 / 9;
     }
-    
-    
+
+
     /* Layout 2 */
     .grid--open .grid__item:first-child {
         grid-area: 2 / 1 / 5 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(2) {
         grid-area: 1 / 4 / 4 / 7;
     }
-    
+
     .grid--open .grid__item:nth-child(3) {
         grid-area: 1 / 7 / 5 / 10;
     }
-    
+
     .grid--open .grid__item:nth-child(4) {
         grid-area: 5 / 1 / 7 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(5) {
         grid-area: 4 / 4 / 7 / 7;
     }
-    
+
     .grid--open .grid__item:nth-child(6) {
         grid-area: 7 / 7 / 11 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(7) {
         grid-area: 5 / 7 / 8 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(8) {
         grid-area: 7 / 2 / 9 / 4;
     }
-    
+
     /* Layout 3 */
     .grid--open .grid__item:first-child {
         grid-area: 1 / 2 / 3 / 5;
     }
-    
+
     .grid--open .grid__item:nth-child(2) {
         grid-area: 3 / 1 / 6 / 5;
     }
-    
+
     .grid--open .grid__item:nth-child(3) {
         grid-area: 1 / 5 / 5 / 8;
     }
-    
+
     .grid--open .grid__item:nth-child(4) {
         grid-area: 2 / 8 / 6 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(5) {
         grid-area: 5 / 5 / 8 / 8;
     }
-    
+
     .grid--open .grid__item:nth-child(6) {
         grid-area: 6 / 8 / 8 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(7) {
         grid-area: 6 / 2 / 8 / 5;
     }
-    
+
     .grid--open .grid__item:nth-child(8) {
         grid-area: 11 / 4 / 8 / 7;
     }
-    
+
     .grid--open .grid__item:nth-child(9) {
         grid-area: 8 / 9 / 11 / 7;
     }
-    
+
     /* Layout 4 */
     .grid--open .grid__item:first-child {
         grid-area: 2 / 1 / 4 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(2) {
         grid-area: 1 / 4 / 3 / 7;
     }
-    
+
     .grid--open .grid__item:nth-child(3) {
         grid-area: 3 / 4 / 5 / 7;
     }
-    
+
     .grid--open .grid__item:nth-child(4) {
         grid-area: 1 / 7 / 4 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(5) {
         grid-area: 4 / 2 / 7 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(6) {
         grid-area: 5 / 7 / 8 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(7) {
         grid-area: 4 / 7 / 8 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(8) {
         grid-area: 8 / 9 / 11 / 4;
     }
-    
+
     /* Layout 5 */
     .grid--open .grid__item:first-child {
         grid-area: 2 / 1 / 5 / 4;
     }
-    
+
     .grid--open .grid__item:nth-child(2) {
         grid-area: 1 / 4 / 5 / 7;
     }
-    
+
     .grid--open .grid__item:nth-child(3) {
         grid-area: 5 / 2 / 7 / 5;
     }
-    
+
     .grid--open .grid__item:nth-child(4) {
         grid-area: 1 / 7 / 4 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(5) {
         grid-area: 5 / 7 / 7 / 5;
     }
-    
+
     .grid--open .grid__item:nth-child(6) {
         grid-area: 7 / 5 / 10 / 1;
     }
-    
+
     .grid--open .grid__item:nth-child(7) {
         grid-area: 4 / 7 / 7 / 9;
     }
-    
+
     .grid--open .grid__item:nth-child(8) {
         grid-area: 4 / 9 / 9 / 11;
     }
-    
+
     .grid--open .grid__item:nth-child(9) {
         grid-area: 7 / 5 / 11 / 9;
     }

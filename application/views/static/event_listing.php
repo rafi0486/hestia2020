@@ -206,9 +206,6 @@
                         <input type="hidden" id="evdd"  hidden/>
                             <div class="row" style='margin-bottom:10px;'>
                                 <div class="col-md-8 col-sm-12" id="div_mail0"><input class="form-control" type="email" id="email0" placeholder="Email" value="<?php if(isset($_SESSION['email']))echo $_SESSION['email'];?>"; readonly></div>
-                                <div class="col-md-4 col-sm-12" id="div_acm0"><label class="checkbox-inline chk_acommodation">
-                                            <input type="checkbox" class="chk_acm"  id="chk_acm0">&nbsp;&nbsp;Accommodation
-                                            </label></div>
                             </div>
                             <div id="team_form_members">
 
@@ -223,49 +220,7 @@
         <input type="submit" id="team_form_hid_btn" hidden/>
 
 
-                          <div class="row container" style="margin: 10px 0px 15px 0px;">
-                            <div class="col-xs-6 ml-3 mt-3">
-                              <div class="center">
-                                <p class="form-check-label">
-                                  Accommodation for:
-                                </p>
-                                <label class="checkbox-inline chk_ac_day">
-                                  <input
-                                    type="checkbox"
-                                    id="day_1"
-                                    value="1"
-                                    disabled=""
-                                  />&nbsp;&nbsp;Feb 27
-                                </label>&nbsp;&nbsp;
-                                <label class="checkbox-inline chk_ac_day">
-                                  <input
-                                    type="checkbox"
-                                    id="day_2"
-                                    value="2"
-                                    disabled=""
-                                  />&nbsp;&nbsp;Feb 28
-                                </label>&nbsp;&nbsp;
-                                <label class="checkbox-inline chk_ac_day">
-                                  <input
-                                    type="checkbox"
-                                    id="day_3"
-                                    value="3"
-                                    disabled=""
-                                  />&nbsp;&nbsp;Feb 29
-                                </label>&nbsp;&nbsp;
-                                <label class="checkbox-inline chk_ac_day">
-                                  <input
-                                    type="checkbox"
-                                    id="day_4"
-                                    value="4"
-                                    disabled=""
-                                  />&nbsp;&nbsp;March 1
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-
-                                <div class="row" style='margin-bottom:10px;'>
+                                <div class="row" style='margin-bottom:10px;margin-top:10px;'>
                                 <div class="col-md-12 col-sm-12"><input class="form-control" type="text" id="referralcode" placeholder="Referral Code" value=""; ></div>
                                 <div class="col-md-12 col-sm-12 mt-3"><p><span class="text-danger">Note:</span> Schedule may change and accommodation dates can be changed accordingly </p></div>
                             </div>
@@ -725,14 +680,14 @@
           });
           $("#addmoreMembersBtn").click(function() {
               $('.close-href').hide();
-              var old=$('#team_form_members_opt').html();
+              // var old=$('#team_form_members_opt').html();
               var cur_cnt=$("#team_form_members_opt > div").length;
               $('.close-href').css('display','none');
              // $('.close-href').show(); // Shows
                // hides
               if(cur_cnt<=rem_members){
-                  var html=" <div class='row' style='margin-bottom:10px;' id='member_"+(minmemb+cur_cnt)+"'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb+cur_cnt)+"' placeholder='Email' required> </div><div class='col-md-4 col-sm-12'><a id='member_"+(minmemb+cur_cnt)+"_close' class='close-href text-white' style='border: 0;float:left;position:absolute;left:-50px;' onclick='removeElement("+(minmemb+cur_cnt)+")'><button  class='btn btn-xs btn-danger'>X</button></a><label class='checkbox-inline chk_acommodation'><input type='checkbox'   class='chk_acm' id='chk_acm"+(minmemb+cur_cnt)+"'>&nbsp;&nbsp;Accommodation</label></div></div>";
-                  $('#team_form_members_opt').html(old+html);
+                  var html=" <div style='margin-bottom:10px;position:relative' id='member_"+(minmemb+cur_cnt)+"'><input class='form-control' type='email' id='email"+(minmemb+cur_cnt)+"' placeholder='Email' required>	<a id='member_"+(minmemb+cur_cnt)+"_close' class='close-href text-white' style='border: 0;position:absolute;right:0;top:0' onclick='removeElement("+(minmemb+cur_cnt)+")'><button  class='btn btn-xs btn-danger'>X</button>	</a></div>";
+                  $('#team_form_members_opt').append(html);
 
               }
               if(cur_cnt>=rem_members){
