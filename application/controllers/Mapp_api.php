@@ -47,6 +47,7 @@ class Mapp_api extends REST_Controller {
          $this->response($s);
 		}
 		function get_event($eid){
+			$this->load->model('Report_model');			
 			$s = $this->report_model->get_eventsbyId($eid);
 			$this->response($s);
 		}
