@@ -188,7 +188,7 @@ class Appapi_Model extends CI_Model {
         $catname=$this->security->xss_clean($this->input->post('id'));
         $this->db->select('e.event_id, e.title, e.prize,e.venue,e.image_name');
         $this->db->from ( 'events as e' );
-        $this->db->join ( 'categories', 'categories.cat_id = e.cat_id' , 'inner' );
+        $this->db->join ( 'categories1', 'categories.cat_id = e.cat_id' , 'inner' );
         $this->db->order_by("categories.cat_name asc,e.title asc");
         $this->db->like('cat_name', $catname, 'after'); 
         $query = $this->db->get();
