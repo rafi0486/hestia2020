@@ -1,6 +1,6 @@
 <?php
 class DocAdmin_model extends CI_Model {
-  
+
     public function saveEvent(){
         //$data['event_id']=$this->input->post('event_id');
         $data['cat_id']=$this->input->post('cat_id');
@@ -32,11 +32,12 @@ class DocAdmin_model extends CI_Model {
         $data['reg_end']=$this->input->post('reg_end');
         $data['syllabus_link']=$this->input->post('syllabus_link');
         $data['username']=$this->input->post('username');
+        $data['pswd'] = password_hash($this->input->post('username'), PASSWORD_BCRYPT);
         $configss['allowed_types'] = '*';
         $configss['max_filename'] = '255';
         $configss['overwrite'] = TRUE;
         $configss['max_size'] = '1024';
-        
+
         $configss['upload_path'] = 'assets/uploads/event_images/';
         if (isset($_FILES['photo']['name'])) {
             echo "here";
@@ -55,16 +56,16 @@ class DocAdmin_model extends CI_Model {
                 }
             }
         }
-        
+
         //$data['pswd']=$this->input->post('pswd');
     }
 
     public function updateEvent(){
-  
+
     //$data['cat_id']=$this->input->post('cat_id');
     $data['title']=$this->input->post('title');
     $data['short_title']=$this->input->post('short_title');
-  
+
     $data['short_desc']=$this->input->post('short_desc');
     $data['details']=$this->input->post('details');
     $data['min_memb']=$this->input->post('min_memb');
@@ -95,7 +96,7 @@ class DocAdmin_model extends CI_Model {
 
     $configss['upload_path'] = 'assets/uploads/event_images/';
     if (isset($_FILES['photo']['name']) && $_FILES['photo']['error']!=4) {
-       
+
         if (0 < $_FILES['photo']['error'] ) {
             echo 'Error during file upload' . $_FILES['photo']['error'];
         } else {
@@ -107,7 +108,7 @@ class DocAdmin_model extends CI_Model {
                 $data1 = $this->upload->data();
                 $data['image_name'] = $data1['raw_name'].$data1['file_ext'];
                 $data['link']=$this->input->post('link');
-                
+
             }
         }
     }
