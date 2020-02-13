@@ -437,6 +437,11 @@
                 <h4>Registration Fee: Free</h4>
                 <?php
             }
+						// $num = $this->db->query('SELECT * FROM registration WHERE event_id=2');
+						// echo $num->num_rows();
+						?>
+						<h4  style="color:#0064cf;">Total Seats :<?= $event->seats ?><h4>
+						<?php
             if($event->syllabus_link){
               ?>
               <h4><a  style="color:#0064cf;" href="<?=$event->syllabus_link?>" target="_blank">Download Syllabus</a><h4>
@@ -456,7 +461,7 @@
                             if (count($schedule)>0) {
                                 ?>
                                 <br>
-                                    <h3>Schedule</h3>
+                                    <!-- <h3>Schedule</h3> -->
                                 <?php
                                     foreach($schedule as $timerow){
                                         $timerow = (array) $timerow; ?>
@@ -466,7 +471,7 @@
                                             if ($timerow['label'] != NULL) echo $timerow['label'].": ";
                                             $start_time=date('d-M h:i A', strtotime($timerow['start_time']));
                                             if ($timerow['end_time'] == NULL) {
-                                                echo 'Starts on '.$start_time;
+                                                // echo 'Starts on '.$start_time;s
                                             } else {
                                                 $end_time=date('d-M h:i A', strtotime($timerow['end_time']));
                                                 $dt_start=substr($start_time, 0, 5);
@@ -474,7 +479,7 @@
                                                 if ($dt_start == $dt_end) {
                                                     $end_time=date('h:i A', strtotime($timerow['end_time']));
                                                 }
-                                                echo $start_time.' to '.$end_time;
+                                                // echo $start_time.' to '.$end_time;
                                             }
                                             ?>
                                             </h5>
