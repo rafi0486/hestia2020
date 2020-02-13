@@ -16,4 +16,4 @@ $config['accommodation_user']='accommodation';
 $config['accommodation_pass']='$2y$10$D9NkmUKL63YIpszkyDyv3OiVqhWwSh3DRcZSM96vT3vHn2YjBz086';
 
 $config['volunteer_user']='volunteer';
-$config['volunteer_pass']='$2y$10$po0hRBkCSbKtOsDH0Cpvi.1AfAVFp7lBn9vchSn5KYcKOMIyQtwYK';
+$config['volunteer_pass']='$2y$10$PFlrwuQHWAjbHzP03W4vj.fxti33GI8yan/ScGwtBlAtWt8fezP6e';
