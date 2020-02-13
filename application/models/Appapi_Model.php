@@ -187,7 +187,7 @@ class Appapi_Model extends CI_Model {
     public function get_event_details_by_catlike(){
         $catname=$this->security->xss_clean($this->input->post('id'));
         if(!$catname){
-            return [];
+            return;
         }
         $this->db->select('e.event_id, e.title, e.prize,e.venue,e.image_name');
         $this->db->from ( 'events as e' );
