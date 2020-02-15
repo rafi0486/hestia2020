@@ -425,7 +425,7 @@
                                             if ($timerow['label'] != NULL) echo $timerow['label'].": ";
                                             $start_time=date('d-M h:i A', strtotime($timerow['start_time']));
                                             if ($timerow['end_time'] == NULL) {
-                                                // echo 'Starts on '.$start_time;s
+                                                echo 'Starts on '.$start_time;s
                                             } else {
                                                 $end_time=date('d-M h:i A', strtotime($timerow['end_time']));
                                                 $dt_start=substr($start_time, 0, 5);
@@ -433,7 +433,7 @@
                                                 if ($dt_start == $dt_end) {
                                                     $end_time=date('h:i A', strtotime($timerow['end_time']));
                                                 }
-                                                // echo $start_time.' to '.$end_time;
+                                                echo $start_time.' to '.$end_time;
                                             }
                                             ?>
                                             </h5>
