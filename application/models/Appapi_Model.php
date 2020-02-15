@@ -186,7 +186,7 @@ class Appapi_Model extends CI_Model {
     
     public function get_event_details_by_catlike($catname){
         
-        $this->db->select('e.event_id, e.cat_id, e.title, e.short_desc, e.details, e.min_memb, e.max_memb, e.venue, e.reg_fee, e.fee_type, e.prize, e.file1, e.file2, e.co1_name, e.co1_no, e.co2_name, e.co2_no, e.seats, e.reg_start, e.reg_end, e.link');
+        $this->db->select('e.event_id, e.cat_id, e.title, e.short_desc, e.details, e.min_memb, e.max_memb, e.venue, e.reg_fee, e.fee_type, e.prize, e.file1, e.file2, e.co1_name, e.co1_no, e.co2_name, e.co2_no, e.seats, e.reg_start, e.reg_end, e.link,e.image_name');
         $this->db->from ( 'events as e' );
         $this->db->join ( 'categories', 'categories.cat_id = e.cat_id' , 'inner' );
         $this->db->order_by("categories.cat_name asc,e.title asc");
