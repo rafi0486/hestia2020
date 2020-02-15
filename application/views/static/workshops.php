@@ -415,7 +415,7 @@
                             if (count($schedule)>0) {
                                 ?>
                                 <br>
-                                    <!-- <h3>Schedule</h3> -->
+                                    <h3>Schedule</h3>
                                 <?php
                                     foreach($schedule as $timerow){
                                         $timerow = (array) $timerow; ?>
