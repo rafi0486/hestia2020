@@ -633,7 +633,7 @@
                               var n=minmemb-1;
                               var html="";
                               while(n>0){
-                                  html+=" <div class='row' style='margin-bottom:10px;'><div class='col-md-8 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb-n)+"' placeholder='Email' required></div><div class='col-md-4 col-sm-12'></div></div>";
+                                  html+=" <div class='row' style='margin-bottom:10px;'><div class='col-md-12 col-sm-12'><input class='form-control' type='email' id='email"+(minmemb-n)+"' placeholder='Email' required></div><div class='col-md-4 col-sm-12'></div></div>";
                                   n--;
                               }
                               $('#team_form_members').html(html);
