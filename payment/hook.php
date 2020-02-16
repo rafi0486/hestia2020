@@ -2,9 +2,7 @@
 /*
 Basic PHP script to handle Instamojo RAP webhook.
 */
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-fwrite($myfile, "Test");
-fclose($myfile);
+
 include 'dbconnect.php';
 include 'errors/logit.php';
 include 'errors/error_handle.php';
