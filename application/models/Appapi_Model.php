@@ -66,7 +66,7 @@ class Appapi_Model extends CI_Model {
 
             $this->db->select ( '*' );
             $this->db->from ( 'registration' );
-    
+
             if( $eid != NULL ){
                 $this->db->where ('member_email',$email);
                 $this->db->where ('event_id',$eid);
@@ -150,13 +150,13 @@ class Appapi_Model extends CI_Model {
         }else{
             return "0";
         }
-        
+
     }
 
     public function get_reg_events(){
         $email=$this->security->xss_clean($this->input->post('email'));
         $imgpath=base_url("assets/uploads/event_images/");
-        $query=$this->db->query("select e.event_id, e.title, e.file1 as f1_hint, e.file2 as f2_hint, r.file1, r.file2 from events e, registration r where e.event_id=r.event_id and r.member_email='".$email."'");
+        $query=$this->db->query("select e.event_id,e.image_name,e.title, e.file1 as f1_hint, e.file2 as f2_hint, r.file1, r.file2 from events e, registration r where e.event_id=r.event_id and r.member_email='".$email."'");
         return  json_encode($query->result());
 
     }
@@ -183,18 +183,18 @@ class Appapi_Model extends CI_Model {
         return json_encode($query->result_array());
     }
 
-    
+
     public function get_event_details_by_catlike($catname){
-        
+
         $this->db->select('e.event_id, e.cat_id, e.title, e.short_desc, e.details, e.min_memb, e.max_memb, e.venue, e.reg_fee, e.fee_type, e.prize, e.file1, e.file2, e.co1_name, e.co1_no, e.co2_name, e.co2_no, e.seats, e.reg_start, e.reg_end, e.link,e.image_name');
         $this->db->from ( 'events as e' );
         $this->db->join ( 'categories', 'categories.cat_id = e.cat_id' , 'inner' );
         $this->db->order_by("categories.cat_name asc,e.title asc");
-        $this->db->like('categories.cat_name', $catname, 'after'); 
+        $this->db->like('categories.cat_name', $catname, 'after');
         $query = $this->db->get();
         return json_encode($query->result_array());
     }
-    
+
     public function get_top_event_details(){
         $this->db->select('event_id, title, prize,venue,image_name');
         $this->db->limit(5);

@@ -379,7 +379,7 @@ main {
 }
 
 .menu__item-link {
-border-bottom: 1px solid white;
+/* border-bottom: 1px solid white; */
 padding-bottom:5px;
     pointer-events: none;
     font-weight: bold;
@@ -394,7 +394,7 @@ padding-bottom:5px;
 }
 .menu__item-link:hover{
 
-  border-bottom: 1px solid transparent ;
+  /* border-bottom: 1px solid transparent ; */
 }
 .menu__item--current .menu__item-link {
     pointer-events: auto;

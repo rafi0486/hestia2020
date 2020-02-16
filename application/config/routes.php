@@ -56,7 +56,7 @@ $route['default_controller'] = 'pages/index';
 
 $route['eventbooking'] = 'Pages/BookTicket';
 $route['events'] = 'Pages/main_events';
-$route['events/workshops'] = 'Pages/workshops';
+// $route['events/workshops'] = 'Pages/workshops';
 $route['events/(.+)'] = 'Pages/Event/$1';
 $route['event/(.+)'] = 'Pages/SingleEvent/$1';
 $route['process/(.+)'] = 'Pages/ProcessUserRequest/$1';
