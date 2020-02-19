@@ -9,17 +9,17 @@ function fatal_handler() {
 
     $error = error_get_last();
 
-    // if( $error !== NULL) {
-    //     $errno   = $error["type"];
-    //     $errfile = $error["file"];
-    //     $errline = $error["line"];
-    //     $errstr  = $error["message"];
-    // include('logit.php');
-    // $str= " ".$errno."|".$errfile."|".$errline."|".$errstr;
-    //     //write_error(format_error( $errno, $errstr, $errfile, $errline));
-    //     errormsg($str);
-    // }
-    $str = "error message";
+    if( $error !== NULL) {
+        $errno   = $error["type"];
+        $errfile = $error["file"];
+        $errline = $error["line"];
+        $errstr  = $error["message"];
+    include('logit.php');
+    $str= " ".$errno."|".$errfile."|".$errline."|".$errstr;
+        //write_error(format_error( $errno, $errstr, $errfile, $errline));
+        errormsg($str);
+    }
+    // $str = "error message";
 }
 
 
@@ -30,7 +30,7 @@ $date = date('m/d/Y h:i:s a', time());
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://www.fast2sms.com/dev/bulk?authorization=Ev2tKrgdNiCFOjeMySRHsaDA4b6T0JUQcZV937f5znGBp1PlxL6QDcEA8igklaOGKwoCpyqNf5zP1vFt&sender_id=FSTSMS&message=".urlencode("ERROR".$date." ".$str."")."&language=english&route=p&numbers=".urlencode('8281582725'),
+  CURLOPT_URL => "https://www.fast2sms.com/dev/bulk?authorization=Ev2tKrgdNiCFOjeMySRHsaDA4b6T0JUQcZV937f5znGBp1PlxL6QDcEA8igklaOGKwoCpyqNf5zP1vFt&sender_id=FSTSMS&message=".urlencode("ERROR")."&language=english&route=p&numbers=".urlencode('8281582725'),
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
