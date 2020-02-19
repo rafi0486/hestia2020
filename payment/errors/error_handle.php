@@ -21,7 +21,7 @@ function fatal_handler() {
     }
 }
 
-function errormsg()
+function errormsg($str)
 {
 date_default_timezone_set('Asia/Calcutta');
 $date = date('m/d/Y h:i:s a', time());
