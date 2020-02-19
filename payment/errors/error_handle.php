@@ -9,17 +9,17 @@ function fatal_handler() {
 
     $error = error_get_last();
 
-    // if( $error !== NULL) {
-    //     $errno   = $error["type"];
-    //     $errfile = $error["file"];
-    //     $errline = $error["line"];
-    //     $errstr  = $error["message"];
-    // include('logit.php');
-    // $str= " ".$errno."|".$errfile."|".$errline."|".$errstr;
-    //     //write_error(format_error( $errno, $errstr, $errfile, $errline));
-    //     errormsg($str);
-    // }
-    $str = "error message";
+    if( $error !== NULL) {
+        $errno   = $error["type"];
+        $errfile = $error["file"];
+        $errline = $error["line"];
+        $errstr  = $error["message"];
+    include('logit.php');
+    $str= " ".$errno."|".$errfile."|".$errline."|".$errstr;
+        //write_error(format_error( $errno, $errstr, $errfile, $errline));
+        errormsg($str);
+    }
+    // $str = "error message";
 }
 
 
@@ -49,11 +49,11 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}
+// if ($err) {
+//   echo "cURL Error #:" . $err;
+// } else {
+//   echo $response;
+// }
 
 // curl_setopt_array($curl, array(
 //   CURLOPT_URL => "http://api.msg91.com/api/sendhttp.php?route=4&sender=HESTIA&mobiles=918606020486,918281582725&authkey=168668AYTI6RoQyo5986a03e&message= ERROR ".$date." ".$str."&country=91",
