@@ -9,16 +9,17 @@ function fatal_handler() {
 
     $error = error_get_last();
 
-    if( $error !== NULL) {
-        $errno   = $error["type"];
-        $errfile = $error["file"];
-        $errline = $error["line"];
-        $errstr  = $error["message"];
-    include('logit.php');
-    $str= " ".$errno."|".$errfile."|".$errline."|".$errstr;
-        //write_error(format_error( $errno, $errstr, $errfile, $errline));
-        errormsg($str);
-    }
+    // if( $error !== NULL) {
+    //     $errno   = $error["type"];
+    //     $errfile = $error["file"];
+    //     $errline = $error["line"];
+    //     $errstr  = $error["message"];
+    // include('logit.php');
+    // $str= " ".$errno."|".$errfile."|".$errline."|".$errstr;
+    //     //write_error(format_error( $errno, $errstr, $errfile, $errline));
+    //     errormsg($str);
+    // }
+    $str = "error message";
 }
 
 
@@ -29,21 +30,47 @@ $date = date('m/d/Y h:i:s a', time());
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://api.msg91.com/api/sendhttp.php?route=4&sender=HESTIA&mobiles=918606020486,918281582725&authkey=168668AYTI6RoQyo5986a03e&message= ERROR ".$date." ".$str."&country=91",
+  CURLOPT_URL => "https://www.fast2sms.com/dev/bulk?authorization=Ev2tKrgdNiCFOjeMySRHsaDA4b6T0JUQcZV937f5znGBp1PlxL6QDcEA8igklaOGKwoCpyqNf5zP1vFt&sender_id=FSTSMS&language=english&route=qt&numbers=".urlencode('8281582725')."&message=ERROR ".$date." ".$str."&variables=".urlencode('{AA}|{CC}')."&variables_values=".urlencode('12345|asdaswdx')."",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_SSL_VERIFYHOST => 0,
   CURLOPT_SSL_VERIFYPEER => 0,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "cache-control: no-cache"
+  ),
 ));
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
 curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => "http://api.msg91.com/api/sendhttp.php?route=4&sender=HESTIA&mobiles=918606020486,918281582725&authkey=168668AYTI6RoQyo5986a03e&message= ERROR ".$date." ".$str."&country=91",
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_ENCODING => "",
+//   CURLOPT_MAXREDIRS => 10,
+//   CURLOPT_TIMEOUT => 30,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => "GET",
+//   CURLOPT_SSL_VERIFYHOST => 0,
+//   CURLOPT_SSL_VERIFYPEER => 0,
+// ));
+//
+// $response = curl_exec($curl);
+// $err = curl_error($curl);
+//
+// curl_close($curl);
 
 }
 
