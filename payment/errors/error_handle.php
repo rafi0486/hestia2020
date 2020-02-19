@@ -19,18 +19,16 @@ function fatal_handler() {
         //write_error(format_error( $errno, $errstr, $errfile, $errline));
         errormsg($str);
     }
-    // $str = "error message";
 }
 
-
-function errormsg($str)
+function errormsg()
 {
 date_default_timezone_set('Asia/Calcutta');
 $date = date('m/d/Y h:i:s a', time());
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://www.fast2sms.com/dev/bulk?authorization=Ev2tKrgdNiCFOjeMySRHsaDA4b6T0JUQcZV937f5znGBp1PlxL6QDcEA8igklaOGKwoCpyqNf5zP1vFt&sender_id=FSTSMS&message=".urlencode("ERROR")."&language=english&route=p&numbers=".urlencode('8281582725'),
+  CURLOPT_URL => "https://www.fast2sms.com/dev/bulk?authorization=Ev2tKrgdNiCFOjeMySRHsaDA4b6T0JUQcZV937f5znGBp1PlxL6QDcEA8igklaOGKwoCpyqNf5zP1vFt&sender_id=FSTSMS&message=".urlencode("ERROR ".$date." ".$str."")."&language=english&route=p&numbers=".urlencode('8281582725'),
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -49,11 +47,12 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
 }
+// if ($err) {
+//   echo "cURL Error #:" . $err;
+// } else {
+//   echo $response;
+// }
 
 // curl_setopt_array($curl, array(
 //   CURLOPT_URL => "http://api.msg91.com/api/sendhttp.php?route=4&sender=HESTIA&mobiles=918606020486,918281582725&authkey=168668AYTI6RoQyo5986a03e&message= ERROR ".$date." ".$str."&country=91",
@@ -72,7 +71,7 @@ if ($err) {
 //
 // curl_close($curl);
 
-}
+// }
 
 
     function format_error( $errno, $errstr, $errfile, $errline ) {
