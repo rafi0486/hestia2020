@@ -186,7 +186,7 @@ if(isset($_COOKIE['redir']))
 
 			<div>
 				<p class="hestia-font " style="text-align:center;letter-spacing:1px;font-size:14px; margin-top:3px;">
-					FEB 27 - MAR 01
+					MAR 05 - MAR 08
 				</p>
 			</div>
 

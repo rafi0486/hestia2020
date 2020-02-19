@@ -5,14 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /* User-defined Constants */
 
 define('APP_TITLE', 'Hestia 20 - National Level Techno-Cultural Fest of TKM');
-define('APP_META_CONTENT', 'Hestia 20 - National level Techno Cultural fest organized by TKM College of Engineering. Feb 27- March 1');
+define('APP_META_CONTENT', 'Hestia 20 - National level Techno Cultural fest organized by TKM College of Engineering. March 5 - March 8');
 define('APP_META_KEYWORDS', 'hestia,hestia20,tkmce,hestiatkm,hestiatkmce,conjura,fest,event,technical,cultural,technocultural');
 
 
 
 /* User-defined Constants */
 
-        
+
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
