@@ -911,43 +911,39 @@ padding-bottom:5px;
 
     /* Layout 3 */
     .grid--open .grid__item:first-child {
-        grid-area: 3 / 1 / 8 / 4;
+        grid-area: 1 / 2 / 3 / 5;
     }
 
     .grid--open .grid__item:nth-child(2) {
-        grid-area: 1 / 2 / 3 / 4;
+        grid-area: 3 / 1 / 6 / 5;
     }
 
     .grid--open .grid__item:nth-child(3) {
-        grid-area: 5 / 4 / 8 / 8;
+        grid-area: 1 / 5 / 5 / 8;
     }
 
     .grid--open .grid__item:nth-child(4) {
-        grid-area: 2 / 7 / 5 / 11;
+        grid-area: 2 / 8 / 6 / 11;
     }
 
     .grid--open .grid__item:nth-child(5) {
-        grid-area: 1 / 4 / 5 / 7;
+        grid-area: 5 / 5 / 8 / 8;
     }
 
     .grid--open .grid__item:nth-child(6) {
-        grid-area: 8 / 5 / 11 / 2;
+        grid-area: 6 / 8 / 8 / 11;
     }
 
     .grid--open .grid__item:nth-child(7) {
-        grid-area: 10 / 9 / 8 / 11;
+        grid-area: 6 / 2 / 8 / 5;
     }
 
     .grid--open .grid__item:nth-child(8) {
-        grid-area: 5 / 8 / 8 / 10;
+        grid-area: 11 / 4 / 8 / 7;
     }
 
     .grid--open .grid__item:nth-child(9) {
-        grid-area: 8 / 5 / 11 / 9;
-    }
-
-    .grid--open .grid__item:nth-child(10) {
-        grid-area: 7 / 5 / 11 / 9;
+        grid-area: 8 / 9 / 11 / 7;
     }
 
     /* Layout 4 */
