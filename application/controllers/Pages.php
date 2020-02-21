@@ -26,7 +26,7 @@ class Pages extends CI_Controller {
         $data['cultural']=$this->report_model->get_categorieslike("cultural");
         $data['workshops']=$this->report_model->get_categorieseventlike("workshops");
         $data['general']=$this->report_model->get_categorieseventlike("general");
-        $data['online']=$this->report_model->get_categorieseventlike("online");
+        $data['lectures']=$this->report_model->get_categorieseventlike("lectures");
 
 
         $this->load->view('static/main_events',$data);

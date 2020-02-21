@@ -209,7 +209,7 @@ if(isset($_COOKIE['redir']))
 			</div>
 			<div class="menu__item">
 				<span class="menu__item-number">04</span>
-				<span class="menu__item-textwrap"><span class="menu__item-text">Online</span></span>
+				<span class="menu__item-textwrap"><span class="menu__item-text">Lectures</span></span>
         <a class="menu__item-link">Explore<i class="material-icons btn--menu" style="color: inherit!important;font-size: 20px;cursor:pointer;position:absolute;top:-11px;right:-40px;float:right;margin:15px">arrow_forward
       </i></a>
 			</div>
@@ -256,7 +256,7 @@ if(isset($_COOKIE['redir']))
           <div class="name-overlay">COMING SOON</div>
           </div>
           <?php
-          foreach ($online as $catrow){
+          foreach ($lectures as $catrow){
           ?>
           <div class="grid__item" style="background-image: url(<?= base_url("assets/uploads/event_images/").$catrow->cat_img ?>)">
           <div class="name-overlay"><?=$catrow->cat_text?></div>
