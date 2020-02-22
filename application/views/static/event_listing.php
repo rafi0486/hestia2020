@@ -394,6 +394,11 @@
                 <h4>Registration Fee: Free</h4>
                 <?php
             }
+						if($event->syllabus_link){
+							?>
+							<h4><a  style="color:#0064cf;" href="<?=$event->syllabus_link?>" target="_blank">Download Syllabus</a><h4>
+								<?php
+						}
             if ($event->reg_fee !== NULL && $event->reg_end !== '') {
                 ?>
                 <h5>Online Registration closes on: <?=$event->reg_end?></h5>
