@@ -538,5 +538,5 @@ if(isset($_COOKIE['redir']))
 
 
 </body>
-
+<!-- <h6 value="V2hhdCBzb2NrZXQgZGlkIHRoZSBtZXJjZWQgcHJvY2Vzc29yIGhhdmU/">Stumble upon this, fellow Flag seeker</h6> -->
 </html>
