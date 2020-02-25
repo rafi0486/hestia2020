@@ -495,5 +495,9 @@ class Report_model extends CI_Model {
           $query = $this->db->get_where('sponsors',array('s_type' => $s_type));
           return $query->result_array();
       }
+      public function get_event_reg_count_by_member_email($eid){
+          $cnt=$this->db->query("SELECT count(distinct member_email) as Cnt from registration where event_id=".$eid);
+          return $cnt->row()->Cnt;
+      }
 }
 ?>

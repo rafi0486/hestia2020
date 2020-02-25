@@ -386,7 +386,7 @@
                 ?>
                 <h4>Registration Fee: ₹<?=$event->reg_fee?> per <?=$event->fee_type?></h4>
 								<?php if($event->cat_id==1){?>
-								<h4 style="color:#0064cf">Remaining Seats: <?=$event->seats-$cnt=$this->report_model->get_event_reg_count($event->event_id);?>
+								<h4 style="color:#0064cf">Remaining Seats: <?=$event->seats-$cnt=$this->report_model->get_event_reg_count_by_member_email($event->event_id);?>
 								<?php } ?>
 								<?php
             }else if($event->reg_fee == 0){
