@@ -144,7 +144,7 @@ header('Location: '.$data['google_login_url']);
         $today = date('Y-m-d');
         $startdate=date('Y-m-d', strtotime($data['event']->reg_start));
         $enddate = date('Y-m-d', strtotime($data['event']->reg_end));
-        $cnt=$this->report_model->get_event_reg_count($eid);
+        $cnt=$this->report_model->get_event_reg_count_by_member_email($eid);
         $reg_fee=$data['event']->reg_fee;
         $reg_end = '';
         $resulthtml="";

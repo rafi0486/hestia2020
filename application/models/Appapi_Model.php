@@ -60,7 +60,7 @@ class Appapi_Model extends CI_Model {
         $startdate=date('Y-m-d', strtotime($event->reg_start));
         $enddate = date('Y-m-d', strtotime($event->reg_end));
         $this->load->model('report_model');
-        $cnt=$this->report_model->get_event_reg_count($eid);
+        $cnt=$this->report_model->get_event_reg_count_by_member_email($eid);
 
         if ($email != NULL) {
 
