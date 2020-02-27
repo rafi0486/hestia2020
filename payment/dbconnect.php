@@ -10,10 +10,10 @@ $base_app_title="Hestia 20";
 // $private_token2='test_682490e7df25b5fad01f575d09d';
 
 // Original
-$private_api='996021d9acebe28e8632b2097e2157aa';
-$private_token='3abad29e7ea8e438fcefd476e281cfb4';
-$private_api2='996021d9acebe28e8632b2097e2157aa';
-$private_token2='3abad29e7ea8e438fcefd476e281cfb4';
+$private_api='2f0b906cf313799b00bbaecddf708d5f';
+$private_token='5e729a651a9842419f815fdf53232a9e';
+$private_api2='2f0b906cf313799b00bbaecddf708d5f';
+$private_token2='5e729a651a9842419f815fdf53232a9e';
 // Check connection
 if (mysqli_connect_errno())
   {
