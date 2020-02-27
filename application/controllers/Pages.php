@@ -47,6 +47,8 @@ class Pages extends CI_Controller {
             show_404();
         }
         $data['google_login_url']=$this->google->loginURL();
+        $data['sponsors_type'] = $this->report_model->get_sponsors_type();
+        $data['sponsors'] = $this->report_model->get_sponsors();
         $this->load->view('static/'.$page,$data);
     }
     function Test($cat){

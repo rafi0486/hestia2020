@@ -30,7 +30,7 @@
 
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/about/demo2.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/normalize.css" />
-
+	<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css" /> -->
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/pater.css" />
 	<link rel="stylesheet" type="text/css" href="<?=  base_url("assets/main/")?>css/common.css" />
 	<link rel="stylesheet" href="<?=  base_url("assets/main/")?>css/revealer.css" />
@@ -135,30 +135,42 @@
 				<?php } ?>
 			</ul>
 		</nav>
-		<div class="content" style="margin-top: 150px; margin-bottom:100px;">
-			<div style="	text-transform: uppercase;font-size: 1.5rem;" class="sponsor-heading">
-        COMING SOON
-			</div>
 
-      <div class="grid grid-1">
+		<div class="content" style="margin-top: 150px;">
 
-        <!-- <div class="grid__item" data-size="1280x961">
-          <a href="https://i.imgur.com/KJPLh5L.png" class="img-wrap"><img src="https://i.imgur.com/KJPLh5L.png" alt="img04" />
-            <div class="description description--grid">
-              Google
-              <span class="company-link" onclick="openInNewTab('https:\/\/www.google.com');">Hello</span>
-            </div>
-          </a>
-        </div> -->
+			<?php
+         foreach ($sponsors_type as $row) {
+      ?>
+			 <div class="sponsor-heading">
+				 <?=$row['s_type']?>
+			 </div>
+			 <div class="grid grid-1">
+				 <?php
+							foreach ($sponsors as $col) {
+				 ?>
+				 <?php if($row['s_type']==$col['s_type']){ ?>
+				 <div class="grid__item" data-size="1280x1131">
+					 <a href="<?=$col['s_link']?>" target="_blank" class="img-wrap">
+						 <img src="<?=base_url('assets/uploads/sponsors/')?><?=$col['s_logo']?>" alt="<?=$col['s_name']?>" />
+						 <div class="description description--grid"><?=$col['s_name']?></div>
+					 </a>
+				 </div>
+			  <?php } ?>
+				<?php } ?>
+			 </div>
+		 <?php } ?>
 
 
-      </div>
+
+			 <div class="preview">
+				 <button class="action action--close">
+					 <i class="fa fa-times"></i><span class="text-hidden">Close</span>
+				 </button>
+				 <div class="description description--preview"></div>
+			 </div>
 
 
-
-			<!-- /preview -->
-		</div>
-		<!-- /content -->
+	</div>
 	</div>
 	<!-- /container -->
 	<script src="<?=  base_url("assets/main/")?>js/home/anime.min.js"></script>
