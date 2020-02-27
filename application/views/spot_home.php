@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="//www.hestia.live/assets/front/img/hestia-icon.png">
-  
+    <link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
+
+
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -103,7 +104,7 @@
                </div>
                         <h4 class="text-center my-3">Spot Registration</h4>
                 <div class="eventsreg style-1">
-                        
+
                 <div class="m-3">
                         <label for="selectcategory">Event Category: </label>
                         <select id="selectcategory" class="form-control">
@@ -116,20 +117,20 @@
                             }
                             ?>
                         </select>
-                        
+
                 </div>
                 <div class="m-3">
                         <label for="selectcategory">Event Name: </label>
                         <select id="selectevent" class="form-control">
 
                         </select>
-                        
+
                 </div>
                 <div class="modal-body">
 
 
                         <form id="team_form" method="post" action="#" name="team_form" >
-        
+
                         <input type="hidden" id="json_data" name="json_data" hidden/>
                             <div class="row" style='margin-bottom:10px;'>
                                 <div class="col-md-3 col-sm-12" id="div_mail0"><input class="form-control mem_mail" type="email" onchange="loadUserInfo(this)" id="email0" placeholder="Email"></div>
@@ -139,24 +140,24 @@
                                 <div class="col-md-1 col-sm-12" id="div_acm0"><label class="checkbox-inline chk_acommodation">
                                             <input type="checkbox" class="chk_acm"  id="chk_acm0">
                                             </label></div>
-                            </div> 
+                            </div>
                             <div id="team_form_members">
-        
+
                             </div>
                             <div id="team_form_members_opt">
                             </div>
-                            
+
                             <div>
                             <div class="col-md-12 col-sm-12 mt-3" id="email_note"><p><span class="text-danger">Only gmail addresses are allowed</span></p></div>
-                          
+
                                 <button type="button" class="btn btn-warning my-2 " name="addMoreMembers" id="addmoreMembersBtn" style="display: none;">Add Member&nbsp;<i class="fas fa-plus-square"></i></button><br>
         <input type="submit" id="team_form_hid_btn" hidden/>
-        
+
                                 <div class="row ">
                                     <div class="col-xs-6 ml-3 mt-3">
-                                        
-                                    
-                                        <div class="center"> 
+
+
+                                        <div class="center">
                                         <label class="form-check-label">
                                                 Accommodation for
                                             </label>
@@ -173,32 +174,32 @@
                                             <input type="checkbox" id="day_4" value="4" >&nbsp;&nbsp;March 31
                                             </label>
                                         </div>
-                                       
+
                                     </div>
-                                   
+
                                 </div>
                                 <div class="row" style='margin-bottom:10px;'>
                                    </div>
-        
-        
-        
-        
+
+
+
+
                             </div>
                         </form>
                     </div>
-        
-        
+
+
                 <div style="margin-left: 40%;" id="btn_add_div">
 
                 </div>
-        
+
                 </div>
-        
+
         </div>
 <!-- end of col-7 -->
-        
+
     </div>
-    
+
 </body>
 
 <script type="text/javascript">
@@ -210,28 +211,28 @@
         $('.modal-close').click(function(){
             $('#myModal').hide();
         });
-    
 
-    
+
+
             jQuery('.modal-body').on('change','.chk_acm',
-        function(){ 
-          
-    
-           
+        function(){
+
+
+
             checkBoxValidate();
-            
+
         });
-    
+
     function checkBoxValidate(){
-    
+
         var flg=false;
             $('.chk_acm').each(function(i, obj) {
-             
+
                 if($(obj).prop('checked')){
                     flg=true;
-                 
+
                 }
-               
+
                 });
                 if(flg==true){
                     $("#day_1").prop('disabled',false);
@@ -250,7 +251,7 @@
                 }
     }
         function LoadEventMembers(event_id){
-    
+
             $.ajax({
                 type:'post',
                 url:"<?=base_url()?>Spot/ProcessUserRequest/"+event_id,
@@ -269,7 +270,7 @@
 
 
                     var array = JSON.parse(result);
-    
+
                     switch(array[0]){
 
                         case 200:{
@@ -278,7 +279,7 @@
 
                             $('.chk_acommodation').css('display','none');
                             $('#div_acm0').css('display','none');
-    
+
                             $('#div_mail0').addClass('col-md-12').removeClass('col-md-8');
                             $('#team_form_members').html("");
 
@@ -288,13 +289,13 @@
                                 var acc=array[2];
                                 for(var i=1;i<=4;i++){
                                         if(acc.includes(i+"")){
-                                      
+
                                             $("#day_"+i).prop('disabled','true');
                                             $("#day_"+i).prop('checked','true');
                                             $("#day_"+i).removeClass("chk_acm");
                                         }else{
-    
-    
+
+
                                         }
                                 }
                             $('.modal-footer').html("<button type='button' class='btn btn-success' name='team_form_submit' class='team_form_submit' onclick='team_form_sumbit()' >Submit&nbsp;<i class='fas fa-check-circle'></i></button>");
@@ -322,9 +323,9 @@
                             if(rem_members<0){
                                 $("#addmoreMembersBtn").css({
                                     "display": "none"
-    
+
                                 });
-    
+
                             }else{
                                 $("#addmoreMembersBtn").css({
                                     "display": "inline"
@@ -336,16 +337,16 @@
                         }            $('#myModal').hide();
 
                         }
-    
-    
-    
-    
+
+
+
+
                 }
             });
-    
-    
-    
-    
+
+
+
+
         }
 
 
@@ -656,9 +657,9 @@ if(isvalid==true){
                 });
 
         }
-    
-    
+
+
     </script>
-    
-    
+
+
 </html>

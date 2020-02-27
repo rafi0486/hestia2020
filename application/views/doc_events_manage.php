@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="//www.hestia.live/assets/front/img/hestia-icon.png">
+    <link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
+
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
@@ -242,7 +243,7 @@
                         <input type="text" id="syllabus_link"  name="syllabus_link"  class="form-control"/>
                     </div>
                 </div>
-                    
+
                     <div class="m-3">
                         <label>Link: </label>
                         <input type="text" id="link"  name="link" required class="form-control"/>

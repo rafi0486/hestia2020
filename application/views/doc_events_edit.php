@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="//www.hestia.live/assets/front/img/hestia-icon.png">
+    <link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
+
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
@@ -125,12 +126,12 @@
                 </table>
             </div>
             </div>
-            
+
             <div class="col-9">
                <div style="float: right;">Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
                </div>
                         <h4 class="text-center my-3">Manage Events</h4>
-                        
+
                         <form action="<?=base_url("DocAdmin/UpdateEvent")?>" method="post" enctype="multipart/form-data">
                 <div class="eventsreg style-1">
 
@@ -148,9 +149,9 @@
                         </select>
 
                 </div>
-               
+
                         <input type="hidden" id="event_id"  name="event_id" value="<?=$edetails->event_id?>"/>
-               
+
                 <div class="m-3">
                         <label>Event Name: </label>
                         <input type="text" id="title"  name="title" class="form-control" value="<?=$edetails->title?>"/>
@@ -246,8 +247,8 @@
                         <label>Syllabus: </label>
                         <input type="text" id="syllabus_link"  name="syllabus_link"  class="form-control" value="<?=$edetails->syllabus_link?>"/>
                     </div>
-               
-                    
+
+
                     <div class="m-3">
                         <label>Link: </label>
                         <input type="text" id="link"  name="link" required class="form-control"  value="<?=$edetails->link?>" />
@@ -262,13 +263,13 @@
                 </div>
                         </form>
 
-                
+
             </div>
-            
-            
+
+
         </div>
-        
-        
+
+
     </div>
 <!-- end of col-7 -->
 
