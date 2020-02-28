@@ -505,5 +505,13 @@ class Report_model extends CI_Model {
           $cnt=$this->db->query("SELECT count(distinct member_email) as Cnt from registration where event_id=".$eid);
           return $cnt->row()->Cnt;
     }
+
+    public function check_categories($cat_name){
+      $query = $this->db->get_where('categories',"cat_name='$cat_name'" );
+      if ( $query->num_rows() == 1) {
+         return TRUE;
+       }
+         return FALSE;
+    }
 }
 ?>
