@@ -199,7 +199,7 @@ class Appapi_Model extends CI_Model {
         // $this->db->select('event_id, title, prize,venue,image_name');
         // $this->db->limit(5);
         // $query = $this->db->get('events');
-        $query=$this->db->query("select event_id, title, prize,venue,image_name from events where event_id IN (1001,7,1002,1051,2)");
+        $query=$this->db->query("select event_id, title, prize,venue,image_name from events where event_id IN (10,6,1001,1002,1051)");
         return json_encode($query->result_array());
     }
     public function set_file_urls($mem_email,$f1,$evid,$f2 = NULL)
