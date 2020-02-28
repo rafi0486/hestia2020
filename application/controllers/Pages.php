@@ -61,11 +61,15 @@ class Pages extends CI_Controller {
     }
     function Event($cat){
         $cat_name=$this->security->xss_clean($cat);
+        $result = $this->report_model->check_categories($cat_name);
+        if($result==NULL){
+          show_404();
+        }else{
         $data['title']=ucfirst($cat_name);
-        $data['google_login_url']=$this->google->loginURL();
-        //$data['title']=$this->report_model->get_events_detail($cat_name);
+        $data['google_login_url']=$this->google->loginURL();        
         $data['events']=$this->report_model->get_events_detail($cat_name);
         $this->load->view('static/event_listing',$data);
+        }
     }
     function UserEvents(){
 
