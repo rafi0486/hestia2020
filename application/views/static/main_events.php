@@ -210,7 +210,7 @@ if(isset($_COOKIE['redir']))
 			<div class="menu__item">
 				<span class="menu__item-number">04</span>
 				<span class="menu__item-textwrap"><span class="menu__item-text">Lectures</span></span>
-        <a class="menu__item-link" href="<?=base_url("events/lectures")?>">Explore<i class="material-icons btn--menu" style="color: inherit!important;font-size: 20px;cursor:pointer;position:absolute;top:-11px;right:-40px;float:right;margin:15px">arrow_forward
+        <a class="menu__item-link">Explore<i class="material-icons btn--menu" style="color: inherit!important;font-size: 20px;cursor:pointer;position:absolute;top:-11px;right:-40px;float:right;margin:15px">arrow_forward
       </i></a>
 			</div>
 			<div class="menu__item">
@@ -251,8 +251,7 @@ if(isset($_COOKIE['redir']))
          					<?php } ?>
 
 				</div>
-				<div class="grid grid--layout-4">
-          </div>
+				<div class="grid grid--layout-4">          
           <?php
           foreach ($lectures as $catrow){
           ?>
