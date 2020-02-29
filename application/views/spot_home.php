@@ -178,6 +178,11 @@
                                     </div>
 
                                 </div>
+                                <div class="mt-3">
+                                        <label for="selectcategory">Transaction ID: </label>
+                                        <input id="transactionId" class="form-control">
+
+                                </div>
                                 <div class="row" style='margin-bottom:10px;'>
                                    </div>
 
