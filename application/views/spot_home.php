@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="<?=  base_url("assets/main/")?>img/hestia-icon.png" />
+    <script type="text/javascript">
 
+function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
 
+}
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -179,9 +188,14 @@
 
                                 </div>
                                 <div class="mt-3">
+                                        <span style="color:black">UPI Transaction</span>
+                                        <input type="radio" onclick="javascript:yesnoCheck();" id="yesCheck" name="transactionMode" value="yes">
+                                        <span class="ml-3" style="color:black">Offline Transaction </span>
+                                        <input type="radio" onclick="javascript:yesnoCheck();" id="noCheck" name="transactionMode" value="no">
+                                </div>
+                                <div id="ifYes" style="display:none" class="mt-3">
                                         <label for="selectcategory">Transaction ID: </label>
                                         <input id="transactionId" class="form-control">
-
                                 </div>
                                 <div class="row" style='margin-bottom:10px;'>
                                    </div>
