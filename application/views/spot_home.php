@@ -629,6 +629,7 @@ function yesnoCheck() {
             item ["event_id"] =$("#selectevent").val();
 
             item ["reg_email"] = $("#email0").val();
+            item ["transactionId"] = $("#transactionId").val();
             item ["referral_code"] = "spot_<?php
                     if(isset($_SESSION['username'])){
                     echo $_SESSION['username'];

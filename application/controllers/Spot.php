@@ -21,6 +21,7 @@ class Spot extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('report_model');
+        $this->load->library('form_validation');
 
         if(!$this->session->userdata('username') || $this->session->userdata('user_type')!="S") {
             redirect('Login');
@@ -81,9 +82,15 @@ class Spot extends CI_Controller {
         $this->load->model('user_model');
         $totalacc=0;
         $retcntr=0;
-
+        if($jsondata->transactionId!=NULL){
+            if($this->report_model->check_transaction_id($jsondata->transactionId) == TRUE){
+                  $this->session->set_flashdata('fail', 'Transaction ID error');
+                  echo "Transaction ID Error <br>";
+                  echo "<a href='https://www.hestia.live/Spot/home'>Go Back</a>";
+                  exit;
+            }
+        }
         foreach ($members as $row){
-
             $data=array();
             $data['fullname']=$row->fullname;
             $data['phone']=$row->phone;
@@ -114,6 +121,7 @@ class Spot extends CI_Controller {
             $data_reg['event_id']=$jsondata->event_id;
             $data_reg['reg_email']=$jsondata->reg_email;
             $data_reg['member_email']=$row->email;
+            $data_reg['transactionId']=$jsondata->transactionId;
             if($data_reg['member_email']==$data_reg['reg_email']){
                 $data_reg['fee_amnt']=$this->input->post('fee_hid');
 
