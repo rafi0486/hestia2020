@@ -513,5 +513,14 @@ class Report_model extends CI_Model {
        }
          return FALSE;
     }
+
+    public function check_transaction_id($transactionId){
+        $query = $this->db->query("SELECT * FROM registration WHERE transactionId=".$transactionId);
+        if ( $query->num_rows() == 1) {
+           return TRUE;
+        }
+        return FALSE;
+    }
+
 }
 ?>
