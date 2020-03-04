@@ -122,6 +122,7 @@ class Spot extends CI_Controller {
             $data_reg['reg_email']=$jsondata->reg_email;
             $data_reg['member_email']=$row->email;
             $data_reg['transactionId']=$jsondata->transactionId;
+            $data_reg['user_type'] = $this->session->userdata('user_type');
             if($data_reg['member_email']==$data_reg['reg_email']){
                 $data_reg['fee_amnt']=$this->input->post('fee_hid');
 
