@@ -23,7 +23,7 @@ class Spot extends CI_Controller {
         $this->load->model('report_model');
         $this->load->library('form_validation');
 
-        if(!$this->session->userdata('username') || $this->session->userdata('user_type')!="S") {
+        if(!$this->session->userdata('username') || $this->session->userdata('user_type')!="S" &&  $this->session->userdata('user_type')!="CS" ) {
             redirect('Login');
         }
 
