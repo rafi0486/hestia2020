@@ -373,6 +373,13 @@ class Report_model extends CI_Model {
        }
 
     }
+    public function get_all_registrations_appreciation_certificate($mail="",$eid=""){
+       if($mail!="" && $eid!=""){
+           $query=$this->db->query("select upper(e.event_id) event_id,r.participated, upper(e.title) title ,upper(u.fullname) fullname ,r.reg_id,upper(u.college) college from events e, registration r,users u where e.event_id=r.event_id and r.member_email=u.email and u.email='".$mail."' and u.profile_completed=1 and r.participated in(101,102,103) and  r.event_id=".$eid);
+           return  $query->result();
+       }
+
+    }
     public function get_single_certificate($certificateno){
         $certificateno = $this->security->xss_clean($certificateno);
         $query=$this->db->query("select e.event_id, e.title ,u.fullname,u.college ,r.reg_id from events e, registration r,users u where e.event_id=r.event_id and r.member_email=u.email and r.reg_id='".$certificateno."'");
@@ -474,9 +481,9 @@ class Report_model extends CI_Model {
             if($iscomplete->num_rows()==1){
                 return 0;
             }else{
-                $ispart=$this->db->query("SELECT * from registration where event_id='$eid' and member_email='$mail' and participated=1");
+                $ispart=$this->db->query("SELECT participated from registration where event_id='$eid' and member_email='$mail' and participated in(1,101,102,103)");
                 if($ispart->num_rows()==1){
-                    return 1;
+                    return $ispart->row()->participated;
                 }else {
                     return -2;
                 }

@@ -293,11 +293,18 @@
                    }
 
                    if($row['certificate']==1){
-                       echo "<a href='#'  class='btn btn-success btn-result btn-custom' onclick='viewcertificate(".$row['event_id'].")'>Download Certificate &nbsp;<i class='material-icons' style='position:relative;top:4px;font-size: 18px;' >arrow_downward</i></a><br/><br/>";
+                       echo "<a href='#'  class='btn btn-success btn-result btn-custom' onclick='viewcertificate(".$row['event_id'].",0)'>Download Certificate &nbsp;<i class='material-icons' style='position:relative;top:4px;font-size: 18px;' >arrow_downward</i></a><br/><br/>";
 
 
-                   }else if($row['certificate']==0)
-                       echo "<a href='".base_url("myprofile")."'  class='btn btn-warning btn-result'>Verify Profile To Download Certificate &nbsp;<i class='fas fa-check'></i></a>";
+                   }else if($row['certificate']==0){
+                                              echo "<a href='".base_url("myprofile")."'  class='btn btn-warning btn-result'>Verify Profile To Download Certificate &nbsp;<i class='fas fa-check'></i></a>";
+
+                   }else if(in_array($row['certificate'], [101,102,103])){
+                                              echo "<a href='#'  class='btn btn-success btn-result btn-custom' onclick='viewcertificate(".$row['event_id'].",1)'>Download Certificate &nbsp;<i class='material-icons' style='position:relative;top:4px;font-size: 18px;' >arrow_downward</i></a><br/><br/>";
+
+                   }else{
+                       
+                   }
 
                    ?>
 
@@ -333,6 +340,19 @@
 	<script src="<?=  base_url("assets/main/")?>js/home/anime.min.js"></script>
 	<script src="<?=  base_url("assets/main/")?>js/home/main.js"></script>
 	<script>
+             function viewcertificate(elem,ctype){
+
+          var url="<?=base_url()?>";
+          if(ctype==0){
+                        url=url+"Certificate/Get/"+elem;
+
+    }else if(ctype==1){
+        
+                  url=url+"Certificate/Appreciation/"+elem;
+
+    }
+          window.location=url;
+      }
 		(function() {
 			var navEl = document.querySelector("nav.Mobilemenu"),
 				revealer = new RevealFx(navEl),
