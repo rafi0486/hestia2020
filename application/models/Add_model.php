@@ -1,4 +1,6 @@
 <?php
+echo "Error";
+exit;
 class Add_model extends CI_Model {
     public function __construct()
     {
