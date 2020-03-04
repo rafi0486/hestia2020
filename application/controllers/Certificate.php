@@ -153,7 +153,7 @@ $data['msg']="";
 
         }
 
-        $pdf->Output('Certificate.pdf', 'I');
+        $pdf->Output('Certificate.pdf', 'D');
     }
         public function Appreciation($eventid=-1)
     {
@@ -234,6 +234,6 @@ $data['msg']="";
 
         }
 
-        $pdf->Output('Certificate.pdf', 'I');
+        $pdf->Output('Certificate.pdf', 'D');
     }
 }
