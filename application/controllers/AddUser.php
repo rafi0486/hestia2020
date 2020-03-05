@@ -1,5 +1,5 @@
 <?php
-echo "Error";exit;
+// echo "Error";exit;
 class AddUser extends CI_Controller {
     function __construct() {
         parent::__construct();
@@ -12,7 +12,7 @@ class AddUser extends CI_Controller {
         $data['phone_no'] = $row['phone'];
         $data['username'] = $row['email'];
         $data['name'] = $row['name'];
-        $data['user_type'] = "CS";
+        $data['user_type'] = "S";
         $phone = substr($row['phone'], -3);
         $user = strstr($row['email'], '@', true);
         $passwd = $phone.$user."#$";
