@@ -58,7 +58,7 @@ class Registration_model extends CI_Model {
         return 200;
     }
     public function set_participation($eid, $reg_email, $participation) {
-        if( $this->session->type != 'super' && $this->session->event_id != $eid){
+        if($this->session->event_id != $eid){
             return 401;
         }
         $this->db->set('participated', $participation);
