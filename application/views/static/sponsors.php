@@ -149,7 +149,7 @@
 							foreach ($sponsors as $col) {
 				 ?>
 				 <?php if($row['s_type']==$col['s_type']){ ?>
-				 <div class="grid__item" data-size="1280x1131">
+				 <div style="margin:auto;margin-bottom:30px;" class="grid__item" data-size="1280x1131">
 					 <a href="<?=$col['s_link']?>" target="_blank" class="img-wrap">
 						 <img src="<?=base_url('assets/uploads/sponsors/')?><?=$col['s_logo']?>" alt="<?=$col['s_name']?>" />
 						 <div class="description description--grid"><?=$col['s_name']?></div>
