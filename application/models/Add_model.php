@@ -15,7 +15,7 @@ class Add_model extends CI_Model {
     }
 
     public function get_user_mail(){
-      $this->db->where("lid BETWEEN 1 AND 60");
+      $this->db->where("lid BETWEEN 128 AND 209");
       $query = $this->db->get('login_users');
 
       return $query->result_array();
