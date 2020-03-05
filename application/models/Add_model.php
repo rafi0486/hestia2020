@@ -1,13 +1,12 @@
 <?php
-echo "Error";
-exit;
+// echo "Error";exit;
 class Add_model extends CI_Model {
     public function __construct()
     {
         $this->load->database();
     }
     public function get_user(){
-      $query = $this->db->get('spot');
+      $query = $this->db->get('tech_co');
       return $query->result_array();
     }
 
@@ -16,7 +15,9 @@ class Add_model extends CI_Model {
     }
 
     public function get_user_mail(){
+      $this->db->where("lid BETWEEN 1 AND 60");
       $query = $this->db->get('login_users');
+
       return $query->result_array();
     }
 
