@@ -12,9 +12,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <title><?=$title?></title>
 </head>
-<body style="background: url('IMAGE-URL')  lightgrey no-repeat center center fixed ; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;height: 100%;min-height:100vh;">
+<body style="background-color: #141417;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;height: 100%;min-height:100vh;">
 <div class="container">
-    
+
                 <div class="row" style="padding:10px;">
 
                     <div class="col-md-5 col-sm-12"></div>
@@ -93,8 +93,8 @@ if($acc!=0){
 
                         <button type="submit" class="btn btn-warning my-2 " name="save" id="">Save</button><br>
                     </form>
-                    </div> 
-                
+                    </div>
+
                    <div class="col-md-6 col-sm-12"> </div>
                 </div>
 </div>

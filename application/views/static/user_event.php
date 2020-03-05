@@ -178,7 +178,7 @@
 
                 echo '<div class="col-12 listing1" style="padding-bottom: 20px;">';
                 echo '<p class="event-name-text text-light" >It looks empty here..</p>';
-                echo '<p class="text-danger text-light" >You havent registered for any event. Checkout the events catalogue and register soon..</p>';							
+                echo '<p class="text-danger text-light" >You havent registered for any event. Checkout the events catalogue and register soon..</p>';
 
 
      // list is empty.
@@ -297,13 +297,13 @@
 
 
                    }else if($row['certificate']==0){
-                                              echo "<a href='".base_url("myprofile")."'  class='btn btn-warning btn-result'>Verify Profile To Download Certificate &nbsp;<i class='fas fa-check'></i></a>";
+                                              echo "<a style='border:1px solid white;padding:2px;' href='".base_url("myprofile")."'  class='btn btn-warning btn-result'>Verify Profile To Download Certificate &nbsp;<i class='fas fa-user-check'></i></a>";
 
                    }else if(in_array($row['certificate'], [101,102,103])){
                                               echo "<a href='#'  class='btn btn-success btn-result btn-custom' onclick='viewcertificate(".$row['event_id'].",1)'>Download Certificate &nbsp;<i class='material-icons' style='position:relative;top:4px;font-size: 18px;' >arrow_downward</i></a><br/><br/>";
 
                    }else{
-                       
+
                    }
 
                    ?>
@@ -347,7 +347,7 @@
                         url=url+"Certificate/Get/"+elem;
 
     }else if(ctype==1){
-        
+
                   url=url+"Certificate/Appreciation/"+elem;
 
     }
