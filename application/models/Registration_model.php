@@ -58,9 +58,9 @@ class Registration_model extends CI_Model {
         return 200;
     }
     public function set_participation($eid, $reg_email, $participation) {
-        if($this->session->event_id != $eid){
-            return 401;
-        }
+        // if($this->session->event_id != $eid){
+        //     return 401;
+        // }
         $this->db->set('participated', $participation);
         $whr = array('event_id' => $eid, 'reg_email' => $reg_email);
         $this->db->where($whr);
