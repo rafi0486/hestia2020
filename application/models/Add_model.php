@@ -6,7 +6,7 @@ class Add_model extends CI_Model {
         $this->load->database();
     }
     public function get_user(){
-      $query = $this->db->get('users_1');
+      $query = $this->db->get('users_2');
       return $query->result_array();
     }
 
@@ -15,7 +15,7 @@ class Add_model extends CI_Model {
     }
 
     public function get_user_mail(){
-      $this->db->where("lid BETWEEN 260 AND 273");
+      $this->db->where("lid BETWEEN 275 AND 281");
       $query = $this->db->get('login_users');
 
       return $query->result_array();
