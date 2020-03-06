@@ -104,9 +104,9 @@
                 </tr>
               </thead>
               <tbody>
+                <?php if(count($winners)>0){ ?>
+                  <?php foreach ($winners as $row) { ?>
                 <tr>
-                  <?php if(count($winners)>0){ ?>
-                    <?php foreach ($winners as $row) { ?>
                         <td><?=$row['fullname']?></td>
                         <td><?=$row['member_email']?></td>
                         <td><?=$row['phone']?></td>
@@ -118,9 +118,9 @@
                         <?php } elseif ($row['participated']==103) {?>
                           <td>Third</td>
                         <?php } ?>
-                    <?php } ?>
-                  <?php } ?>
                 </tr>
+              <?php } ?>
+            <?php } ?>
               </tbody>
             </table>
             <?php if(count($winners)>0){ ?>
@@ -131,7 +131,7 @@
               <?php }else { ?>
               <button class="btn btn-sm btn-primary disabled">Certificate published</button>
               <?php } ?>
-            <?php } ?>  
+            <?php } ?>
         </div>
 <!-- end of col-7 -->
 
