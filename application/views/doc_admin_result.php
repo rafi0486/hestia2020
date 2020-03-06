@@ -91,11 +91,11 @@
         <div class="col-9 p-1">
             <div style="float: right;"> <a href="<?=base_url("DocAdmin/home")?>"><button class="btn btn-sm btn-primary">Home</button></a> Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
             </div>
-            <h4 class="text-center my-3">Results</h4>
-
+            <h4 class="text-center my-3">Result </h4>
             <table class="table table-hover">
               <thead>
                 <tr>
+                  <th>Event</td>
                   <th>Full Name</th>
                   <th>Email</th>
                   <th>Phone</th>
@@ -107,6 +107,7 @@
                 <?php if(count($winners)>0){ ?>
                   <?php foreach ($winners as $row) { ?>
                 <tr>
+                  <td><?=$row['title']?></td>                        
                         <td><?=$row['fullname']?></td>
                         <td><?=$row['member_email']?></td>
                         <td><?=$row['phone']?></td>
