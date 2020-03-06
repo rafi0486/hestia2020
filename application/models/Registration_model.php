@@ -76,11 +76,10 @@ class Registration_model extends CI_Model {
         return 200;
     }
     public function search($keyword){
-      $this->db->select('events.title,registration.member_email,registration.reg_email, registration.fee_amnt,registration.user_type,registration.transactionId')
+      $this->db->select('registration.timestamp,events.title,registration.member_email,registration.reg_email, registration.fee_amnt,registration.user_type,registration.transactionId')
        ->from('registration')
        ->where('registration.referral_code', $keyword)
        ->join('events', 'registration.event_id = events.event_id', 'LEFT');
-       // ->join('table3 as t3', 't1.id = t3.id', 'LEFT')
        $query= $this->db->get();
        return $query->result_array();
     }

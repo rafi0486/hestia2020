@@ -92,6 +92,7 @@ th, td {
   <?php } ?>
   <table style="width:100%;margin-bottom:50px;">
       <tr>
+        <th>Time</th>
         <th>Reg Email</th>
         <th>Member Email</th>
         <th>Event</th>
@@ -100,6 +101,7 @@ th, td {
       </tr>
       <?php foreach($users as $user) : ?>
       <tr>
+        <td><?=$user['timestamp']?></td>
         <td><?=$user['reg_email']?></td>
         <td><?=$user['member_email']?></td>
         <td><?=$user['title']?></td>
