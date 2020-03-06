@@ -363,7 +363,13 @@
             <h3 class="box__title">
               <span class="box__title-inner"><?=$event->title?></span>
             </h3>
-            <?=$event->btn?>
+						<?php if($event->event_id==1097){ ?>
+							<h4 class="box__text box__text--bottom btn-custom disabled">
+	                      <span class="box__text-inner text-primary disabled" >SPOT REGISTRATION AVAILABLE</span>
+	            </h4>
+						<?php } else { ?>
+						<?=$event->btn?>
+						<?php } ?>
 
 
 
