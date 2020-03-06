@@ -127,7 +127,7 @@
             </div>
         </div>
         <div class="col-9 p-1">
-            <div style="float: right;">Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
+            <div style="float: right;"> <a href="<?=base_url("DocAdmin/Results")?>"><button class="btn btn-sm btn-primary">Result</button></a> Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
                </div>
                         <h4 class="text-center my-3">Manage Events</h4>
                 <form action="<?=base_url("DocAdmin/SaveEvent")?>" method="post" enctype="multipart/form-data">

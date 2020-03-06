@@ -47,7 +47,23 @@ class DocAdmin extends CI_Controller {
 
         $this->load->view('doc_events_edit',$data);
     }
-    
+
+    public function results()
+    {
+      $data['winners'] = $this->docadmin_model->get_winners(2);        
+        $data['allevents']=$this->report_model->get_events(NULL);
+        $this->load->view('doc_admin_result',$data);
+    }
+    public function result($eid)
+    {
+        if(!$eid){
+          return;
+        }
+        $data['winners'] = $this->docadmin_model->get_winners($eid);
+        $data['allevents']=$this->report_model->get_events(NULL);
+        $this->load->view('doc_admin_result',$data);
+    }
+
     public function SaveEvent(){
         if($this->docadmin_model->saveEvent()){
             redirect("DocAdmin/home");
@@ -250,6 +266,11 @@ class DocAdmin extends CI_Controller {
         $data_ret['acc_fee']=($totalacc*150);
         $data_ret['total_fee']=($totalacc*150)+$feeamoun;
         echo "<center><h1>₹ ".$data_ret['total_fee']." </h1><h5>Event Registration :   ₹ ".$data_ret['event_fee']." </h5><h5>Accommodation Charge  :   ₹ ".$data_ret['acc_fee']." </h5></center><input type='hidden' name='fee_hid' value='".$data_ret['total_fee']."'>";
+    }
+
+    public function Publish_Certificate($eid){
+        $this->docadmin_model->publish_cert($eid);
+        redirect('DocAdmin/Results/');
     }
 
 }

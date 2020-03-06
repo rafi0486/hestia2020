@@ -117,5 +117,17 @@ class DocAdmin_model extends CI_Model {
     //$data['pswd']=$this->input->post('pswd');
 }
 
+    public function get_winners($eid){
+      $query = $this->db->query("SELECT events.is_certificate_pub,registration.member_email,registration.participated,registration.event_id,users.fullname,users.phone,users.college FROM registration LEFT JOIN users ON registration.member_email = users.email left JOIN events ON
+registration.event_id = events.event_id WHERE registration.event_id=".$eid." AND registration.participated != 1 AND registration.participated !=0 " );
+      return $query->result_array();
+    }
+
+    public function publish_cert($eid){
+      $query = $this->db->query("UPDATE events SET is_certificate_pub = 1 WHERE event_id = ".$eid);
+      // echo "flag1";exit;
+
+    }
+
 }
 ?>
