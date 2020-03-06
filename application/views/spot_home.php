@@ -108,7 +108,7 @@ function yesnoCheck() {
             </div>
         </div>
         <div class="col-9 p-1">
-            <div style="float: right;">Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
+            <div style="float: right;"><a href="<?=base_url("Spot/search")?>"><button class="btn btn-sm btn-primary">Verify Amount</button></a>  Logged in as <?=$_SESSION['loginname']?> <a href="<?=base_url("Login/logout")?>"><button class="btn btn-sm btn-danger">Logout</button></a></li>
                </div>
                         <h4 class="text-center my-3">Spot Registration</h4>
                 <div class="eventsreg style-1">
@@ -138,7 +138,7 @@ function yesnoCheck() {
 
 
                         <form id="team_form" method="post" action="#" name="team_form" >
-
+                          <p><b><span class="text-danger">NOTE: UNLESS ACCOMMODATION IS REQUIRED, PLEASE DON'T SELECT THE CHECK BOX AT THE END </span></b></p>
                         <input type="hidden" id="json_data" name="json_data" hidden/>
                             <div class="row" style='margin-bottom:10px;'>
                                 <div class="col-md-3 col-sm-12" id="div_mail0"><input class="form-control mem_mail" type="email" onchange="loadUserInfo(this)" id="email0" placeholder="Email"></div>
@@ -149,6 +149,7 @@ function yesnoCheck() {
                                             <input type="checkbox" class="chk_acm"  id="chk_acm0">
                                             </label></div>
                             </div>
+
                             <div id="team_form_members">
 
                             </div>

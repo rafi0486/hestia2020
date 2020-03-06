@@ -22,7 +22,6 @@ class Spot extends CI_Controller {
         parent::__construct();
         $this->load->model('report_model');
         $this->load->library('form_validation');
-
         if(!$this->session->userdata('username') || $this->session->userdata('user_type')!="S" &&  $this->session->userdata('user_type')!="CS" ) {
             redirect('Login');
         }
@@ -34,6 +33,22 @@ class Spot extends CI_Controller {
         $data['categories']=$this->report_model->get_categories();
         $this->load->view('spot_home',$data);
     }
+
+
+    public function searchResult(){
+        $this->load->model('registration_model');
+        $keyword=$this->input->post('search');
+        $user = substr($keyword, 5);
+        $data['user_details'] = $this->registration_model->get_user_details($user);
+        $data['keyword'] = $keyword;
+        $data['users']=$this->registration_model->search($keyword);
+        $this->load->view('spot_search_result',$data);
+    }
+
+    public function search(){
+        $this->load->view('spot_search');
+    }
+
     public function event_current_status_get($eid){
 
         echo $this->report_model->GetEventCurrentStatus_Spot($eid);

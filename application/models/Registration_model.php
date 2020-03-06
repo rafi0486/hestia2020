@@ -75,5 +75,19 @@ class Registration_model extends CI_Model {
         $this->db->delete('registrations', array('reg_id' => $id));
         return 200;
     }
+    public function search($keyword){
+      $this->db->select('events.title,registration.member_email,registration.reg_email, registration.fee_amnt,registration.user_type,registration.transactionId')
+       ->from('registration')
+       ->where('registration.referral_code', $keyword)
+       ->join('events', 'registration.event_id = events.event_id', 'LEFT');
+       // ->join('table3 as t3', 't1.id = t3.id', 'LEFT')
+       $query= $this->db->get();
+       return $query->result_array();
+    }
+    public function get_user_details($email){
+      $this->db->where('username',$email);
+       $query = $this->db->get('login_users');
+       return $query->result_array();
+    }
 }
 ?>
