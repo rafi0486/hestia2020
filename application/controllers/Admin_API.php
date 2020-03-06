@@ -26,7 +26,7 @@ class Admin_API extends REST_Controller {
             $data = $this->event_model->update_pass($username,$oldpassword,$password);
         }
         $this->response($data);
-    }    
+    }
     function login_delete(){
         $this->session->sess_destroy();
         $this->response(true);
@@ -90,9 +90,9 @@ class Admin_API extends REST_Controller {
         // $config['max_height']           = 768;
         // $config['detect_mime']           = TRUE;
         // $config['file_name']           = "poster.png";
-    
+
         // $this->load->library('upload', $config);
-    
+
         // if ( ! $this->upload->do_upload('userfile')){
         //     $error = array('error' => $this->upload->display_errors());
         //     $this->response($error);
@@ -177,9 +177,9 @@ class Admin_API extends REST_Controller {
         $this->load->model('event_model');
         $id=$this->put('event_id');
         $status = $this->event_model->enable_certificate($id);
-        
+
         $mail = file_get_contents('https://www.hestia.live/payment/mail/eventcertmail.php?eid='.$id);
-        
+
         $this->response($id,$status);
     }
     function participation_put() {
@@ -199,5 +199,9 @@ class Admin_API extends REST_Controller {
     function accommodation_get() {
         $this->load->model('user_model');
         $this->response($this->user_model->get_accommodations());
+    }
+    function isCerificatePublished_get($eid){
+        $this->load->model('report_model');
+        $this->response($this->report_model->get_certstatus($eid));
     }
 }

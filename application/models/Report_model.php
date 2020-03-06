@@ -528,6 +528,20 @@ class Report_model extends CI_Model {
         }
         return FALSE;
     }
+    public function get_certstatus($eid){
+      $query =  $this->db->query("SELECT is_certificate_pub from events where event_id= ".$eid );
+      if($query->num_rows()==1){
+        // print_r($query->result());
+        foreach ($query->result() as $row) {
+            if($row->is_certificate_pub == 1){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+        }
+      }
+      else return FALSE;
+    }
 
 }
 ?>
