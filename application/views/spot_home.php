@@ -137,7 +137,7 @@ function yesnoCheck() {
                 <div class="modal-body">
 
 
-                        <form id="team_form" method="post" action="#" name="team_form" onsubmit="event.preventDefault()" >
+                        <form id="team_form" method="post" action="#" name="team_form" onsubmit=" event.preventDefault()" >
                           <p><b><span class="text-danger">NOTE: UNLESS ACCOMMODATION IS REQUIRED, PLEASE DON'T SELECT THE CHECK BOX AT THE END </span></b></p>
                         <input type="hidden" id="json_data" name="json_data" hidden/>
                             <div class="row" style='margin-bottom:10px;'>
