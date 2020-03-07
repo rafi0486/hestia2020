@@ -95,9 +95,10 @@
             <table class="table table-hover">
               <thead>
                 <tr>
-                  <th>Event</td>
+                  <th>Event</th>
+                  <th>Regstred Email</th>
+                    <th>Email</th>
                   <th>Full Name</th>
-                  <th>Email</th>
                   <th>Phone</th>
                   <th>College</th>
                   <th>Position</th>
@@ -107,9 +108,10 @@
                 <?php if(count($winners)>0){ ?>
                   <?php foreach ($winners as $row) { ?>
                 <tr>
-                  <td><?=$row['title']?></td>                        
+                  <td><?=$row['title']?></td>
+                  <td><?=$row['reg_email']?></td>                  
+                  <td><?=$row['member_email']?></td>
                         <td><?=$row['fullname']?></td>
-                        <td><?=$row['member_email']?></td>
                         <td><?=$row['phone']?></td>
                         <td><?=$row['college']?></td>
                         <?php if($row['participated']==101){?>
