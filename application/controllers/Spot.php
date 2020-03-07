@@ -41,6 +41,7 @@ class Spot extends CI_Controller {
         $user = substr($keyword, 5);
         $data['user_details'] = $this->registration_model->get_user_details($user);
         $data['keyword'] = $keyword;
+        $data['amount']=$this->registration_model->calculate_total($keyword);
         $data['users']=$this->registration_model->search($keyword);
         $this->load->view('spot_search_result',$data);
     }

@@ -88,7 +88,10 @@ th, td {
   Name :  <?=$row['name']?><br>
   Email: <?=$row['username']?><br>
   Phone:  <?=$row['phone_no']?><br>
-  User Type:  <?=$row['user_type']?><br><br>
+  User Type:  <?=$row['user_type']?><br>
+        <?php foreach ($amount as $col) { ?>
+  Total Amount: <?=$col['total']?><br>
+        <?php } ?>
   <?php } ?>
   <table style="width:100%;margin-bottom:50px;">
       <tr>

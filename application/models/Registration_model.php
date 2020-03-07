@@ -88,5 +88,9 @@ class Registration_model extends CI_Model {
        $query = $this->db->get('login_users');
        return $query->result_array();
     }
+    public function calculate_total($keyword){
+      $query = $this->db->query("SELECT SUM(fee_amnt) as total FROM registration WHERE referral_code = '".$keyword."';");
+      return $query->result_array();
+    }
 }
 ?>
