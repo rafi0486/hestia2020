@@ -23,7 +23,7 @@ class Login extends CI_Controller {
 
         if($this->session->userdata('user_type')=="D") {
             redirect('DocAdmin/home');
-        }elseif($this->session->userdata('user_type')=="S" || $this->session->userdata('user_type')=="CS") {
+        }elseif($this->session->userdata('user_type')=="S" || $this->session->userdata('user_type')=="CS" ||  $this->session->userdata('user_type')=="J" ) {
             redirect('Spot/home');
         }
 
