@@ -25,7 +25,7 @@
 </head>
 <style>
     body{
-        overflow: true;
+        overflow-x:hidden;
     }
     .custom-button{
         width: 50%;
