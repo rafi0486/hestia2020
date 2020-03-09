@@ -25,7 +25,7 @@
 </head>
 <style>
     body{
-        overflow: hidden;
+        overflow: true;
     }
     .custom-button{
         width: 50%;
@@ -109,7 +109,7 @@
                   <?php foreach ($winners as $row) { ?>
                 <tr>
                   <td><?=$row['title']?></td>
-                  <td><?=$row['reg_email']?></td>                  
+                  <td><?=$row['reg_email']?></td>
                   <td><?=$row['member_email']?></td>
                         <td><?=$row['fullname']?></td>
                         <td><?=$row['phone']?></td>
