@@ -1,5 +1,5 @@
 <?php
-echo "Error";exit;
+// echo "Error";exit;
 class AddUser extends CI_Controller {
     function __construct() {
         parent::__construct();
@@ -65,6 +65,54 @@ class AddUser extends CI_Controller {
 
             }
 
+    }
+
+
+    public function send_email_covid(){
+      require("./payment/mail//sendgrid-php/vendor/autoload.php");
+      $users=$this->add_model->get_all_mail();
+      foreach ($users as $row ) {
+      $message = 	"<html><head><title>Greetings from the Organising Committee of Hestia'20</title>
+                          </head>
+                          <body>
+                          <p><b>
+                          Hi,<br><br>
+                          Thank you for participating in Hestia'20 which was conducted from the 5th of March to the 8th of March, 2020.<br>
+                          Around 5000+ people must have visited the campus during these days.<br>
+                          In light of the recent Corona Outbreak in Kerala and especially in the districts of Kollam and Pathanamthitta, we strongly recommend you to be cautious and not to ignore any symptoms like runny nose, sore throat, cough or fever.<br>
+                          For enquiries contact your nearest Health officer and do notify us in case of any confirmation from them so that we can take necessary actions forward.<br>
+                          Do the same for your friends and family.
+                          <br>
+                          Please do not discard this issue.<br>
+                          Be a responsible citizen and contact your nearest health facility in case of any suspicions.
+                          <br><br><br>
+                          Thank you once again.<br>
+                          Yours failthully.</b>
+                          </p>
+                          </body>
+                          </html>
+                          ";
+                      // echo $message;exit;
+                      $email = new \SendGrid\Mail\Mail();
+                      $email->setFrom("noreply@hestia.live", "Hestia20");
+                      $email->setSubject("Greetings from the Organising Committee of Hestia'20 ");
+                      $email->addTo($row['email'],$row['fullname']);
+                      $email->addContent(
+                        "text/html", $message
+                      );
+                      $sendgrid = new \SendGrid('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');
+
+                      try {
+                          $response = $sendgrid->send($email);
+                          $status = $response->statusCode();
+                          print $response->statusCode() . "\n";
+                         // print_r($response->headers());
+                         // print $response->body() . "\n";
+                      } catch (Exception $e) {
+                          echo 'Caught exception: ',  $e->getMessage(), "\n";
+                      }
+
+            }
     }
 
 }

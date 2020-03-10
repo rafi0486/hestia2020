@@ -1,5 +1,5 @@
 <?php
-echo "Error";exit;
+// echo "Error";exit;
 class Add_model extends CI_Model {
     public function __construct()
     {
@@ -27,6 +27,10 @@ class Add_model extends CI_Model {
          return TRUE;
        }
          return FALSE;
+    }
+    public function get_all_mail(){
+      $query = $this->db->get('users');
+      return $query->result_array();
     }
 
 }
