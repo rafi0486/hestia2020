@@ -23,7 +23,7 @@
             <form id="team_form" action="<?=base_url("verify")?>" method="post">
 <?=$msg;?>
                 <div class="input-group">
-                    <span style="margin-top: 9px;margin-right:10px;" class="input-group-addon">H/19/</span>
+                    <span style="margin-top: 9px;margin-right:10px;" class="input-group-addon">H/20/</span>
                     <input class="form-control" type="text"  onkeypress="return isNumber(event)"  id="" placeholder="Certificate Number" name="cert_no" maxlength="6" ><br/>
                 </div>
 

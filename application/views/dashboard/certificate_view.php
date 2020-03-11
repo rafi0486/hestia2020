@@ -22,7 +22,7 @@
             <h3 style="margin-bottom:30px">Verify Certificate</h3>
             <form id="team_form"  method="post">
 
-                <h6>Certificate No : H/19/<?=$record->reg_id?></h6>
+                <h6>Certificate No : H/20/<?=$record->reg_id?></h6>
                 <h6>Participant : <?=$record->fullname?></h6>
                 <h6>Event : <?=$record->title?></h6>
                 <h6>College : <?=$record->college?></h6>
