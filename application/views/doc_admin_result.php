@@ -27,10 +27,14 @@
     body{
         overflow-x:hidden;
     }
+
     .custom-button{
         width: 50%;
         border-radius: 0;
 
+    }
+    .table{
+      overflow-x: scroll;      
     }
     .eventsreg{
         height: calc(100vh - 150px);
