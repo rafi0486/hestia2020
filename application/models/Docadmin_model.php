@@ -119,7 +119,7 @@ class DocAdmin_model extends CI_Model {
 
     public function get_winners($eid){
       $query = $this->db->query("SELECT events.is_certificate_pub,registration.reg_email,events.title,registration.member_email,registration.participated,registration.event_id,users.fullname,users.phone,users.college FROM registration LEFT JOIN users ON registration.member_email = users.email left JOIN events ON
-registration.event_id = events.event_id WHERE registration.event_id=".$eid." AND registration.participated != 1 AND registration.participated !=0 " );
+registration.event_id = events.event_id WHERE registration.event_id=".$eid." AND registration.participated != 1 AND registration.participated !=0 ORDER BY registration.reg_email ASC " );
       return $query->result_array();
     }
 
