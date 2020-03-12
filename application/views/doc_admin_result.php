@@ -25,7 +25,7 @@
 </head>
 <style>
     body{
-        overflow-x:hidden;
+        /* overflow-x:hidden; */
     }
 
     .custom-button{
@@ -34,7 +34,7 @@
 
     }
     .table{
-      overflow-x: scroll;      
+      /* overflow-x: scroll; */
     }
     .eventsreg{
         height: calc(100vh - 150px);
