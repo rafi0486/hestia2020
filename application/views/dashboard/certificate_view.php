@@ -12,14 +12,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Verify Certificate | Hestia'20</title>
 </head>
-<body style="background: lightgrey no-repeat center center fixed ; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;height: 100%;min-height:100vh;">
+<body style="background-color:#101010;">
 <div class="container">
 
     <div class="row" style="padding:10px;">
 
         <div class="col-md-5 col-sm-12"></div>
         <div class="col-md-3 col-sm-12" style="background: #fff;width:90%;border: grey; border-radius:5px; padding: 20px; position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);">
-            <h3 style="margin-bottom:30px">Verify Certificate</h3>
+            <h4 style="margin-bottom:30px">Verify Certificate - Hestia'20</h4>
             <form id="team_form"  method="post">
 
                 <h6>Certificate No : H/20/<?=$record->reg_id?></h6>
@@ -31,7 +31,9 @@
 
 <br>
 
-                <button   type="button" class="btn btn-warning my-2 "  onclick="window.location='<?=base_url("verify")?>'" >Check Another</button><br>
+                <button   type="button" class="btn btn-warning my-2 "  onclick="window.location='<?=base_url("verify")?>'" >Check Hestia20</button>
+                <button   type="button" class="btn btn-warning my-2 "  onclick="window.location='<?=base_url("verify19")?>'" >Check Hestia19</button><br>
+
             </form>
         </div>
 

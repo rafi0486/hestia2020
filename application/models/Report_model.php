@@ -543,5 +543,16 @@ class Report_model extends CI_Model {
       else return FALSE;
     }
 
+    public function get_single_certificate_19($certificateno){
+        $this->db->close();
+        // $this->load->database('hestia19');
+        $this->legacy_db = $this->load->database('hestia19', TRUE);
+
+        // require("./payment/dbconnect_19.php");
+        $certificateno = $this->security->xss_clean($certificateno);
+        $query=$this->legacy_db->query("select e.event_id, e.title ,u.fullname,u.college ,r.reg_id from events e, registration r,users u where e.event_id=r.event_id and r.member_email=u.email and r.reg_id='".$certificateno."'");
+        return  $query->row();
+    }
+
 }
 ?>

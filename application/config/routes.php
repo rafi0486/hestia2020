@@ -65,6 +65,8 @@ $route['myevents'] = 'Pages/UserEvents';
 $route['myprofile'] = 'Profile/update';
 $route['Login'] = 'Login/index';
 $route['verify'] = 'Certificate/Verify';
+$route['verify19'] = 'Certificate/Verify19';
+
 
 $route['get_all_users'] = 'Login_get_all_users/index';
 $route['Auth'] = 'Auth/';

@@ -236,4 +236,28 @@ $data['msg']="";
 
         $pdf->Output('Certificate.pdf', 'D');
     }
+
+
+      public function Verify19(){
+            require("./payment/dbconnect_19.php");
+            $this->load->model('report_model');
+            $data['msg']="";
+            if(!$this->input->post('cert_no')){
+                $this->load->view("dashboard/certificate_verify19",$data);
+
+            }else{
+                $data['record']=$this->report_model->get_single_certificate_19($this->input->post('cert_no'));
+
+                if($data['record']){
+                $this->load->view("dashboard/certificate_view19",$data);
+
+            }else{
+                $data['msg']="Invalid Certificate No";
+                $this->load->view("dashboard/certificate_verify19",$data);
+
+            }
+
+                    }
+                    //echo "this certificate belongs to ".$record->fullname;
+     }
 }
