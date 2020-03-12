@@ -11,6 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <title>Complete Your Profile</title>
+<meta
+  name="description"
+  content="<?=APP_META_CONTENT?>"
+/>
 </head>
 <body style="background-color:#101010;">
 <div class="container">

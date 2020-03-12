@@ -11,6 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Verify Certificate | Hestia'20</title>
+    <meta
+      name="description"
+      content="<?=APP_META_CONTENT?>"
+    />
 </head>
 <body style="background-color:#101010;">
 <div class="container">
@@ -30,7 +34,7 @@
 <br>
 
                 <button type="submit" class="btn btn-warning my-2 " name="save" id="">View</button>
-                <button   type="button" class="btn btn-warning my-2 "  onclick="window.location='<?=base_url("verify19")?>'" >Check Hestia19</button><br>                
+                <button   type="button" class="btn btn-warning my-2 "  onclick="window.location='<?=base_url("verify19")?>'" >Check Hestia19</button><br>
             </form>
         </div>
 
