@@ -239,7 +239,6 @@ $data['msg']="";
 
 
       public function Verify19(){
-            require("./payment/dbconnect_19.php");
             $this->load->model('report_model');
             $data['msg']="";
             if(!$this->input->post('cert_no')){
