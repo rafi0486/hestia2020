@@ -14,8 +14,8 @@ if(isset($_GET['title']))
     $title=$_GET['title'];
 }
 else
-    exit("modded Mrequest"); 
-    
+    exit("modded Mrequest");
+
 $to = $email; // note the comma
 
 // Subject
@@ -123,7 +123,7 @@ $message = '
 										<p style="display:block;margin:13px 0">
 											<span>
 												<strong>
-													<span style="font-size:16px;text-transform:uppercase">DOWNLOAD YOUR CERTIFICATE - HESTIA 19</span>
+													<span style="font-size:16px;text-transform:uppercase">DOWNLOAD YOUR CERTIFICATE - HESTIA 20</span>
 												</strong>
 											</span>
 										</p>
@@ -182,7 +182,7 @@ $message = '
 						</span>
 						<br>
 						<span style="font-size:14px">
-							You may now download your participation certificate for the event '.$title.'. <br>Visit \'My Events\' section of Hestia\'20 website to download the certificates of the events you have participated.
+							You may now download your certificate for the event '.$title.'. <br>Visit \'My Events\' section of Hestia\'20 website to download the certificates of the events you have participated.
 						</span>
 						<br>
 						<span class="text-danger" style="font-size:13px;color:red">
@@ -256,10 +256,10 @@ $message = '
 									<td style="word-wrap:break-word;font-size:0px;padding:0px 0px 0px 0px;border-collapse:collapse" align="center">
 										<div style="color:#afafaf;font-family:Roboto,Ubuntu,Helvetica,Arial,sans-serif;font-size:11px;line-height:22px;text-align:center">
 											<p style="font-size:9px;line-height:20px;display:block;margin:13px 0">
-									
+
 												</span>
 												<br>
-												<span>Copyright @ 2019 Hestia 19
+												<span>Copyright @ 2020 Hestia 20
 												</span>
 											</p>
 										</div>
@@ -324,12 +324,12 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] = 'From: Hestia20 Doc Team <noreply@hestia.live>';
+$headers[] = 'From: Hestia20 <noreply@hestia.live>';
 $headers[] ='Reply-To: webadmin@hestia.live';
 
 
 
-$from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20 Doc Team");
+$from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20");
 $subject = new \SendGrid\Mail\Subject($subject);
 $to = new \SendGrid\Mail\To($email, $name);
 
@@ -365,4 +365,3 @@ try {
 }
 
 ?>
-
