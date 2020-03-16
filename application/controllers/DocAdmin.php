@@ -50,7 +50,7 @@ class DocAdmin extends CI_Controller {
 
     public function results()
     {
-      $data['winners'] = $this->docadmin_model->get_winners(2);        
+      $data['winners'] = $this->docadmin_model->get_winners(2);
         $data['allevents']=$this->report_model->get_events(NULL);
         $this->load->view('doc_admin_result',$data);
     }
@@ -270,6 +270,7 @@ class DocAdmin extends CI_Controller {
 
     public function Publish_Certificate($eid){
         $this->docadmin_model->publish_cert($eid);
+        $mail = file_get_contents('https://www.hestia.live/payment/mail/eventcertmail.php?eid='.$eid);
         redirect('DocAdmin/Results/');
     }
 
