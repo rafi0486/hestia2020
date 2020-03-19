@@ -186,7 +186,9 @@ $message = '
 						</span>
 						<br>
 						<span class="text-danger" style="font-size:13px;color:red">
-							Note: Contact your event coordinator in case of unavailabilty of a certificate.
+              <b>Note:<br>
+              1 - Verify your name and college before downloading the certificate. After that you cant change your informations<br>
+							2 - Contact your event coordinator in case of unavailabilty of a certificate.</b>
 						</span>
 					</p>
 				</div>
