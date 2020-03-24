@@ -30,6 +30,10 @@ class Spot extends CI_Controller {
     }
     public function home()
     {
+        $url = base_url("Login/logout");
+        echo "<h1>Loading Hestia'21.........</h1><br>";
+        echo "<a  href=\"$url\">LOGOUT</a>";
+        exit;
         $data['categories']=$this->report_model->get_categories();
         $this->load->view('spot_home',$data);
     }
