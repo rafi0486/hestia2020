@@ -188,7 +188,7 @@ $message = '
 						<span class="text-danger" style="font-size:13px;color:red">
               <b>Note:<br>
               1 - Verify your name and college before downloading the certificate. After that you cant change your informations<br>
-							2 - Contact your event coordinator in case of unavailabilty of a certificate.</b>
+							2 - Please do not reply to this mail as it is a computer generated mail. Contact your event coordinator in case of unavailabilty of a certificate.</b>
 						</span>
 					</p>
 				</div>
@@ -327,7 +327,8 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
 $headers[] = 'From: Hestia20 <noreply@hestia.live>';
-$headers[] ='Reply-To: webadmin@hestia.live';
+// Reply To
+// $headers[] ='Reply-To: webadmin@hestia.live';
 
 
 
@@ -345,13 +346,13 @@ $email = new \SendGrid\Mail\Mail(
 //$email->addHeaders($headers);
 //$email->addHeader("MIME-Version", "1.0");
 //$email->addHeader("Content-type", "text/html; charset=iso-8859-1");
-
-$email->setReplyTo(
-    new \SendGrid\Mail\ReplyTo(
-        "webadmin@hestia.live",
-        "Hestia Web Admin"
-    )
-);
+// Reply TO
+// $email->setReplyTo(
+//     new \SendGrid\Mail\ReplyTo(
+//         "webadmin@hestia.live",
+//         "Hestia Web Admin"
+//     )
+// );
 $sendgrid = new \SendGrid('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');
 //$email->addHeader("X-Test1", "Test1");
 $email->addHeader("X-Mailer", "hestia.live");
