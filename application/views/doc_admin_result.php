@@ -130,8 +130,7 @@
             <?php } ?>
               </tbody>
             </table>
-              <?php foreach ($event as $row) {
-                echo $row->cat_id; ?>
+              <?php foreach ($event as $row)  ?>
               <?php if($row->cat_id!=1 && $row->cat_id!=33 && $row->is_certificate_pub!=1 && $row->cat_id!=31) {?>
                 <p><b><span class="text-danger">NOTE: UNLESS RESULT IS PUBLISHED (IF THE EVENT HAVE WINNERS), PLEASE DON'T PUBLISH CERTIFICATE </span></b></p>
               <form method="post" action="<?=base_url("DocAdmin/Publish_Certificate/".$row->event_id)?>">
