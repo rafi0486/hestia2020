@@ -553,6 +553,13 @@ class Report_model extends CI_Model {
         $query=$this->legacy_db->query("select e.event_id, e.title ,u.fullname,u.college ,r.reg_id from events e, registration r,users u where e.event_id=r.event_id and r.member_email=u.email and r.reg_id='".$certificateno."'");
         return  $query->row();
     }
+    public function get_event($eid){
+      $this->db->select ( '*' );
+      $this->db->from ( 'events' );
+        $this->db->where('event_id',$eid);
+        $query = $this->db->get ();
+        return $query->result();
+    }
 
 }
 ?>

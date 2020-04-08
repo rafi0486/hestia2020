@@ -51,6 +51,7 @@ class DocAdmin extends CI_Controller {
     public function results()
     {
       $data['winners'] = $this->docadmin_model->get_winners(2);
+        $data['event'] = $this->report_model->get_event(2);
         $data['allevents']=$this->report_model->get_events(NULL);
         $this->load->view('doc_admin_result',$data);
     }
@@ -60,6 +61,7 @@ class DocAdmin extends CI_Controller {
           return;
         }
         $data['winners'] = $this->docadmin_model->get_winners($eid);
+        $data['event'] = $this->report_model->get_event($eid);
         $data['allevents']=$this->report_model->get_events(NULL);
         $this->load->view('doc_admin_result',$data);
     }
