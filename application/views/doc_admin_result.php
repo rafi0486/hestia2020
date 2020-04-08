@@ -131,7 +131,7 @@
               </tbody>
             </table>
             <?php if(count($winners)>0){ ?>
-              <?php if($row['cat_id']!=1 || $row['cat_id']!=33 || $row['is_certificate_pub']!=1) {?>
+              <?php if($row['cat_id']!=1 || $row['cat_id']!=33 || $row['is_certificate_pub']!=1 || $row['cat_id']!=31) {?>
                 <p><b><span class="text-danger">NOTE: UNLESS RESULT IS PUBLISHED (IF THE EVENT HAVE WINNERS), PLEASE DON'T PUBLISH CERTIFICATE </span></b></p>
               <form method="post" action="<?=base_url("DocAdmin/Publish_Certificate/".$row['event_id'])?>">
                 <button class="btn btn-sm btn-danger">Publish Certificate</button>
