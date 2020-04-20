@@ -1,13 +1,12 @@
 # ___Hestia 20___
 
-### _The front end design of Hestia20 Website_
+### _The Web Application for Hestia20 _
 #### _View project : [hestia.live](https://www.hestia.live)_
 #### _Project Sources : [Codrops](https://tympanus.net/codrops/)_
 ## _Installation_
 #### _1 - Clone Project_
->_git clone https://github.com/AkmarNafi/Hestia-frontend.git_
-#### _2 - Backend Integration_
->_View backend integrated code at [https://github.com/rafi0486/hestia2020](https://github.com/rafi0486/hestia2020)_
+>_git clone https://github.com/rafi0486/hestia2020.git __
+
 
 ##### _Backend Specifications_
 ###### _Framework : Codeigniter [https://codeigniter.com/](https://codeigniter.com/)_
