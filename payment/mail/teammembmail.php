@@ -431,7 +431,7 @@ $email->setReplyTo(
         "Hestia Web Admin"
     )
 );
-$sendgrid = new \SendGrid('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');
+$sendgrid = new \SendGrid('');
 //$email->addHeader("X-Test1", "Test1");
 $email->addHeader("X-Mailer", "hestia.live");
 // "X-Accept-Language": "en",

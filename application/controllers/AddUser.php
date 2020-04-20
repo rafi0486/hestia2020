@@ -51,7 +51,7 @@ class AddUser extends CI_Controller {
                       $email->addContent(
                         "text/html", $message
                       );
-                      $sendgrid = new \SendGrid('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');
+                      $sendgrid = new \SendGrid('');
 
                       try {
                           $response = $sendgrid->send($email);
@@ -100,7 +100,7 @@ class AddUser extends CI_Controller {
                       $email->addContent(
                         "text/html", $message
                       );
-                      $sendgrid = new \SendGrid('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');
+                      $sendgrid = new \SendGrid('');
 
                       try {
                           $response = $sendgrid->send($email);
