@@ -1,11 +1,11 @@
 # ___Hestia 20___
 
-### _The Web Application for Hestia20 _
+###  ___Web Application for Hestia20___
 #### _View project : [hestia.live](https://www.hestia.live)_
 #### _Project Sources : [Codrops](https://tympanus.net/codrops/)_
 ## _Installation_
 #### _1 - Clone Project_
->_git clone https://github.com/rafi0486/hestia2020.git __
+>git clone https://github.com/rafi0486/hestia2020.git
 
 
 ##### _Backend Specifications_
@@ -38,3 +38,5 @@
 ![Home](https://raw.githubusercontent.com/AkmarNafi/Hestia-frontend/master/git_img/5.png)
 
 ![Home](https://raw.githubusercontent.com/AkmarNafi/Hestia-frontend/master/git_img/6.png)
+
+#### _Admin Panel_
