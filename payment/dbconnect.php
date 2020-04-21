@@ -3,7 +3,7 @@
 $conn = mysqli_connect("localhost","root",'',"hestia20_DB");
 $base_app_url="https://www.hestia.live/";
 $base_app_title="Hestia 20";
-Test
+// Test
 $private_api='';
 $private_token='';
 $private_api2='';

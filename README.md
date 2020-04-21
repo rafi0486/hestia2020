@@ -2,10 +2,12 @@
 
 ###  ___Web Application for Hestia20___
 #### _View project : [hestia.live](https://www.hestia.live)_
-#### _Project Sources : [Codrops](https://tympanus.net/codrops/)_
-## _Installation_
-#### _1 - Clone Project_
->git clone https://github.com/rafi0486/hestia2020.git
+#### _Front end Sources : [Codrops](https://tympanus.net/codrops/)_
+
+```diff
+- Note: This web application is the modified version of hestia19 website (Backend).
+```
+- View : https://github.com/AmalJossy/Hestia19-website
 
 
 ##### _Backend Specifications_
@@ -39,4 +41,22 @@
 
 ![Home](https://raw.githubusercontent.com/AkmarNafi/Hestia-frontend/master/git_img/6.png)
 
-#### _Admin Panel_
+### ___Admin Panel___
+
+#### _Event Management_
+![](https://raw.githubusercontent.com/rafi0486/hestia2020/master/git-img/1.png)
+
+![](https://raw.githubusercontent.com/rafi0486/hestia2020/master/git-img/3.png)
+
+#### _Result Management_
+![](https://raw.githubusercontent.com/rafi0486/hestia2020/master/git-img/2.png)
+
+#### _Spot Registration_
+
+![](https://raw.githubusercontent.com/rafi0486/hestia2020/master/git-img/4.png)
+
+#### _Spot paymrnt tracking_
+![](https://raw.githubusercontent.com/rafi0486/hestia2020/master/git-img/5.png)
+
+
+
