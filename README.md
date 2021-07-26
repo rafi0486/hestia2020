@@ -17,7 +17,7 @@
 
 ## ___View Android App___
 #### _General Android Application : [Hestia'20](https://play.google.com/store/apps/details?id=live.hestia.app)_
-#### _Admin App for volunteering : [View](https://www.hestia.live/admin_app)_
+
 
 ## ___Sample Views___
 
