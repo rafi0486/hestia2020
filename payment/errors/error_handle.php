@@ -28,7 +28,7 @@ $date = date('m/d/Y h:i:s a', time());
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "PLACE YOUR API AND URL".urlencode("ERROR ".$date." ".$str."")."&language=english&route=p&numbers=".urlencode('8281582725'),
+  CURLOPT_URL => "PLACE YOUR API AND URL".urlencode("ERROR ".$date." ".$str."")."&language=english&route=p&numbers=".urlencode('Phone1,Phone2'),
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
