@@ -36,7 +36,7 @@ $arrlength = count($mails);
 for($x = 0; $x < $arrlength; $x++) {
 
 $curl = curl_init();
-$url= 'https://www.hestia.live/payment/mail/certmailsend.php?email='.$mails[$x].'&title='.$title;
+$url= 'https://www.hestialive.com/payment/mail/certmailsend.php?email='.$mails[$x].'&title='.$title;
 $url = str_replace(" ", '%20', $url);
             // Set some options - we are passing in a useragent too here
             curl_setopt_array($curl, [

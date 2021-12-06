@@ -117,7 +117,7 @@ class User_model extends CI_Model {
             // Set some options - we are passing in a useragent too here
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_URL => 'https://www.hestia.live/payment/mail/sendgridsend.php?email='.$data['email'].'',
+                CURLOPT_URL => 'https://www.hestialive.com/payment/mail/sendgridsend.php?email='.$data['email'].'',
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0"
             ]);

@@ -97,7 +97,7 @@ $message = '
 									<tbody>
 																											<tr>
 											<td style="width:600px;border-collapse:collapse">
-												<img alt="" title="" height="auto" src="https://www.hestia.live/payment/mail/images/logo-cover.jpg" style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:100%;height:auto;line-height:100%" width="600" class="CToWUd a6T" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 731px; top: 238px;"><div id=":s9" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="aSK J-J5-Ji aYr"></div></div></div>
+												<img alt="" title="" height="auto" src="https://www.hestialive.com/payment/mail/images/logo-cover.jpg" style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:100%;height:auto;line-height:100%" width="600" class="CToWUd a6T" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 731px; top: 238px;"><div id=":s9" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="aSK J-J5-Ji aYr"></div></div></div>
 											</td>
 										</tr>
 																										 </tbody>
@@ -177,7 +177,7 @@ $message = '
 					<br>
 					<div style="font-family:Roboto,Tahoma,sans-serif;display:inline-flex;padding:5px 0px">
 						<div>
-							<img style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:20px;margin-right:15px;;height:auto;line-height:100%"  src="https://www.hestia.live/payment/mail/images/placeholder.png" class="CToWUd">
+							<img style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:20px;margin-right:15px;;height:auto;line-height:100%"  src="https://www.hestialive.com/payment/mail/images/placeholder.png" class="CToWUd">
 						</div>
 						<div>
 							<span style="font-size:13px;color:#353535">TKM College of Engineering,
@@ -188,7 +188,7 @@ Kerala, India</span>
 					</div><br>
 					<div style="font-family:Roboto,Tahoma,sans-serif;display:inline-flex;padding:5px 0px">
 						<div>
-							<img style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:20px;margin-right:15px;;height:auto;line-height:100%"  src="https://www.hestia.live/payment/mail/images/user.png" class="CToWUd">
+							<img style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:20px;margin-right:15px;;height:auto;line-height:100%"  src="https://www.hestialive.com/payment/mail/images/user.png" class="CToWUd">
 						</div>
 						<div>
 							<span style="font-size:13px;color:#353535">Organized by TKM College of Engineering, Kollam</span>
@@ -374,7 +374,7 @@ Kerala, India</span>
 							<br>
 							<span style="font-size:12px">
 
-							Head over to <a href="https://www.hestia.live">Hestia 20 website</a> to browse and register for events.							</span>
+							Head over to <a href="https://www.hestialive.com">Hestia 20 website</a> to browse and register for events.							</span>
 
 																											</label>
 
@@ -411,17 +411,17 @@ Kerala, India</span>
 
 						<p style="font-family:Roboto,Tahoma,sans-serif;display:block;margin:13px 0">
 							<span style="font-size:15px">
-																							<img style="height:17px;padding-right:15px;border:0;line-height:100%;outline:none;text-decoration:none" src="https://www.hestia.live/payment/mail/images/user.png" class="CToWUd">'.$name.'</span>
+																							<img style="height:17px;padding-right:15px;border:0;line-height:100%;outline:none;text-decoration:none" src="https://www.hestialive.com/payment/mail/images/user.png" class="CToWUd">'.$name.'</span>
 																					</p>
 						<p style="font-family:Roboto,Tahoma,sans-serif;display:block;margin:13px 0">
 							<a style="color:#1155cc">
 								<span style="font-size:14px">
-									<img style="height:17px;padding-right:15px;border:0;line-height:100%;outline:none;text-decoration:none" src="https://www.hestia.live/payment/mail/images/email.png" class="CToWUd">'.$email.'</span>
+									<img style="height:17px;padding-right:15px;border:0;line-height:100%;outline:none;text-decoration:none" src="https://www.hestialive.com/payment/mail/images/email.png" class="CToWUd">'.$email.'</span>
 							</a>
 						</p>
 																					<p style="font-family:Roboto,Tahoma,sans-serif;display:block;margin:13px 0">
 								<span style="font-size:14px;height:17px;padding-right:20px">
-									<img style="height:17px;padding-right:15px;border:0;line-height:100%;outline:none;text-decoration:none" src="https://www.hestia.live/payment/mail/images/phone.png" class="CToWUd"> '.$phone.'</span>
+									<img style="height:17px;padding-right:15px;border:0;line-height:100%;outline:none;text-decoration:none" src="https://www.hestialive.com/payment/mail/images/phone.png" class="CToWUd"> '.$phone.'</span>
 							</p>
 																			</div>
 				</div>
@@ -472,7 +472,7 @@ Kerala, India</span>
 								<strong>
 									<span style="font-size:18px;color:#ffffff">
 																											  <span style="color:#ffffff">Once you register for events, go to the My-Events section of the website to view them. </span><br>
-																			<a style="margin:8px 0" href="https://www.hestia.live/myevents"> Go to My Events</a> 							  </span><br><br>
+																			<a style="margin:8px 0" href="https://www.hestialive.com/myevents"> Go to My Events</a> 							  </span><br><br>
 								</strong>
 							</p>
 						</div>
@@ -579,10 +579,10 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] ='Reply-To: webadmin@hestia.live';
+$headers[] ='Reply-To: webadmin@hestialive.com';
 
 
-$from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20 Registrations");
+$from = new \SendGrid\Mail\From("noreply@hestialive.com", "Hestia20 Registrations");
 $subject = new \SendGrid\Mail\Subject($subject);
 $to = new \SendGrid\Mail\To($email, $name);
 
@@ -599,13 +599,13 @@ $email = new \SendGrid\Mail\Mail(
 
 $email->setReplyTo(
     new \SendGrid\Mail\ReplyTo(
-        "webadmin@hestia.live",
+        "webadmin@hestialive.com",
         "Hestia Web Admin"
     )
 );
 $sendgrid = new \SendGrid('');
 //$email->addHeader("X-Test1", "Test1");
-$email->addHeader("X-Mailer", "hestia.live");
+$email->addHeader("X-Mailer", "hestialive.com");
 // "X-Accept-Language": "en",
        // "X-Mailer": "MyApp"
 try {

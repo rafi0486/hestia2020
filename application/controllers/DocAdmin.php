@@ -272,7 +272,7 @@ class DocAdmin extends CI_Controller {
 
     public function Publish_Certificate($eid){
         $this->docadmin_model->publish_cert($eid);
-        $mail = file_get_contents('https://www.hestia.live/payment/mail/eventcertmail.php?eid='.$eid);
+        $mail = file_get_contents('https://www.hestialive.com/payment/mail/eventcertmail.php?eid='.$eid);
         redirect('DocAdmin/Results/');
     }
 

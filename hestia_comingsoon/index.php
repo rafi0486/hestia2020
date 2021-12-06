@@ -43,12 +43,6 @@
 <body class="demo-1">
   <main>
     <div class="content"></div>
-
-    <div style="background-color:black;padding-bottom:5px;">
-      <center>
-        <a style="color: white; font-weight: bold;" href="download/">DOWNLOAD VIDEO</a>
-      </center>
-    </div>
   </main>
 
   <script type="text/javascript" src="main.js"></script>

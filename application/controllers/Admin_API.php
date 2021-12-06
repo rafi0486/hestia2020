@@ -178,7 +178,7 @@ class Admin_API extends REST_Controller {
         $id=$this->put('event_id');
         $status = $this->event_model->enable_certificate($id);
 
-        $mail = file_get_contents('https://www.hestia.live/payment/mail/eventcertmail.php?eid='.$id);
+        $mail = file_get_contents('https://www.hestialive.com/payment/mail/eventcertmail.php?eid='.$id);
 
         $this->response($id,$status);
     }

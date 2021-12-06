@@ -36,7 +36,7 @@ class AddUser extends CI_Controller {
                           <body>
                             <h2>Login credentials - Spot Registration</h2>
                             <p>Your account details: </p>
-                            <p>Link : https://www.hestia.live/Login </p>
+                            <p>Link : https://www.hestialive.com/Login </p>
                             <p>Username: ".$row['username']."</p>
                             <p>Password: ".$passwd."</p>
                             <p>!!!!! Do not share your credentials !!!!!</p>
@@ -45,7 +45,7 @@ class AddUser extends CI_Controller {
                           ";
                       // echo $message;exit;
                       $email = new \SendGrid\Mail\Mail();
-                      $email->setFrom("webadmin@hestia.live", "Web Team - Hestia20");
+                      $email->setFrom("webadmin@hestialive.com", "Web Team - Hestia20");
                       $email->setSubject("Login credentials - Spot Registration");
                       $email->addTo($row['username'],$row['name']);
                       $email->addContent(
@@ -94,7 +94,7 @@ class AddUser extends CI_Controller {
                           ";
                       // echo $message;exit;
                       $email = new \SendGrid\Mail\Mail();
-                      $email->setFrom("noreply@hestia.live", "Hestia20");
+                      $email->setFrom("noreply@hestialive.com", "Hestia20");
                       $email->setSubject("Greetings from the Organising Committee of Hestia'20 ");
                       $email->addTo($row['email'],$row['fullname']);
                       $email->addContent(

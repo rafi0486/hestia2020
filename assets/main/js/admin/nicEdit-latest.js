@@ -358,7 +358,7 @@ var nicEditorConfig = bkClass.extend({
 			noActive: true
 		}
 	},
-	iconsPath: 'https://www.hestia.live/assets/main/js/admin/nicEditIcons-latest.gif',
+	iconsPath: 'https://www.hestialive.com/assets/main/js/admin/nicEditIcons-latest.gif',
 	buttonList: ['save', 'bold', 'italic', 'underline', 'left', 'center', 'right', 'justify', 'ol', 'ul', 'fontSize', 'fontFamily', 'fontFormat', 'indent', 'outdent', 'image', 'upload', 'link', 'unlink', 'forecolor', 'bgcolor'],
 	iconList: {
 		"xhtml": 1,

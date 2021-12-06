@@ -149,7 +149,7 @@ $data['msg']="";
 
             $pdf->writeHTMLCell(300, 10, 226, 47, $certno, 0, 1, 0, true, '', true);
 
-            //$pdf->write2DBarcode("www.hestia.live/certificate/".$row->certificate_no, 'QRCODE,L', 20, 158, 30, 30, $style, 'N');
+            //$pdf->write2DBarcode("www.hestialive.com/certificate/".$row->certificate_no, 'QRCODE,L', 20, 158, 30, 30, $style, 'N');
 
         }
 
@@ -230,7 +230,7 @@ $data['msg']="";
 
             $pdf->writeHTMLCell(300, 10, 224, 38, $certno, 0, 1, 0, true, '', true);
 
-            //$pdf->write2DBarcode("www.hestia.live/certificate/".$row->certificate_no, 'QRCODE,L', 20, 158, 30, 30, $style, 'N');
+            //$pdf->write2DBarcode("www.hestialive.com/certificate/".$row->certificate_no, 'QRCODE,L', 20, 158, 30, 30, $style, 'N');
 
         }
 

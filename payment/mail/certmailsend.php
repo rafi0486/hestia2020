@@ -81,7 +81,7 @@ $message = '
 									<tbody>
 																											<tr>
 											<td style="width:600px;border-collapse:collapse">
-												<img alt="" title="" height="auto" src="https://www.hestia.live/payment/mail/images/logo-cover.jpg" style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:100%;height:auto;line-height:100%" width="600" class="CToWUd a6T" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 731px; top: 238px;"><div id=":s9" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="aSK J-J5-Ji aYr"></div></div></div>
+												<img alt="" title="" height="auto" src="https://www.hestialive.com/payment/mail/images/logo-cover.jpg" style="border:none;border-radius:0px;display:block;font-size:13px;outline:none;text-decoration:none;width:100%;height:auto;line-height:100%" width="600" class="CToWUd a6T" tabindex="0"><div class="a6S" dir="ltr" style="opacity: 0.01; left: 731px; top: 238px;"><div id=":s9" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="aSK J-J5-Ji aYr"></div></div></div>
 											</td>
 										</tr>
 																										 </tbody>
@@ -222,7 +222,7 @@ $message = '
 								<strong>
 									<span style="font-size:18px;color:#ffffff">
 																											  <span style="color:#ffffff">Click on the link below to login and Download your participation certificate on Hestia20 Website </span>
-																	<br>		<a style="margin:8px 0;color: #FF0000;" href="https://www.hestia.live/myevents"> Get My Certificates</a> 							  </span><br><br>
+																	<br>		<a style="margin:8px 0;color: #FF0000;" href="https://www.hestialive.com/myevents"> Get My Certificates</a> 							  </span><br><br>
 								</strong>
 							</p>
 						</div>
@@ -326,13 +326,13 @@ $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 // Additional headers
 //$headers[] = 'To:  <'.$email.'>';
-$headers[] = 'From: Hestia20 <noreply@hestia.live>';
+$headers[] = 'From: Hestia20 <noreply@hestialive.com>';
 // Reply To
-// $headers[] ='Reply-To: webadmin@hestia.live';
+// $headers[] ='Reply-To: webadmin@hestialive.com';
 
 
 
-$from = new \SendGrid\Mail\From("noreply@hestia.live", "Hestia20");
+$from = new \SendGrid\Mail\From("noreply@hestialive.com", "Hestia20");
 $subject = new \SendGrid\Mail\Subject($subject);
 $to = new \SendGrid\Mail\To($email, $name);
 
@@ -349,13 +349,13 @@ $email = new \SendGrid\Mail\Mail(
 // Reply TO
 // $email->setReplyTo(
 //     new \SendGrid\Mail\ReplyTo(
-//         "webadmin@hestia.live",
+//         "webadmin@hestialive.com",
 //         "Hestia Web Admin"
 //     )
 // );
 $sendgrid = new \SendGrid('');
 //$email->addHeader("X-Test1", "Test1");
-$email->addHeader("X-Mailer", "hestia.live");
+$email->addHeader("X-Mailer", "hestialive.com");
 // "X-Accept-Language": "en",
        // "X-Mailer": "MyApp"
 try {

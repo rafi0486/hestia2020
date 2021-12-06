@@ -361,7 +361,7 @@
 										 style="padding-left:7px;"
 									 ></i
 								 ></a>
-								 <a href="mailto:info@hestia.live" target="_blank"
+								 <a href="mailto:info@hestialive.com" target="_blank"
 									 ><i
 										 style="padding-left:10px;"
 										 class=" text-white fa fa-envelope"
@@ -386,8 +386,8 @@
 								 style="font-weight: 600; font-size: .75em; text-align: center;"
 							 >
 								 Web-related queries?
-								 <a class="text-white" href="mailto:webadmin@hestia.live"
-									 >webadmin@hestia.live</a
+								 <a class="text-white" href="mailto:webadmin@hestialive.com"
+									 >webadmin@hestialive.com</a
 								 >
 							 </p>
 						 </div>

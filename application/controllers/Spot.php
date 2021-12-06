@@ -106,7 +106,7 @@ class Spot extends CI_Controller {
             if($this->report_model->check_transaction_id($jsondata->transactionId) == TRUE){
                   $this->session->set_flashdata('fail', 'Transaction ID error');
                   echo "Transaction ID Error <br>";
-                  echo "<a href='https://www.hestia.live/Spot/home'>Go Back</a>";
+                  echo "<a href='https://www.hestialive.com/Spot/home'>Go Back</a>";
                   exit;
             }
         }
